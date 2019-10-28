@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.14)  24 OCT 2019 11:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.14)  28 OCT 2019 11:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/erickvargas/Documents/llncs2e 2/samplepaper.tex"
-(/Users/erickvargas/Documents/llncs2e 2/samplepaper.tex
+**/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex
+(/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex
 LaTeX2e <2019-10-01> patch level 1
-(/Users/erickvargas/Documents/llncs2e 2/llncs.cls
+(/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/llncs.cls
 Document Class: llncs 2018/03/10 v2.20 
  LaTeX document class for Lecture Notes in Computer Science
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
@@ -145,12 +145,57 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
-) (/Users/erickvargas/Documents/llncs2e 2/samplepaper.aux
+) (/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux
 
 LaTeX Warning: Label `fig1' multiply defined.
 
 
 LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `table:resultados-2' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `table:resultados-2' multiply defined.
+
+
+LaTeX Warning: Label `table:ga-pso-parameters-20' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `table:resultados-2' multiply defined.
 
 )
 \openout1 = `samplepaper.aux'.
@@ -244,10 +289,10 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Package epstopdf Info: Source file: <fig1.eps>
-(epstopdf)                    date: 2017-10-04 10:21:14
+(epstopdf)                    date: 2019-10-24 11:49:34
 (epstopdf)                    size: 357553 bytes
 (epstopdf)             Output file: <fig1-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-10-23 14:44:37
+(epstopdf)                    date: 2019-10-24 11:49:34
 (epstopdf)                    size: 26294 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig1-eps-converted-to.pdf fig1.eps>
 (epstopdf)             \includegraphics on input line 102.
@@ -257,7 +302,7 @@ File: fig1-eps-converted-to.pdf Graphic file (type pdf)
 <use fig1-eps-converted-to.pdf>
 Package pdftex.def Info: fig1-eps-converted-to.pdf  used on input line 102.
 (pdftex.def)             Requested size: 347.12354pt x 143.29115pt.
- [2 </Users/erickvargas/Documents/llncs2e 2/fig1-eps-converted-to.pdf>]
+ [2 </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1-eps-converted-to.pdf>]
 <benchmark.png, id=37, 652.4375pt x 192.72pt>
 File: benchmark.png Graphic file (type png)
 <use benchmark.png>
@@ -268,7 +313,62 @@ File: 2-sphere.jpg Graphic file (type jpg)
 <use 2-sphere.jpg>
 Package pdftex.def Info: 2-sphere.jpg  used on input line 221.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
- [3 </Users/erickvargas/Documents/llncs2e 2/benchmark.png>] [4 </Users/erickvargas/Documents/llncs2e 2/2-sphere.jpg>] [5] [6] (/Users/erickvargas/Documents/llncs2e 2/samplepaper.aux)
+<2-rastrigin.jpg, id=40, 351.3125pt x 225.84375pt>
+File: 2-rastrigin.jpg Graphic file (type jpg)
+<use 2-rastrigin.jpg>
+Package pdftex.def Info: 2-rastrigin.jpg  used on input line 226.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+<2-rosenbrock.jpg, id=41, 351.3125pt x 225.84375pt>
+File: 2-rosenbrock.jpg Graphic file (type jpg)
+<use 2-rosenbrock.jpg>
+Package pdftex.def Info: 2-rosenbrock.jpg  used on input line 231.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+<10-sphere.jpg, id=42, 351.3125pt x 225.84375pt>
+File: 10-sphere.jpg Graphic file (type jpg)
+<use 10-sphere.jpg>
+Package pdftex.def Info: 10-sphere.jpg  used on input line 313.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+<10-rastrigin.jpg, id=43, 351.3125pt x 225.84375pt>
+File: 10-rastrigin.jpg Graphic file (type jpg)
+<use 10-rastrigin.jpg>
+Package pdftex.def Info: 10-rastrigin.jpg  used on input line 318.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+<10-rosenbrock.jpg, id=44, 351.3125pt x 225.84375pt>
+File: 10-rosenbrock.jpg Graphic file (type jpg)
+<use 10-rosenbrock.jpg>
+Package pdftex.def Info: 10-rosenbrock.jpg  used on input line 323.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+<20-sphere.jpg, id=45, 351.3125pt x 225.84375pt>
+File: 20-sphere.jpg Graphic file (type jpg)
+<use 20-sphere.jpg>
+Package pdftex.def Info: 20-sphere.jpg  used on input line 405.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+<20-rastrigin.jpg, id=46, 351.3125pt x 225.84375pt>
+File: 20-rastrigin.jpg Graphic file (type jpg)
+<use 20-rastrigin.jpg>
+Package pdftex.def Info: 20-rastrigin.jpg  used on input line 410.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+<20-rosenbrock.jpg, id=47, 351.3125pt x 225.84375pt>
+File: 20-rosenbrock.jpg Graphic file (type jpg)
+<use 20-rosenbrock.jpg>
+Package pdftex.def Info: 20-rosenbrock.jpg  used on input line 415.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+<40-sphere.jpg, id=48, 351.3125pt x 225.84375pt>
+File: 40-sphere.jpg Graphic file (type jpg)
+<use 40-sphere.jpg>
+Package pdftex.def Info: 40-sphere.jpg  used on input line 498.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+<40-rastrigin.jpg, id=49, 351.3125pt x 225.84375pt>
+File: 40-rastrigin.jpg Graphic file (type jpg)
+<use 40-rastrigin.jpg>
+Package pdftex.def Info: 40-rastrigin.jpg  used on input line 503.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+<40-rosenbrock.jpg, id=50, 351.3125pt x 225.84375pt>
+File: 40-rosenbrock.jpg Graphic file (type jpg)
+<use 40-rosenbrock.jpg>
+Package pdftex.def Info: 40-rosenbrock.jpg  used on input line 508.
+(pdftex.def)             Requested size: 347.12354pt x 223.169pt.
+ [3 </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/benchmark.png>] [4 </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-sphere.jpg>] [5 </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rastrigin.jpg> </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rosenbrock.jpg>] [6] [7 </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-sphere.jpg> </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rastrigin.jpg>] [8 </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rosenbrock.jpg>] [9 </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-sphere.jpg> </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rastrigin.jpg>] [10 </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rosenbrock.jpg>] [11 </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-sphere.jpg>] [12 </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rastrigin.jpg> </Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rosenbrock.jpg>] [13] [14] (/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -277,18 +377,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1990 strings out of 492167
- 27961 string characters out of 6125388
- 107639 words of memory out of 5000000
- 6331 multiletter control sequences out of 15000+600000
+ 2069 strings out of 492167
+ 29869 string characters out of 6125388
+ 131659 words of memory out of 5000000
+ 6399 multiletter control sequences out of 15000+600000
  11209 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,8n,30p,350b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,8n,30p,386b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on "/Users/erickvargas/Documents/llncs2e 2/samplepaper.pdf" (6 pages, 555579 bytes).
+Output written on /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf (14 pages, 790712 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 138 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

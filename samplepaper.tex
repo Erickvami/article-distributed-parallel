@@ -160,7 +160,7 @@ parameters must be configured to be adjusted to the next criterial, using the ne
    Evaluations = 10^{5} Dimensions
    \end{equation}
 
-
+For example, if the experiment has 2 dimensions, the maximum number of evaluations will be 200,0000, for 10 dimensions will be 1,000,000 of evaluacions and the same with the others dimensions.
 
 
 
@@ -219,8 +219,18 @@ parameters must be configured to be adjusted to the next criterial, using the ne
 
 \begin{figure}[htp]
 \includegraphics[width=\textwidth]{2-sphere.jpg}
-\caption{Benchmark functions for experimentation.} \label{fig1}
+\caption{2 dimension experiments Sphere.} \label{fig1}
 \end{figure}
+
+\begin{figure}[htp]
+  \includegraphics[width=\textwidth]{2-rastrigin.jpg}
+  \caption{2 dimension experiments Rastrigin.} \label{fig1}
+  \end{figure}
+  
+\begin{figure}[htp]
+  \includegraphics[width=\textwidth]{2-rosenbrock.jpg}
+  \caption{2 dimension experiments Rosenbrock.} \label{fig1}
+  \end{figure}
 
 \begin{table}[htp]
     \caption{Resultados 2 dimensiones}
@@ -252,7 +262,282 @@ parameters must be configured to be adjusted to the next criterial, using the ne
     \end{tabular}
     \end{table}
   
+    \begin{table}[htp]
+      \caption{Parametros experimentos 10 dimensiones}
+      \label{table:ga-pso-parameters-10}
+      \centering
+      \begin{tabular}{|l|l|}
+      \hline
+      Parameter & Value \\
+      \hline
+      \hline
+      Optimizaci\'on GA & Minimiza \\
+      \hline
+      Generaciones GA & 70 \\
+      \hline
+      Dimensiones GA & 10 \\
+      \hline
+      Tama\~no de poblaci\'on GA & 200 \\
+      \hline
+      Mutaci\'on GA & Aleatorio(Tournament2,Tournament3,Random \\
+      &  ,RandomLinearRank,Sequential,Fittest)\\
+      \hline
+      Cruce GA & Tournament3 \\
+      \hline
+      Porcentaje de cruce GA & Aleatorio[10\%, 80\%] \\
+      \hline
+      Porcentaje de mutaci\'on GA & Aleatorio[10\%,50\%] \\
+      \hline
+      Funci\'on de cruce GA & Uniforme de punto medio \\
+      \hline
+      Funci\'on de mutaci\'on GA & gaussian \\
+      \hline
+      Optimizaci\'on PSO & Minimiza \\
+      \hline
+      Iteraciones PSO & 70 \\
+      \hline
+      Dimensiones PSO & 10 \\
+      \hline
+      Tama\~no de vector PSO & 200 \\
+      \hline
+      Factor social PSO & Aleatorio[0.5,4.0] \\
+      \hline
+      Factor individual PSO & Aleatorio[0.5,4.0] \\
+      \hline
+      Peso de inercia PSO & Aleatorio[0.5,4.0] \\
+      \hline
+      \end{tabular}
+      \end{table}
+    
+      \begin{figure}[htp]
+        \includegraphics[width=\textwidth]{10-sphere.jpg}
+        \caption{10 dimensions experiments Sphere.} \label{fig1}
+        \end{figure}
 
+        \begin{figure}[htp]
+          \includegraphics[width=\textwidth]{10-rastrigin.jpg}
+          \caption{10 dimensions experiments Rastrigin.} \label{fig1}
+          \end{figure}
+
+          \begin{figure}[htp]
+            \includegraphics[width=\textwidth]{10-rosenbrock.jpg}
+            \caption{10 dimensions experiments Rosenbrock.} \label{fig1}
+            \end{figure}
+
+        \begin{table}[htp]
+          \caption{Resultados 10 dimensiones}
+          \label{table:resultados-2}
+          \centering
+          \begin{tabular}{|l|l|l|l|}
+          \hline
+          Fn & Mejor & Promedio & No. Experimento \\
+          \hline
+          \hline
+          Rastrigin GA & 3.21768E-09 & 2.38015E-06 & 15\\
+          \hline
+          Rastrigin PSO & 7.8586E-11 & 2.715716161 & 15\\
+          \hline
+          Rastrigin GA-PSO & 8.01492E-12 & 5.08668E-09 & 15\\
+          \hline
+          Sphere GA & 1.84051E-09 & 2.5389E-08 & 15\\
+          \hline
+          Sphere PSO & 4.50351E-11 & 4.72855E-09 & 15\\
+          \hline
+          Sphere GA-PSO & 3.33851E-11 & 1.30062E-09 & 15\\
+          \hline
+          Rosenbrock GA & 9.58323E-07 & 1.24176E-08 & 15\\
+          \hline
+          Rosenbrock PSO & 4.16711E-07 & 4.431565444 & 15\\
+          \hline
+          Rosenbrock GA-PSO & 3.62472E-07 & 0.000240251 & 15\\
+          \hline
+          \end{tabular}
+          \end{table}
+
+          \begin{table}[htp]
+            \caption{Parametros experimentos 20 dimensiones}
+            \label{table:ga-pso-parameters-20}
+            \centering
+            \begin{tabular}{|l|l|}
+            \hline
+            Parameter & Value \\
+            \hline
+            \hline
+            Optimizaci\'on GA & Minimiza \\
+            \hline
+            Generaciones GA & 70 \\
+            \hline
+            Dimensiones GA & 20 \\
+            \hline
+            Tama\~no de poblaci\'on GA & 200 \\
+            \hline
+            Mutaci\'on GA & Aleatorio(Tournament2,Tournament3,Random \\
+            &  ,RandomLinearRank,Sequential,Fittest)\\
+            \hline
+            Cruce GA & Tournament3 \\
+            \hline
+            Porcentaje de cruce GA & Aleatorio[10\%, 80\%] \\
+            \hline
+            Porcentaje de mutaci\'on GA & Aleatorio[10\%,50\%] \\
+            \hline
+            Funci\'on de cruce GA & Uniforme de punto medio \\
+            \hline
+            Funci\'on de mutaci\'on GA & gaussian \\
+            \hline
+            Optimizaci\'on PSO & Minimiza \\
+            \hline
+            Iteraciones PSO & 70 \\
+            \hline
+            Dimensiones PSO & 20 \\
+            \hline
+            Tama\~no de vector PSO & 200 \\
+            \hline
+            Factor social PSO & Aleatorio[0.5,4.0] \\
+            \hline
+            Factor individual PSO & Aleatorio[0.5,4.0] \\
+            \hline
+            Peso de inercia PSO & Aleatorio[0.5,4.0] \\
+            \hline
+            \end{tabular}
+            \end{table}
+          
+            \begin{figure}[htp]
+              \includegraphics[width=\textwidth]{20-sphere.jpg}
+              \caption{20 dimensions experiments Sphere.} \label{fig1}
+              \end{figure}
+      
+              \begin{figure}[htp]
+                \includegraphics[width=\textwidth]{20-rastrigin.jpg}
+                \caption{20 dimensions experiments Rastrigin.} \label{fig1}
+                \end{figure}
+      
+                \begin{figure}[htp]
+                  \includegraphics[width=\textwidth]{20-rosenbrock.jpg}
+                  \caption{20 dimensions experiments Rosenbrock.} \label{fig1}
+                  \end{figure}
+
+                  \begin{table}[htp]
+
+    \caption{Resultados 20 dimensiones}
+    \label{table:resultados-2}
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    Fn & Mejor & Promedio & No. Experimento \\
+    \hline
+    \hline
+    Rastrigin GA & 0.000808633 & 0.220596203 & 15\\
+    \hline
+    Rastrigin PSO & 3.988070734 & 25.51777514 & 15\\
+    \hline
+    Rastrigin GA-PSO & 9.13E-09 & 7.38E-02 & 15\\
+    \hline
+    Sphere GA & 1.84051E-09 & 9.22715E-06 & 15\\
+    \hline
+    Sphere PSO & 7.04E-11 & 3.50E-07 & 15\\
+    \hline
+    Sphere GA-PSO & 9.11E-11 & 2.13E-08 & 15\\
+    \hline
+    Rosenbrock GA & 0.000348015 & 0.010958941 & 15\\
+    \hline
+    Rosenbrock PSO & 9.119539342 & 13.37613983 & 15\\
+    \hline
+    Rosenbrock GA-PSO & 2.31663E-05 & 0.005608855 & 15\\
+    \hline
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[htp]
+      \caption{Parametros experimentos 40 dimensiones}
+      \label{table:ga-pso-parameters-20}
+      \centering
+      \begin{tabular}{|c|c|}
+      \hline
+      Parameter & Value \\
+      \hline
+      \hline
+      Optimizaci\'on GA & Minimiza \\
+      \hline
+      Generaciones GA & 70 \\
+      \hline
+      Dimensiones GA & 40 \\
+      \hline
+      Tama\~no de poblaci\'on GA & 200 \\
+      \hline
+      Mutaci\'on GA & Aleatorio(Tournament2,Tournament3,Random \\
+      &  ,RandomLinearRank,Sequential,Fittest)\\
+      \hline
+      Cruce GA & Tournament3 \\
+      \hline
+      Porcentaje de cruce GA & Aleatorio[10\%, 80\%] \\
+      \hline
+      Porcentaje de mutaci\'on GA & Aleatorio[10\%,50\%] \\
+      \hline
+      Funci\'on de cruce GA & Uniforme de punto medio \\
+      \hline
+      Funci\'on de mutaci\'on GA & gaussian \\
+      \hline
+      Optimizaci\'on PSO & Minimiza \\
+      \hline
+      Iteraciones PSO & 70 \\
+      \hline
+      Dimensiones PSO & 40 \\
+      \hline
+      Tama\~no de vector PSO & 200 \\
+      \hline
+      Factor social PSO & Aleatorio[0.5,4.0] \\
+      \hline
+      Factor individual PSO & Aleatorio[0.5,4.0] \\
+      \hline
+      Peso de inercia PSO & Aleatorio[0.5,4.0] \\
+      \hline
+      \end{tabular}
+      \end{table}
+    
+      \begin{figure}[htp]
+        \includegraphics[width=\textwidth]{40-sphere.jpg}
+        \caption{40 dimensions experiments Sphere.} \label{fig1}
+        \end{figure}
+
+        \begin{figure}[htp]
+          \includegraphics[width=\textwidth]{40-rastrigin.jpg}
+          \caption{40 dimensions experiments Rastrigin.} \label{fig1}
+          \end{figure}
+
+          \begin{figure}[htp]
+            \includegraphics[width=\textwidth]{40-rosenbrock.jpg}
+            \caption{40 dimensions experiments Rosenbrock.} \label{fig1}
+            \end{figure}
+
+            \begin{table}[htp]
+              \caption{Resultados 40 dimensiones}
+              \label{table:resultados-2}
+              \centering
+              \begin{tabular}{|l|l|l|l|}
+              \hline
+              Fn & Mejor & Promedio & No. Experimento \\
+              \hline
+              \hline
+              Rastrigin GA & 1.95478879 & 3.560837088 & 15\\
+              \hline
+              Rastrigin PSO & 29.06596132 & 130.2865863 & 15\\
+              \hline
+              Rastrigin GA-PSO & 2.46E-04 & 2.13E+00 & 15\\
+              \hline
+              Sphere GA & 0.002686956 & 0.005302951 & 15\\
+              \hline
+              Sphere PSO & 8.68E-11 & 2.07E-03 & 15\\
+              \hline
+              Sphere GA-PSO & 2.00E-10 & 1.41E-04 & 15\\
+              \hline
+              Rosenbrock GA & 0.000348015 & 106.9287542 & 15\\
+              \hline
+              Rosenbrock PSO & 0.032708559 & 0.368395353 & 15\\
+              \hline
+              Rosenbrock GA-PSO & 0.018538924 & 0.525086565 & 15\\
+              \hline
+              \end{tabular}
+              \end{table}
 % ---- Bibliography ----
 %
 % BibTeX users should specify bibliography style 'splncs04'.

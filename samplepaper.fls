@@ -1,11 +1,11 @@
-PWD /Users/erickvargas/Documents/llncs2e 2
+PWD /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel
 INPUT /usr/local/texlive/2019/texmf.cnf
 INPUT /usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/erickvargas/Documents/llncs2e 2/samplepaper.tex
-OUTPUT /Users/erickvargas/Documents/llncs2e 2/samplepaper.log
-INPUT /Users/erickvargas/Documents/llncs2e 2/llncs.cls
-INPUT /Users/erickvargas/Documents/llncs2e 2/llncs.cls
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex
+OUTPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.log
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/llncs.cls
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/llncs.cls
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
@@ -26,9 +26,9 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
-INPUT /Users/erickvargas/Documents/llncs2e 2/samplepaper.aux
-INPUT /Users/erickvargas/Documents/llncs2e 2/samplepaper.aux
-OUTPUT /Users/erickvargas/Documents/llncs2e 2/samplepaper.aux
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux
+OUTPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux
 INPUT /usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
@@ -83,24 +83,57 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
-OUTPUT /Users/erickvargas/Documents/llncs2e 2/samplepaper.pdf
+OUTPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf
 INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /Users/erickvargas/Documents/llncs2e 2/fig1.eps
-INPUT /Users/erickvargas/Documents/llncs2e 2/fig1.eps
-INPUT /Users/erickvargas/Documents/llncs2e 2/fig1.eps
-INPUT /Users/erickvargas/Documents/llncs2e 2/fig1-eps-converted-to.pdf
-INPUT /Users/erickvargas/Documents/llncs2e 2/fig1-eps-converted-to.pdf
-INPUT /Users/erickvargas/Documents/llncs2e 2/fig1.eps
-INPUT /Users/erickvargas/Documents/llncs2e 2/fig1-eps-converted-to.pdf
-INPUT /Users/erickvargas/Documents/llncs2e 2/fig1-eps-converted-to.pdf
-INPUT /Users/erickvargas/Documents/llncs2e 2/fig1-eps-converted-to.pdf
-INPUT /Users/erickvargas/Documents/llncs2e 2/benchmark.png
-INPUT /Users/erickvargas/Documents/llncs2e 2/benchmark.png
-INPUT /Users/erickvargas/Documents/llncs2e 2/benchmark.png
-INPUT /Users/erickvargas/Documents/llncs2e 2/2-sphere.jpg
-INPUT /Users/erickvargas/Documents/llncs2e 2/2-sphere.jpg
-INPUT /Users/erickvargas/Documents/llncs2e 2/2-sphere.jpg
-INPUT /Users/erickvargas/Documents/llncs2e 2/samplepaper.aux
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1.eps
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1.eps
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1.eps
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1-eps-converted-to.pdf
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1-eps-converted-to.pdf
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1.eps
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1-eps-converted-to.pdf
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1-eps-converted-to.pdf
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1-eps-converted-to.pdf
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/benchmark.png
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/benchmark.png
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/benchmark.png
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-sphere.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rastrigin.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rosenbrock.jpg
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb
