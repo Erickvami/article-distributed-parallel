@@ -81,10 +81,12 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
 OUTPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf
 INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/architectures.png
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/architectures.png
+INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/architectures.png
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
 INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1.eps
 INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1.eps
 INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1.eps
@@ -94,6 +96,7 @@ INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parall
 INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1-eps-converted-to.pdf
 INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1-eps-converted-to.pdf
 INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/fig1-eps-converted-to.pdf
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/benchmark.png
 INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/benchmark.png
 INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/benchmark.png

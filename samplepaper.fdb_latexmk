@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1572288753 "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf" "samplepaper" 1572288754
-  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux" 1572288754 5656 c83b2e977367541bf6ae73d74b5c2743 ""
-  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" 1572288753 24007 5bd585f5d6771aed2e0414f3cb646df0 ""
+["pdflatex"] 1572384041 "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf" "samplepaper" 1572384042
+  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux" 1572384042 5687 b0d351b51032579135becb32efacf783 ""
+  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" 1572384040 25195 c086a3270d697b758ed60f80cdb55f39 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -79,14 +79,15 @@
   "40-rastrigin.jpg" 1571942974 20032 e0990317addba9220d28257e3e3fe9d7 ""
   "40-rosenbrock.jpg" 1571942974 23050 f83c889ad9242225b3508879b72aa8d2 ""
   "40-sphere.jpg" 1571942974 20088 d0234c47487bccb5fd722b5df8c9e040 ""
+  "architectures.png" 1572383573 260776 b8cecd29a3b1eb977a36f95d405b73bf ""
   "benchmark.png" 1571942974 384710 4fd508f0cc73a71c66b46c9be97753ad ""
   "fig1.eps" 1571942974 357553 784a1d3035e9550a463f314c33bb157f ""
   "llncs.cls" 1571942974 43467 a21466011e5ed5d4c3f1d5a9af897395 ""
-  "samplepaper.aux" 1572288754 5656 c83b2e977367541bf6ae73d74b5c2743 "pdflatex"
-  "samplepaper.tex" 1572288753 24007 5bd585f5d6771aed2e0414f3cb646df0 ""
+  "samplepaper.aux" 1572384042 5687 b0d351b51032579135becb32efacf783 "pdflatex"
+  "samplepaper.tex" 1572384040 25195 c086a3270d697b758ed60f80cdb55f39 ""
   (generated)
   "samplepaper.pdf"
-  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf"
-  "samplepaper.log"
   "samplepaper.aux"
   "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.log"
+  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf"
+  "samplepaper.log"
