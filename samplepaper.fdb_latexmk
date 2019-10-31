@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1572495507 "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf" "samplepaper" 1572495508
-  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux" 1572495508 5703 da0d05f2cdd647a233c097923a4bfe41 ""
-  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" 1572495506 27704 7b45cde4aaec436a121d0958dcf37d27 ""
+["pdflatex"] 1572499971 "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf" "samplepaper" 1572499972
+  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux" 1572499972 6521 cc6e29cea017209239f6ec2f029c28a3 ""
+  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" 1572499971 29199 c268989a5394982471b794c3bc18abd4 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -82,11 +82,14 @@
   "general diagram architecture 2.png" 1572393776 82159 ee36989dfbfb00366f6e516ca4f3de66 ""
   "llncs.cls" 1571942974 43467 a21466011e5ed5d4c3f1d5a9af897395 ""
   "multipopulation.png" 1571879141 183954 3460d5c578c5238cf4a8359356a12787 ""
-  "samplepaper.aux" 1572495508 5703 da0d05f2cdd647a233c097923a4bfe41 "pdflatex"
-  "samplepaper.tex" 1572495506 27704 7b45cde4aaec436a121d0958dcf37d27 ""
+  "samplepaper.aux" 1572499972 6521 cc6e29cea017209239f6ec2f029c28a3 "pdflatex"
+  "samplepaper.tex" 1572499971 29199 c268989a5394982471b794c3bc18abd4 ""
+  "selection.png" 1572498250 62110 61ce262715584433f37daaa39a3fca44 ""
+  "splittinPointUniform.png" 1572499274 85541 da507178258eddec9e5be751ee87894b ""
+  "subpopulationDefinition.png" 1572497908 9019 2f0e81cab60c75c1e97e8b990e4f91d3 ""
   (generated)
   "samplepaper.aux"
-  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.log"
   "samplepaper.pdf"
   "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf"
   "samplepaper.log"
+  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.log"

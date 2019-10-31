@@ -118,7 +118,8 @@ for the multi-population. Of course this whole process is performed asynchronous
 update of the multi-population status \cite{Lovbjerg2001,Jimeno2019}. In the following figure you can see from
 illustrative way how the multi-population is composed.
 \begin{figure}[htp]
-  \includegraphics[width=\textwidth]{multipopulation.png}
+  \centering
+  \includegraphics[width=0.7\textwidth]{multipopulation.png}
   \caption{Multipopulation representation.} \label{fig1}
   \end{figure}
 \item Message Provider: Its purpose is the creation of a sub-population messages queue which is the 
@@ -136,14 +137,51 @@ function as required.
 \end{itemize}
 
 
-
 To develop this architecture the applied technologies are based in JavaScript using Node JS as it can be
 see it in the General Architecture Flowchart.
 
 \begin{figure}[htp]
-  \includegraphics[width=\textwidth]{general diagram architecture 2.png}
+  \centering
+  \includegraphics[width=0.9\textwidth]{general diagram architecture 2.png}
   \caption{General Architecture Flowchart.} \label{fig1}
   \end{figure}
+
+\subsection{Sub-population definition}
+
+Individuals are created composed of 2 types of information, the one that is active or useful for crossing
+and the one that is not. The population contains the series of possible solutions, while the rest contains 
+the information on how the processing for the search of the optimal solutions will be executed, linked directly 
+with their respective algorithms.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{subpopulationDefinition.png}
+  \caption{Sub-population composition.} \label{fig1}
+  \end{figure}
+
+\subsection{Splitting Point Uniform Migration}
+A uniform mask is created to apply the migration between individuals
+from 2 sub-populations. The selected data are combined using the middle point between the
+selected points by the mask. This process iterates the 2 sub-populations to randomly swap values and
+replace some of them with middle points.
+
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{splittinPointUniform.png}
+  \caption{Splitting Point Uniform process.} \label{fig1}
+  \end{figure}
+
+  \subsection{Migration Selection}
+
+  Using migration selection by tournament keeping up the information of the best sub-population of the multi-population.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{selection.png}
+  \caption{Selection by tournament.} \label{fig1}
+  \end{figure}
+
 
   % \begin{theorem}
   %   This is a sample theorem. The run-in heading is set in bold, while
@@ -179,7 +217,8 @@ benchmark functions, for this case the functions are Sphere, Rastrigin and Rosen
 Using 10 sub-population for each experiment and maximum 4 migrations per sub-population with different algorithms and parameters for each sub-population.
 
 \begin{figure}[htp]
-    \includegraphics[width=\textwidth]{benchmark.png}
+  \centering
+    \includegraphics[width=0.7\textwidth]{benchmark.png}
     \caption{Benchmark functions for experimentation.} \label{fig1}
     \end{figure}
 
