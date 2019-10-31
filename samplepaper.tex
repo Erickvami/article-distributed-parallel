@@ -90,56 +90,68 @@ and support. In serverless this functions could be triggered by an event that wo
 Also is known that each function scales independently and is stateless with a short duration.
 
 
-\begin{table}
-\caption{Table captions should be placed above the
-tables.}\label{tab1}
-\begin{tabular}{|l|l|l|}
-\hline
-Heading level &  Example & Font size and style\\
-\hline
-Title (centered) &  {\Large\bfseries Lecture Notes} & 14 point, bold\\
-1st-level heading &  {\large\bfseries 1 Introduction} & 12 point, bold\\
-2nd-level heading & {\bfseries 2.1 Printing Area} & 10 point, bold\\
-3rd-level heading & {\bfseries Run-in Heading in Bold.} Text follows & 10 point, bold\\
-4th-level heading & {\itshape Lowest Level Heading.} Text follows & 10 point, italic\\
-\hline
-\end{tabular}
-\end{table}
+\section{Proposed architecture}
 
+This architecture consist in 3 nodes, they are explained on the next points:
 
-\noindent Displayed equations are centered and set on a separate
-line.
-\begin{equation}
-x + y = z
-\end{equation}
-Please try to avoid rasterized images for line-art diagrams and
-schemas. Whenever possible, use vector graphics instead (see
-Fig.~\ref{fig1}).
+\begin{itemize}
+  \item Manager: Here the multi-population is managed, it is initialized how to process it, 
+  followed by the subpopulations, which when they are concepted trigger an event that sends 
+  the subpopulations to be stored in a file JSON of MongoDB (preventing to saturate the memory) 
+  and to a message queue that is directed to its subsequent processing in the “Receiver” section 
+  that is our cluster of functions (Faas), because each subpopulation requires the execution of a 
+  different algorithm, there is a different channel in the web sockets for each type of algorithm 
+  that triggers its respective serverless function.
+  Once a subpopulation is processed, it is returned and a selection is made for the sub-population 
+  migration. The migration selection is made by taking the population attribute of the subpopulation 
+  that was returned and the subpopulation that it have been selected among the best 2, it should be 
+  noted that the decision to identify the best from the 2 is made randomly. Once the selection is made, 
+  a Splitting Point Uniform crossing will be made.
+  The 2 new subpopulations replace their self and are resent it back to their respective
+serverless function and this process is repeited until completing the number of assigned migrations
+for the multi-population. Of course this whole process is performed asynchronously avoiding wait for all responses from serverless functions to perform a crossover or a
+update of the multi-population status \cite{Lovbjerg2001,Jimeno2019}. In the following figure you can see from
+illustrative way how the multi-population is composed.
+\item Message Provider: Its purpose is the creation of a sub-population messages queue which is the 
+comunication channel between the sub-population Manager and the Receiver (FaaS), each message is a 
+trigger for the execution of a GA or PSO function. Thanks to the message queue, it is possible to perform 
+the serverless functions asynchronously, avoiding that the algorithm wait for responses independently of 
+their duration and the simultaneous evaluation of different sub-populations independent of its algorithm 
+or characteristics.
+\item Receiver: The following section contains the Serverless functions of the algorithms to be executed, 
+reduced the best possible using the functional programming paradigm so that they can be converted into FaaS 
+without problems, in addition to achieving a completely clean and fast execution \cite{Roberts2016} . Each message received 
+on this node is executed in the form of a multi-threaded process in parallel, this allows to having more than 
+one population-based search algorithm running at the same time, and making a copy of itself each algorithm 
+function as required.
+\end{itemize}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{fig1.eps}
-\caption{A figure caption is always placed below the illustration.
-Please note that short captions are centered, while long ones are
-justified by the macro package automatically.} \label{fig1}
-\end{figure}
+% \begin{figure}[htp]
+%   \includegraphics[width=\textwidth]{multipopulation.png}
+%   \caption{Multipopulation representation.} \label{fig1}
+%   \end{figure}
 
-\begin{theorem}
-This is a sample theorem. The run-in heading is set in bold, while
-the following text appears in italics. Definitions, lemmas,
-propositions, and corollaries are styled the same way.
-\end{theorem}
-%
-% the environments 'definition', 'lemma', 'proposition', 'corollary',
-% 'remark', and 'example' are defined in the LLNCS documentclass as well.
-%
-\begin{proof}
-Proofs, examples, and remarks have the initial word in italics,
-while the following text appears in normal font.
-\end{proof}
-For citations of references, we prefer the use of square brackets
-and consecutive numbers. Citations using labels or the author/year
-convention are also acceptable. The following bibliography provides
-a sample reference list with entries for journal
+To develop this architecture the applied technologies are based in JavaScript using Node JS as it can be
+see it in the General Architecture Flowchart.
+
+\begin{figure}[htp]
+  \includegraphics[width=\textwidth]{general diagram architecture 2.png}
+  \caption{General Architecture Flowchart.} \label{fig1}
+  \end{figure}
+
+  % \begin{theorem}
+  %   This is a sample theorem. The run-in heading is set in bold, while
+  %   the following text appears in italics. Definitions, lemmas,
+  %   propositions, and corollaries are styled the same way.
+  %   \end{theorem}
+  %   %
+  %   % the environments 'definition', 'lemma', 'proposition', 'corollary',
+  %   % 'remark', and 'example' are defined in the LLNCS documentclass as well.
+  %   %
+  %   \begin{proof}
+  %   Proofs, examples, and remarks have the initial word in italics,
+  %   while the following text appears in normal font.
+  %   \end{proof}
 % articles~\cite{ref_article1}, an LNCS chapter~\cite{ref_lncs1}, a
 % book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
 % and a homepage~\cite{ref_url1}. Multiple citations are grouped
