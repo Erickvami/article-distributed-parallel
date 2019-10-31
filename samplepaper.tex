@@ -92,6 +92,11 @@ Also is known that each function scales independently and is stateless with a sh
 
 \section{Proposed architecture}
 
+The propose is an architecture that allows to process a simple population that is divided into sub-populations
+distributing them to process in different ways and then communicating each other with purpose of increase the possibility
+to find the best fitness of a function. This architecture can accept the use of an indeterminate number of algorithms, allowing
+an easy hybridation and continuous adaptability for different problems.
+
 This architecture consist in 3 nodes, they are explained on the next points:
 
 \begin{itemize}
@@ -112,6 +117,10 @@ serverless function and this process is repeited until completing the number of 
 for the multi-population. Of course this whole process is performed asynchronously avoiding wait for all responses from serverless functions to perform a crossover or a
 update of the multi-population status \cite{Lovbjerg2001,Jimeno2019}. In the following figure you can see from
 illustrative way how the multi-population is composed.
+\begin{figure}[htp]
+  \includegraphics[width=\textwidth]{multipopulation.png}
+  \caption{Multipopulation representation.} \label{fig1}
+  \end{figure}
 \item Message Provider: Its purpose is the creation of a sub-population messages queue which is the 
 comunication channel between the sub-population Manager and the Receiver (FaaS), each message is a 
 trigger for the execution of a GA or PSO function. Thanks to the message queue, it is possible to perform 
@@ -126,10 +135,7 @@ one population-based search algorithm running at the same time, and making a cop
 function as required.
 \end{itemize}
 
-% \begin{figure}[htp]
-%   \includegraphics[width=\textwidth]{multipopulation.png}
-%   \caption{Multipopulation representation.} \label{fig1}
-%   \end{figure}
+
 
 To develop this architecture the applied technologies are based in JavaScript using Node JS as it can be
 see it in the General Architecture Flowchart.
