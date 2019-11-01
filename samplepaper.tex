@@ -14,29 +14,30 @@
 
 \begin{document}
 %
-\title{An Event-based Architecture for Multi-population Optimization Algorithms
-\thanks{Supported by organization x.}}
+\title{An Event-based Architecture for Multi-population Optimization Algorithms}
 %
 %\titlerunning{Abbreviated paper title}
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
 \author{Erick Vargas Minguela\inst{1}\orcidID{0000-1111-2222-3333} \and
-Mario Garcia Valdez\inst{2,3}\orcidID{1111-2222-3333-4444} \and
-Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
+Mario Garcia Valdez\inst{1}\orcidID{1111-2222-3333-4444} \and
+Third Author\inst{2}\orcidID{2222--3333-4444-5555}}
 %
-\authorrunning{F. Author et al.}
+\authorrunning{E. Vargas Minguela et al.}
 % First names are abbreviated in the running head.
 % If there are more than two authors, 'et al.' is used.
 %
 \institute{National Technological Institute of Mexico 
 \email{erick.vargas.minguela@gmail.com}\\
-\url{http://www.springer.com/gp/computer-science/lncs}\\
+%\url{http://www.springer.com/gp/computer-science/lncs}\\
 \email{\{abc,lncs\}}}
 %
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
+  % It seems like the abstract is incompleate, it is a good idea to 
+  % write it at the end - Mario 
     Having the knowledge that both of them are population-based algorithms it
     can be defined that a migration between 2 or more populations are possible,
     and this kind hybrid can be helpful to increase the possibility to find the
@@ -58,24 +59,29 @@ Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
 %
 %
 \section{Introduction}
-A universe of solutions can exist for a single problem and sometimes is too big
-and complex to solve them in a traditional way. That is why heuristic and
-population based algorithms are required. This kind of algorithms are very
-useful to solve combinatories problems, however, usually one is better than
-others to solve one thing and another is great to solve another problem, and
-there are several cases stucked in optimal local values.
+A universe of solutions can exist for a single optmization problem and sometimes
+is too big and complex to solve in a traditional way. That is why heuristic and
+population-based algorithms are required. % They are just one of the options. -
+Mario This kind of algorithms are very useful to solve combinatory problems,
+however, usually one is better than others to solve one thing and another is
+great to solve another problem, and there are several cases stucked in optimal
+local values. % Add a bit more detail - Mario
 
-Here we propose an architecture composed by serverless functions to create a
-multi-populations that will process sub-populations in distributed function
-architecture and they are going to be parallel and asynchronous making each
-sub-population distributed and independent. And comunicating using migrations to
-help each other preventing fall into optimal local values.
+In this work, we propose an architecture composed by serverless functions to
+create a multi-populations that will process sub-populations in distributed
+function architecture and they are going to be parallel and asynchronous making
+each sub-population distributed and independent. And comunicating using
+migrations to help each other preventing fall into optimal local values. % the
+sentence is a bit confusing - Mario
+% Add a connection between the previous idea (multi-algorithms,
+% multi-populations) with distributed and serverless.
 
-The distributed architectures are having extensive use in the software industry
-because of their high performance, many systems are being created and migrating
-step by step to microservices and... in a nearly future... the new architectures
-called serverless, which proposes the use of “Function as a Service” (FaaS).
-
+Distributed and cloud-based architectures are used extensivly in the software
+industry because of their high performance and lower overall cost.  Many systems
+are being created and migrating step by step to microservices and... in a nearly
+future... the new architectures called serverless, which proposes the use of
+“Function as a Service” (FaaS).
+% I think you are not finished writing the above sentence. - Mario
 
 \subsection{Serverless}
 Recently, the cloud providers as Amazon Web Services (AWS), Google Cloud, etc.
