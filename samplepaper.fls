@@ -1,158 +1,158 @@
-PWD /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel
-INPUT /usr/local/texlive/2019/texmf.cnf
-INPUT /usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf
-INPUT /usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex
-OUTPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.log
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/llncs.cls
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/llncs.cls
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/aliascnt.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/aliascnt.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux
-OUTPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux
-INPUT /usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-INPUT /usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib7.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib5.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-OUTPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf
-INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/architectures.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/architectures.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/architectures.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/multipopulation.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/multipopulation.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/multipopulation.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/general diagram architecture 2.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/general diagram architecture 2.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/general diagram architecture 2.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/subpopulationDefinition.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/subpopulationDefinition.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/subpopulationDefinition.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/splittinPointUniform.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/splittinPointUniform.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/splittinPointUniform.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/selection.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/selection.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/selection.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/benchmark.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/benchmark.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/benchmark.png
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/2-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/10-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/20-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-sphere.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rastrigin.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rosenbrock.jpg
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/40-rosenbrock.jpg
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
-INPUT /Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb
+PWD c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel
+INPUT c:/texlive/2019/texmf.cnf
+INPUT c:/texlive/2019/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.tex
+OUTPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.log
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/llncs.cls
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/llncs.cls
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/size10.clo
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/size10.clo
+INPUT c:/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/aliascnt.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/aliascnt.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.aux
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.aux
+OUTPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.aux
+INPUT c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT c:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT c:/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib7.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib5.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+OUTPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.pdf
+INPUT c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/architectures.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/architectures.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/architectures.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/multipopulation.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/multipopulation.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/multipopulation.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/general diagram architecture 2.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/general diagram architecture 2.PNG
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/general diagram architecture 2.PNG
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/subpopulationDefinition.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/subpopulationDefinition.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/subpopulationDefinition.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/splittinPointUniform.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/splittinPointUniform.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/splittinPointUniform.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/selection.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/selection.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/selection.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/benchmark.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/benchmark.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/benchmark.png
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-sphere.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rastrigin.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rosenbrock.jpg
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.aux
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb

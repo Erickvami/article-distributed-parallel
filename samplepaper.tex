@@ -14,7 +14,8 @@
 
 \begin{document}
 %
-\title{An Event-based Architecture for Multi-population Optimization Algorithms\thanks{Supported by organization x.}}
+\title{An Event-based Architecture for Multi-population Optimization Algorithms
+\thanks{Supported by organization x.}}
 %
 %\titlerunning{Abbreviated paper title}
 % If the paper title is too long for the running head, you can set
@@ -36,206 +37,214 @@ Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-    Having the knowledge that both of them are population-based algorithms it can be
-    defined that a migration between 2 or more populations are possible, and this kind
-    hybrid can be helpful to increase the possibility to find the optimal result (the best
-    of the best), there is where fits the concept of Multi-population.
-    For this kind of work we used asynchronous functions, serverless functions,
-multithread and a distributed architecture taking advantage for functional
-programming and serverless architecture.
-Even nature works like that... parallel, asynchronous and distributed.
+    Having the knowledge that both of them are population-based algorithms it
+    can be defined that a migration between 2 or more populations are possible,
+    and this kind hybrid can be helpful to increase the possibility to find the
+    optimal result (the best of the best), there is where fits the concept of
+    Multi-population. For this kind of work we used asynchronous functions,
+    serverless functions, multithread and a distributed architecture taking
+    advantage for functional programming and serverless architecture. Even
+    nature works like that... parallel, asynchronous and distributed.
 
 
 
-\keywords{Multi-population  \and Asynchronous \and Sub-population \and Serverless \and Distributed.}
+\keywords{Multi-population  
+  \and Asynchronous 
+  \and Sub-population 
+  \and Serverless 
+  \and Distributed.}
 \end{abstract}
 %
 %
 %
 \section{Introduction}
-A universe of solutions can exist for a single problem and sometimes is too big and complex 
-to solve them in a traditional way. That is why heuristic and population based algorithms are required. This kind
-of algorithms are very useful to solve combinatories problems, however, usually one is better than others 
-to solve one thing and another is great to solve another problem, and there are several cases 
-stucked in optimal local values.
+A universe of solutions can exist for a single problem and sometimes is too big
+and complex to solve them in a traditional way. That is why heuristic and
+population based algorithms are required. This kind of algorithms are very
+useful to solve combinatories problems, however, usually one is better than
+others to solve one thing and another is great to solve another problem, and
+there are several cases stucked in optimal local values.
 
-Here we propose an architecture composed by serverless functions to create a multi-populations that
-will process sub-populations in distributed function architecture and they are going to be parallel and asynchronous
-making each sub-population distributed and independent. And comunicating using migrations to help each other 
-preventing fall into optimal local values.
+Here we propose an architecture composed by serverless functions to create a
+multi-populations that will process sub-populations in distributed function
+architecture and they are going to be parallel and asynchronous making each
+sub-population distributed and independent. And comunicating using migrations to
+help each other preventing fall into optimal local values.
 
-The distributed architectures are having extensive use in the software
-industry because of their high performance, many systems are being
-created and migrating step by step to microservices and... in a nearly
-future... the new architectures called serverless, which proposes the
-use of “Function as a Service” (FaaS).
+The distributed architectures are having extensive use in the software industry
+because of their high performance, many systems are being created and migrating
+step by step to microservices and... in a nearly future... the new architectures
+called serverless, which proposes the use of “Function as a Service” (FaaS).
 
 
 \subsection{Serverless}
-Recently, the cloud providers as Amazon Web Services (AWS), Google Cloud, etc. Offers a new alternative to programming throught interfaces called Serverless Computing,
-this kind of platform consist in a very simple mecanism where the developer upload the code into the platform and 
-execute it as mamy times it is required scalling and allowing do this in a parallel way. This way the developers do not worry about servers, connections and other configurations.
-In serverless it pays only for what is used. Even there are some platform that allows to install them into your own server to do your own local architecture serverless.
+Recently, the cloud providers as Amazon Web Services (AWS), Google Cloud, etc.
+Offers a new alternative to programming throught interfaces called Serverless
+Computing, this kind of platform consist in a very simple mecanism where the
+developer upload the code into the platform and execute it as mamy times it is
+required scalling and allowing do this in a parallel way. This way the
+developers do not worry about servers, connections and other configurations. In
+serverless it pays only for what is used. Even there are some platform that
+allows to install them into your own server to do your own local architecture
+serverless.
 
 \begin{figure}[htp]
-  \includegraphics[width=\textwidth]{architectures.png}
+  \includegraphics[width=\textwidth]{img/architectures.png}
   \caption{Software architecture generations.} \label{fig1}
   \end{figure}
 
 \subsubsection{Serverless Function} 
-In math a function is a relation between a set of inputs and an allowed set of outputs with
-the idea that each input goes to a single output. But in computer science is small bits of code 
-that do only one thing and are easily to understand
-and support. In serverless this functions could be triggered by an event that would be menssages, http request,etc.
-Also is known that each function scales independently and is stateless with a short duration.
+In math a function is a relation between a set of inputs and an allowed set of
+outputs with the idea that each input goes to a single output. But in computer
+science is small bits of code that do only one thing and are easily to
+understand and support. In serverless this functions could be triggered by an
+event that would be menssages, http request,etc. Also is known that each
+function scales independently and is stateless with a short duration.
 
 
 \section{Proposed architecture}
 
-The propose is an architecture that allows to process a simple population that is divided into sub-populations
-distributing them to process in different ways and then communicating each other with purpose of increase the possibility
-to find the best fitness of a function. This architecture can accept the use of an indeterminate number of algorithms, allowing
-an easy hybridation and continuous adaptability for different problems.
+The propose is an architecture that allows to process a simple population that
+is divided into sub-populations distributing them to process in different ways
+and then communicating each other with purpose of increase the possibility to
+find the best fitness of a function. This architecture can accept the use of an
+indeterminate number of algorithms, allowing an easy hybridation and continuous
+adaptability for different problems.
 
 This architecture consist in 3 nodes, they are explained on the next points:
 
 \begin{itemize}
-  \item Manager: Here the multi-population is managed, it is initialized how to process it, 
-  followed by the subpopulations, which when they are concepted trigger an event that sends 
-  the subpopulations to be stored in a file JSON of MongoDB (preventing to saturate the memory) 
-  and to a message queue that is directed to its subsequent processing in the “Receiver” section 
-  that is our cluster of functions (Faas), because each subpopulation requires the execution of a 
-  different algorithm, there is a different channel in the web sockets for each type of algorithm 
-  that triggers its respective serverless function.
-  Once a subpopulation is processed, it is returned and a selection is made for the sub-population 
-  migration. The migration selection is made by taking the population attribute of the subpopulation 
-  that was returned and the subpopulation that it have been selected among the best 2, it should be 
-  noted that the decision to identify the best from the 2 is made randomly. Once the selection is made, 
-  a Splitting Point Uniform crossing will be made.
-  The 2 new subpopulations replace their self and are resent it back to their respective
-serverless function and this process is repeited until completing the number of assigned migrations
-for the multi-population. Of course this whole process is performed asynchronously avoiding wait for all responses from serverless functions to perform a crossover or a
-update of the multi-population status \cite{Lovbjerg2001,Jimeno2019}. In the following figure you can see from
-illustrative way how the multi-population is composed.
+  \item Manager: Here the multi-population is managed, it is initialized how to
+  process it, followed by the subpopulations, which when they are concepted
+  trigger an event that sends the subpopulations to be stored in a file JSON of
+  MongoDB (preventing to saturate the memory) and to a message queue that is
+  directed to its subsequent processing in the “Receiver” section that is our
+  cluster of functions (Faas), because each subpopulation requires the execution
+  of a different algorithm, there is a different channel in the web sockets for
+  each type of algorithm that triggers its respective serverless function. Once
+  a subpopulation is processed, it is returned and a selection is made for the
+  sub-population migration. The migration selection is made by taking the
+  population attribute of the subpopulation that was returned and the
+  subpopulation that it have been selected among the best 2, it should be noted
+  that the decision to identify the best from the 2 is made randomly. Once the
+  selection is made, a Splitting Point Uniform crossing will be made. The 2 new
+  subpopulations replace their self and are resent it back to their respective
+  serverless function and this process is repeited until completing the number
+  of assigned migrations for the multi-population. Of course this whole process
+  is performed asynchronously avoiding wait for all responses from serverless
+  functions to perform a crossover or a update of the multi-population status
+  \cite{Lovbjerg2001,Jimeno2019}. In the following figure you can see from
+  illustrative way how the multi-population is composed.
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.7\textwidth]{multipopulation.png}
+  \includegraphics[width=0.7\textwidth]{img/multipopulation.png}
   \caption{Multipopulation representation.} \label{fig1}
   \end{figure}
-\item Message Provider: Its purpose is the creation of a sub-population messages queue which is the 
-comunication channel between the sub-population Manager and the Receiver (FaaS), each message is a 
-trigger for the execution of a GA or PSO function. Thanks to the message queue, it is possible to perform 
-the serverless functions asynchronously, avoiding that the algorithm wait for responses independently of 
-their duration and the simultaneous evaluation of different sub-populations independent of its algorithm 
-or characteristics.
-\item Receiver: The following section contains the Serverless functions of the algorithms to be executed, 
-reduced the best possible using the functional programming paradigm so that they can be converted into FaaS 
-without problems, in addition to achieving a completely clean and fast execution \cite{Roberts2016} . Each message received 
-on this node is executed in the form of a multi-threaded process in parallel, this allows to having more than 
-one population-based search algorithm running at the same time, and making a copy of itself each algorithm 
-function as required.
+\item Message Provider: Its purpose is the creation of a sub-population messages
+queue which is the comunication channel between the sub-population Manager and
+the Receiver (FaaS), each message is a trigger for the execution of a GA or PSO
+function. Thanks to the message queue, it is possible to perform the serverless
+functions asynchronously, avoiding that the algorithm wait for responses
+independently of their duration and the simultaneous evaluation of different
+sub-populations independent of its algorithm or characteristics.
+\item Receiver: The following section contains the Serverless functions of the
+algorithms to be executed, reduced the best possible using the functional
+programming paradigm so that they can be converted into FaaS without problems,
+in addition to achieving a completely clean and fast execution
+\cite{Roberts2016} . Each message received on this node is executed in the form
+of a multi-threaded process in parallel, this allows to having more than one
+population-based search algorithm running at the same time, and making a copy of
+itself each algorithm function as required.
 \end{itemize}
 
-
-To develop this architecture the applied technologies are based in JavaScript using Node JS as it can be
-see it in the General Architecture Flowchart.
+To develop this architecture the applied technologies are based in JavaScript
+using Node JS as it can be see it in the General Architecture Flowchart.
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.9\textwidth]{general diagram architecture 2.png}
+  \includegraphics[width=0.9\textwidth]{img/general diagram architecture 2.png}
   \caption{General Architecture Flowchart.} \label{fig1}
   \end{figure}
 
 \subsection{Sub-population definition}
 
-Individuals are created composed of 2 types of information, the one that is active or useful for crossing
-and the one that is not. The population contains the series of possible solutions, while the rest contains 
-the information on how the processing for the search of the optimal solutions will be executed, linked directly 
-with their respective algorithms.
+Individuals are created composed of 2 types of information, the one that is
+active or useful for crossing and the one that is not. The population contains
+the series of possible solutions, while the rest contains the information on how
+the processing for the search of the optimal solutions will be executed, linked
+directly with their respective algorithms.
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.6\textwidth]{subpopulationDefinition.png}
+  \includegraphics[width=0.6\textwidth]{img/subpopulationDefinition.png}
   \caption{Sub-population composition.} \label{fig1}
   \end{figure}
 
 \subsection{Splitting Point Uniform Migration}
-A uniform mask is created to apply the migration between individuals
-from 2 sub-populations. The selected data are combined using the middle point between the
-selected points by the mask. This process iterates the 2 sub-populations to randomly swap values and
-replace some of them with middle points.
+A uniform mask is created to apply the migration between individuals from 2
+sub-populations. The selected data are combined using the middle point between
+the selected points by the mask. This process iterates the 2 sub-populations to
+randomly swap values and replace some of them with middle points.
 
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.9\textwidth]{splittinPointUniform.png}
+  \includegraphics[width=0.9\textwidth]{img/splittinPointUniform.png}
   \caption{Splitting Point Uniform process.} \label{fig1}
   \end{figure}
 
   \subsection{Migration Selection}
 
-  Using migration selection by tournament keeping up the information of the best sub-population of the multi-population.
+  Using migration selection by tournament keeping up the information of the best
+  sub-population of the multi-population.
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.5\textwidth]{selection.png}
+  \includegraphics[width=0.5\textwidth]{img/selection.png}
   \caption{Selection by tournament.} \label{fig1}
   \end{figure}
 
 
-  % \begin{theorem}
-  %   This is a sample theorem. The run-in heading is set in bold, while
-  %   the following text appears in italics. Definitions, lemmas,
-  %   propositions, and corollaries are styled the same way.
-  %   \end{theorem}
-  %   %
-  %   % the environments 'definition', 'lemma', 'proposition', 'corollary',
-  %   % 'remark', and 'example' are defined in the LLNCS documentclass as well.
-  %   %
-  %   \begin{proof}
-  %   Proofs, examples, and remarks have the initial word in italics,
-  %   while the following text appears in normal font.
-  %   \end{proof}
-% articles~\cite{ref_article1}, an LNCS chapter~\cite{ref_lncs1}, a
-% book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
-% and a homepage~\cite{ref_url1}. Multiple citations are grouped
-% \cite{ref_article1,ref_lncs1,ref_book1},
-% \cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
-
-%-------------------Experiments-----------------------------------------------
-
 \section{Experiments and Results}
 \subsection{Experiments}
-Now that an interaction between sub-populations with different algorithms it is working and  hybridation have been a success, using until now the added algorithms (GA and PSO) algorithms, all thanks to the 
-developed architecture, lets procede to the experiments.
-This section is going to be the execution of several experiments from 2 to 40 dimensions, with a stop criterial 
-of an error below  0.5E-8, without a parameter optimization method, waiting that the architecture by its self
-would be enough to increase the possibility to find a better optimal result than the traditional methods.
-All this hoping that the results will probe the needness of this kind of architecture on increasing dimensions.
-To test if the architecture was useful, several experiments were made to solve
-benchmark functions, for this case the functions are Sphere, Rastrigin and Rosenbrock.
-Using 10 sub-population for each experiment and maximum 4 migrations per sub-population with different algorithms and parameters for each sub-population.
+Now that an interaction between sub-populations with different algorithms it is
+working and  hybridation have been a success, using until now the added
+algorithms (GA and PSO) algorithms, all thanks to the developed architecture,
+lets procede to the experiments. This section is going to be the execution of
+several experiments from 2 to 40 dimensions, with a stop criterial of an error
+below  0.5E-8, without a parameter optimization method, waiting that the
+architecture by its self would be enough to increase the possibility to find a
+better optimal result than the traditional methods. All this hoping that the
+results will probe the needness of this kind of architecture on increasing
+dimensions. To test if the architecture was useful, several experiments were
+made to solve benchmark functions, for this case the functions are Sphere,
+Rastrigin and Rosenbrock. Using 10 sub-population for each experiment and
+maximum 4 migrations per sub-population with different algorithms and parameters
+for each sub-population.
 
 \begin{figure}[htp]
   \centering
-    \includegraphics[width=0.7\textwidth]{benchmark.png}
+    \includegraphics[width=0.7\textwidth]{img/benchmark.png}
     \caption{Benchmark functions for experimentation.} \label{fig1}
     \end{figure}
 
 \subsection{Parameters Configuration} 
 
-This architecture modifies the traditional way to work with population based algorithms, then the experiments 
-could not be parameterized as usually are.
+This architecture modifies the traditional way to work with population based
+algorithms, then the experiments could not be parameterized as usually are.
 
 Then the experiments are scaled by their number of evaluations and the
-parameters must be configured to be adjusted to the next criterial, using the next expression:
+parameters must be configured to be adjusted to the next criterial, using the
+next expression:
 
 \begin{equation}
     \label{eq:hesitancy-interpretation}
    Evaluations = 10^{5} Dimensions
    \end{equation}
 
-For example, if the experiment has 2 dimensions, the maximum number of evaluations will be 200,0000, for 10 dimensions will be 1,000,000 of evaluacions and the same with the others dimensions.
+For example, if the experiment has 2 dimensions, the maximum number of
+evaluations will be 200,0000, for 10 dimensions will be 1,000,000 of evaluacions
+and the same with the others dimensions.
 
 
 
@@ -293,17 +302,17 @@ For example, if the experiment has 2 dimensions, the maximum number of evaluatio
     \end{table}
 
 \begin{figure}[htp]
-\includegraphics[width=\textwidth]{2-sphere.jpg}
+\includegraphics[width=\textwidth]{img/2-sphere.jpg}
 \caption{2 dimension experiments Sphere.} \label{fig1}
 \end{figure}
 
 \begin{figure}[htp]
-  \includegraphics[width=\textwidth]{2-rastrigin.jpg}
+  \includegraphics[width=\textwidth]{img/2-rastrigin.jpg}
   \caption{2 dimension experiments Rastrigin.} \label{fig1}
   \end{figure}
   
 \begin{figure}[htp]
-  \includegraphics[width=\textwidth]{2-rosenbrock.jpg}
+  \includegraphics[width=\textwidth]{img/2-rosenbrock.jpg}
   \caption{2 dimension experiments Rosenbrock.} \label{fig1}
   \end{figure}
 
@@ -385,17 +394,17 @@ PSO Inercia factor & Random[0.5,4.0] \\
       \end{table}
     
       \begin{figure}[htp]
-        \includegraphics[width=\textwidth]{10-sphere.jpg}
+        \includegraphics[width=\textwidth]{img/10-sphere.jpg}
         \caption{10 dimensions experiments Sphere.} \label{fig1}
         \end{figure}
 
         \begin{figure}[htp]
-          \includegraphics[width=\textwidth]{10-rastrigin.jpg}
+          \includegraphics[width=\textwidth]{img/10-rastrigin.jpg}
           \caption{10 dimensions experiments Rastrigin.} \label{fig1}
           \end{figure}
 
           \begin{figure}[htp]
-            \includegraphics[width=\textwidth]{10-rosenbrock.jpg}
+            \includegraphics[width=\textwidth]{img/10-rosenbrock.jpg}
             \caption{10 dimensions experiments Rosenbrock.} \label{fig1}
             \end{figure}
 
@@ -477,17 +486,17 @@ PSO Inercia factor & Random[0.5,4.0] \\
             \end{table}
           
             \begin{figure}[htp]
-              \includegraphics[width=\textwidth]{20-sphere.jpg}
+              \includegraphics[width=\textwidth]{img/20-sphere.jpg}
               \caption{20 dimensions experiments Sphere.} \label{fig1}
               \end{figure}
       
               \begin{figure}[htp]
-                \includegraphics[width=\textwidth]{20-rastrigin.jpg}
+                \includegraphics[width=\textwidth]{img/20-rastrigin.jpg}
                 \caption{20 dimensions experiments Rastrigin.} \label{fig1}
                 \end{figure}
       
                 \begin{figure}[htp]
-                  \includegraphics[width=\textwidth]{20-rosenbrock.jpg}
+                  \includegraphics[width=\textwidth]{img/20-rosenbrock.jpg}
                   \caption{20 dimensions experiments Rosenbrock.} \label{fig1}
                   \end{figure}
 
@@ -570,17 +579,17 @@ PSO Inercia factor & Random[0.5,4.0] \\
       \end{table}
     
       \begin{figure}[htp]
-        \includegraphics[width=\textwidth]{40-sphere.jpg}
+        \includegraphics[width=\textwidth]{img/40-sphere.jpg}
         \caption{40 dimensions experiments Sphere.} \label{fig1}
         \end{figure}
 
         \begin{figure}[htp]
-          \includegraphics[width=\textwidth]{40-rastrigin.jpg}
+          \includegraphics[width=\textwidth]{img/40-rastrigin.jpg}
           \caption{40 dimensions experiments Rastrigin.} \label{fig1}
           \end{figure}
 
           \begin{figure}[htp]
-            \includegraphics[width=\textwidth]{40-rosenbrock.jpg}
+            \includegraphics[width=\textwidth]{img/40-rosenbrock.jpg}
             \caption{40 dimensions experiments Rosenbrock.} \label{fig1}
             \end{figure}
 
