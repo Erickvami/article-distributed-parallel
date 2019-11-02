@@ -66,27 +66,32 @@ Third Author\inst{2}\orcidID{2222--3333-4444-5555}}
 %
 \section{Introduction}
 A universe of solutions can exist for a single optimization problem and sometimes
-is too big and complex to solve it in a traditional way. That is why heuristic and
-population-based algorithms are required. % They are just one of the options. -
-Mario This kind of algorithms are very useful to solve combinatory problems,
-however, usually one is better than others to solve one thing and another is
-great to solve another problem, and there are several cases stucked in optimal
-local values. % Add a bit more detail - Mario
+is too big and complex to solve it in a traditional way. That is why heuristic,
+population-based algorithms and other type of methods are required. % They are just one of the options. -Mario 
+This kind of algorithms are very useful to solve combinatory problems,
+however, there is not perfect algorithm, usually one type of algorithm is good for an specific
+type of problem and there is not always easy to know which algorithm is the appropriate to use.
+Assuming that it is selected an appropriate algorithm it is unknown the appropriate parameters,
+these problems creates the needness to have a dynamic architecture that manage all these inconveniences.% Add a bit more detail - Mario
 
 In this work, we propose an architecture composed by serverless functions to
-create a multi-populations that will process sub-populations in distributed
-function architecture and they are going to be parallel and asynchronous making
-each sub-population distributed and independent. And comunicating using
-migrations to help each other preventing fall into optimal local values. % the
-sentence is a bit confusing - Mario
+process small fragments from a population in a distributed way,
+turning a population into a multi-population that will process sub-populations in independent
+functions that runs in parallel and handled asynchronously, making
+each sub-population distributed and independent. In addition, sub-populations use data
+migrations between them to help each other even if the algorithms and processing parameters from both sub-populations are different, 
+that prevent to fall into optimal local values. % the
+% sentence is a bit confusing - Mario
 % Add a connection between the previous idea (multi-algorithms,
 % multi-populations) with distributed and serverless.
 
-Distributed and cloud-based architectures are used extensivly in the software
+Distributed and cloud-based architectures are used extensively in the software
 industry because of their high performance and lower overall cost.  Many systems
-are being created and migrating step by step to microservices and... in a nearly
-future... the new architectures called serverless, which proposes the use of
-“Function as a Service” (FaaS).
+are being created and migrating step by step to microservices and in a nearly
+future the new architectures called serverless, which proposes the use of
+“Function as a Service” (FaaS). This type of architectures must be exploited 
+in the field of scientific research and development and here we take advantage of them
+to increase the perfomance of some population-based algorithms.
 % I think you are not finished writing the above sentence. - Mario
 
 \subsection{Serverless}
