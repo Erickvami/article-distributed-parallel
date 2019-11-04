@@ -3,14 +3,9 @@
 % Version 2.20 of 2017/10/04
 %
 \documentclass[runningheads]{llncs}
-%
+
 \usepackage{graphicx}
-% Used for displaying a sample figure. If possible, figure files should
-% be included in EPS format.
-%
-% If you use the hyperref package, please uncomment the following line
-% to display URLs in blue roman font according to Springer's eBook style:
-% \renewcommand\UrlFont{\color{blue}\rmfamily}
+
 
 \begin{document}
 %
@@ -38,20 +33,28 @@ Third Author\inst{2}\orcidID{2222--3333-4444-5555}}
 \begin{abstract}
   % It seems like the abstract is incompleate, it is a good idea to 
   % write it at the end - Mario 
-    This article explains about an architecture designed to create an easy way to
-    distribute the processing of population-based algorithms with the idea of avoiding 
-    getting stuck in a value looking for a solution of a combinatorial problem, creating 
-    multiple fragments from a single population with different
-    parameters of execution, also this feature allows to hybridate different techniques by adding multiple algorithms,
-     in this case it is implemented with Genetic Algorithms (GA) and Particle Swarm Optimization (PSO). 
-    Having the knowledge that both of them are population-based algorithms it
-    can be defined that a migration between 2 or more populations are possible,
-    and this type of hybrid could be helpful to increase the possibility to find the
-    optimal result (the best of the best), there is where fits the concept of
-    Multi-population. For this type of work we used asynchronous functions,
-    serverless functions, multithread and a distributed architecture taking
-    advantage of functional programming and serverless architecture. Even
-    nature works like that... parallel, asynchronous and distributed.
+    In this work, we present a software implementation that  
+    follows an event-driven architecture, designed to asynchronously distribute the processing of
+    population-based algorithms. The search algorithm uses a multipopulation
+    approach, creating multiple populations with different parameters of
+    execution, allowing the hybridation of multiple algorithms, in this case
+    Genetic Algorithms (GAs) and Particle Swarm Optimization (PSO). 
+    Using a message queue, each population is manipulated by asynchronous 
+    serverless functions, taking advantage of functional programming. 
+    The cloud-ready javascript implementation, includes a web-based application
+    for the configuration and interaction with algorithms. 
+    We executed several experiments in order to validate the system, using
+    benchmark functions and several configurations. 
+    Results show ...
+     
+    % Results here 
+
+   % Having
+   % the knowledge that both of them are population-based algorithms it can be
+   % defined that a migration between 2 or more populations are possible, and
+   % this type of hybrid could be helpful to increase the possibility to find the
+   % optimal result (the best of the best), there is where fits the concept of
+   % Multi-population. 
 
 
 

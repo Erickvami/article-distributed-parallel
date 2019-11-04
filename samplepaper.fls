@@ -66,9 +66,9 @@ INPUT c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 INPUT c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 OUTPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.pdf
 INPUT c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/architectures.png
 INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/architectures.png
 INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/architectures.png
@@ -130,6 +130,8 @@ INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-
 INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rosenbrock.jpg
 INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rosenbrock.jpg
 INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rosenbrock.jpg
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.bbl
+INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.bbl
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
 INPUT c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.aux
 INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
