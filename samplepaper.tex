@@ -67,45 +67,56 @@ Third Author\inst{2}\orcidID{2222--3333-4444-5555}}
 %
 %
 \section{Introduction}
-A universe of solutions can exist for a single optimization problem and sometimes
-is too big and complex to solve it in a traditional way. That is why heuristic,
-population-based algorithms and other type of methods are required. % They are just one of the options. -Mario 
-This kind of algorithms are very useful to solve combinatory problems,
-however, there is not perfect algorithm, usually one type of algorithm is good for an specific
-type of problem and there is not always easy to know which algorithm is the appropriate to use.
-Assuming that it is selected an appropriate algorithm it is unknown the appropriate parameters,
-these problems creates the needness to have a dynamic architecture that manage all these inconveniences.% Add a bit more detail - Mario
+A universe of solutions can exist for a single optimization problem and
+sometimes is too big and complex to solve it traditionally. That is why
+heuristic, population-based algorithms, and other types of methods can be
+applied.  Population-based algorithms are useful to solve combinatory problems;
+however,  the performance of an algorithm depends on the problem and initial
+conditions. Usually, an algorithm is suitable for only a specific type of
+problem, and it is not always easy to know which algorithm is more fitting. Even
+assuming that we selected an appropriate algorithm, we must also find the
+appropriate parameters. To deal with these problems, parallel and hybrid
+architectures have been proposed. The clear advantage of these architectures is
+the faster execution of the algorithms. However, there is also the ability to
+change the search dynamically, having multiple algorithms with different
+parameters interacting with each other at the same time. 
 
-In this work, we propose an architecture composed by serverless functions to
-process small fragments from a population in a distributed way,
-turning a population into a multi-population that will process sub-populations in independent
-functions that runs in parallel and handled asynchronously, making
-each sub-population distributed and independent. In addition, sub-populations use data
-migrations between them to help each other even if the algorithms and processing parameters from both sub-populations are different, 
-that prevent to fall into optimal local values. % the
-% sentence is a bit confusing - Mario
-% Add a connection between the previous idea (multi-algorithms,
-% multi-populations) with distributed and serverless.
+In this work, we propose the use of several serverless functions to process
+small fragments from a population in a distributed way, turning a population
+into a multi-population. Independent functions, running asynchronously,
+process each sub-population. Also, sub-populations use the migration of data
+between them, to help each other even if the algorithms or parameters of each
+sub-population are different. The objective is to prevent the algorithm from
+falling into optimal local values.
 
 Distributed and cloud-based architectures are used extensively in the software
 industry because of their high performance and lower overall cost.  Many systems
-are being created and migrating step by step to microservices and in a nearly
-future the new architectures called serverless, which proposes the use of
-“Function as a Service” (FaaS). This type of architectures must be exploited 
-in the field of scientific research and development and here we take advantage of them
-to increase the perfomance of some population-based algorithms.
-% I think you are not finished writing the above sentence. - Mario
+are being created and migrating step by step to microservices and new serverless
+architectures, which proposes the use of “Function as a Service” (FaaS).
+Researchers are starting to exploit this type of architectures [References] in
+heuristic optimization development, and here we take advantage of them to
+increase the performance of some population-based algorithms.
+
+%%
+%% A description of the paper goes here
+%% what are we proposing? You can start with the description in the abstract.  
+%% what are the findings? 
+%% what is presented in each section? 
+%% Check other papers to get the idea - Mario
+
 
 \subsection{Serverless}
-Recently, the cloud providers as Amazon Web Services (AWS), Google Cloud, etc.
-Offers a new alternative to programming throught interfaces called Serverless
-Computing, this kind of platform consist in a very simple mecanism where the
-developer upload the code into the platform and execute it as mamy times it is
-required scalling and allowing do this in a parallel way. This way the
-developers do not worry about servers, connections and other configurations. In
-serverless it pays only for what is used. Even there are some platform that
-allows to install them into your own server to do your own local architecture
-serverless.
+
+Recently,  cloud providers such as Amazon Web Services (AWS), IBM Cloud, and
+Google Cloud, offer a new alternative to programming through interfaces called
+Serverless Computing  [References], this platform consists in an effortless
+mechanism where developers upload the code into the platform and execute it as
+many times as it is required, scaling and allowing to do this in parallel. This
+way, the developers do not worry about servers, connections, and other
+configurations. In serverless, users pay only for what it is used. There is also
+the option to install some of these platforms locally; for instance, AWS [name]
+[Ref ] or Apache Open Whisk [Ref]. stall them into your own server to do your
+own local architecture serverless.
 
 \begin{figure}[htp]
   \includegraphics[width=\textwidth]{img/architectures.png}
@@ -113,13 +124,14 @@ serverless.
   \end{figure}
 
 \subsubsection{Serverless Function} 
-In math a function is a relation between a set of inputs and an allowed set of
-outputs with the idea that each input goes to a single output. But in computer
-science is small bits of code that do only one thing and are easily to
-understand and support. In serverless this functions could be triggered by an
-event that would be menssages, http request,etc. Also is known that each
-function scales independently and is stateless with a short duration.
-
+In math, a function is a relation between a set of inputs and an allowed set of
+outputs, with the idea that each input goes to a single output. However, in
+computer science, a function is defined as small bits of code that do only one
+thing and are easy to understand and support. In serverless,  events such as
+messages or HTTP requests can trigger these functions. Also, each function
+scales independently and is stateless with a short duration.
+% I am not a fan of that definition of a function in CS - Mario
+% Explain a bit more the "Stateless" part - Mario 
 
 \section{Proposed architecture}
 
