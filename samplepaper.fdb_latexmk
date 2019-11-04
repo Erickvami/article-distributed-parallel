@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex samplepaper"] 1572886966 "samplepaper.aux" "samplepaper.bbl" "samplepaper" 1572886969
+["bibtex samplepaper"] 1572886966 "samplepaper.aux" "samplepaper.bbl" "samplepaper" 1572887004
   "c:/texlive/2019/texmf-dist/bibtex/bst/base/ieeetr.bst" 1572363240 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "samplepaper.aux" 1572886968 6241 9f4867e84477f4226f4ff5d6e092f927 "pdflatex"
+  "samplepaper.aux" 1572887004 6241 9f4867e84477f4226f4ff5d6e092f927 "pdflatex"
   "samplepaper.bib" 1572883788 32980 b1421ce1b9027e15cb0f4f8ecae0c12e ""
   (generated)
-  "samplepaper.blg"
   "samplepaper.bbl"
-["pdflatex"] 1572886967 "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.tex" "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.pdf" "samplepaper" 1572886969
-  "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.aux" 1572886968 6241 9f4867e84477f4226f4ff5d6e092f927 ""
-  "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.tex" 1572886963 30910 feaf45c8ea52305429cb6e165b6a1e79 ""
+  "samplepaper.blg"
+["pdflatex"] 1572887002 "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.tex" "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.pdf" "samplepaper" 1572887004
+  "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.aux" 1572887004 6241 9f4867e84477f4226f4ff5d6e092f927 ""
+  "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.tex" 1572887001 30893 a62d205736c6898bd44e895836dd3e8c ""
   "c:/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1572364735 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1572363515 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1572363515 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -82,12 +82,12 @@
   "img/splittinPointUniform.png" 1572636052 85541 caa24559965bc63f992bd66fb1432489 ""
   "img/subpopulationDefinition.png" 1572636052 9019 cd520f3a3141218d78e72d53f6caa6f0 ""
   "llncs.cls" 1572636052 43467 b08ec23e994470d7d8fc268d245cf555 ""
-  "samplepaper.aux" 1572886968 6241 9f4867e84477f4226f4ff5d6e092f927 "pdflatex"
+  "samplepaper.aux" 1572887004 6241 9f4867e84477f4226f4ff5d6e092f927 "pdflatex"
   "samplepaper.bbl" 1572886967 561 f386475fd45a1f329b7f5c98b042de10 "bibtex samplepaper"
-  "samplepaper.tex" 1572886963 30910 feaf45c8ea52305429cb6e165b6a1e79 ""
+  "samplepaper.tex" 1572887001 30893 a62d205736c6898bd44e895836dd3e8c ""
   (generated)
-  "samplepaper.pdf"
   "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.pdf"
-  "samplepaper.log"
   "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.log"
+  "samplepaper.log"
+  "samplepaper.pdf"
   "samplepaper.aux"

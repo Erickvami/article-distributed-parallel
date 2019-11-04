@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.29)  4 NOV 2019 09:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.29)  4 NOV 2019 09:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -288,118 +288,118 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 31.
 
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 65.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 64.
 (c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
  [1
 
 {c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <img/architectures.png, id=14, 715.67375pt x 353.32pt>
 File: img/architectures.png Graphic file (type png)
 <use img/architectures.png>
-Package pdftex.def Info: img/architectures.png  used on input line 112.
+Package pdftex.def Info: img/architectures.png  used on input line 111.
 (pdftex.def)             Requested size: 347.12354pt x 171.37077pt.
  [2 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/architectures.png>]
 <img/multipopulation.png, id=21, 526.96875pt x 283.0575pt>
 File: img/multipopulation.png Graphic file (type png)
 <use img/multipopulation.png>
-Package pdftex.def Info: img/multipopulation.png  used on input line 160.
+Package pdftex.def Info: img/multipopulation.png  used on input line 159.
 (pdftex.def)             Requested size: 242.98541pt x 130.519pt.
  [3 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/multipopulation.png>]
 <img/general diagram architecture 2.png, id=26, 582.67688pt x 307.64937pt>
 File: img/general diagram architecture 2.png Graphic file (type png)
 <use img/general diagram architecture 2.png>
-Package pdftex.def Info: img/general diagram architecture 2.png  used on input line 185.
+Package pdftex.def Info: img/general diagram architecture 2.png  used on input line 184.
 (pdftex.def)             Requested size: 312.40906pt x 164.95459pt.
 <img/subpopulationDefinition.png, id=27, 490.83376pt x 142.5325pt>
 File: img/subpopulationDefinition.png Graphic file (type png)
 <use img/subpopulationDefinition.png>
-Package pdftex.def Info: img/subpopulationDefinition.png  used on input line 199.
+Package pdftex.def Info: img/subpopulationDefinition.png  used on input line 198.
 (pdftex.def)             Requested size: 208.27623pt x 60.4809pt.
  [4 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/general diagram architecture 2.PNG>]
 <img/splittinPointUniform.png, id=32, 549.05125pt x 216.81pt>
 File: img/splittinPointUniform.png Graphic file (type png)
 <use img/splittinPointUniform.png>
-Package pdftex.def Info: img/splittinPointUniform.png  used on input line 212.
+Package pdftex.def Info: img/splittinPointUniform.png  used on input line 211.
 (pdftex.def)             Requested size: 312.40906pt x 123.36794pt.
 <img/selection.png, id=33, 367.3725pt x 265.99374pt>
 File: img/selection.png Graphic file (type png)
 <use img/selection.png>
-Package pdftex.def Info: img/selection.png  used on input line 223.
+Package pdftex.def Info: img/selection.png  used on input line 222.
 (pdftex.def)             Requested size: 173.56177pt x 125.66646pt.
  [5 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/subpopulationDefinition.png> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/splittinPointUniform.png>]
 <img/benchmark.png, id=39, 652.4375pt x 192.72pt>
 File: img/benchmark.png Graphic file (type png)
 <use img/benchmark.png>
-Package pdftex.def Info: img/benchmark.png  used on input line 247.
+Package pdftex.def Info: img/benchmark.png  used on input line 246.
 (pdftex.def)             Requested size: 242.98541pt x 71.77284pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 281.
+(Font)              <9> on input line 280.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 281.
+(Font)              <6> on input line 280.
  [6 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/selection.png> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/benchmark.png>]
 <img/2-sphere.jpg, id=46, 351.3125pt x 225.84375pt>
 File: img/2-sphere.jpg Graphic file (type jpg)
 <use img/2-sphere.jpg>
-Package pdftex.def Info: img/2-sphere.jpg  used on input line 325.
+Package pdftex.def Info: img/2-sphere.jpg  used on input line 324.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/2-rastrigin.jpg, id=47, 351.3125pt x 225.84375pt>
 File: img/2-rastrigin.jpg Graphic file (type jpg)
 <use img/2-rastrigin.jpg>
-Package pdftex.def Info: img/2-rastrigin.jpg  used on input line 330.
+Package pdftex.def Info: img/2-rastrigin.jpg  used on input line 329.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/2-rosenbrock.jpg, id=48, 351.3125pt x 225.84375pt>
 File: img/2-rosenbrock.jpg Graphic file (type jpg)
 <use img/2-rosenbrock.jpg>
-Package pdftex.def Info: img/2-rosenbrock.jpg  used on input line 335.
+Package pdftex.def Info: img/2-rosenbrock.jpg  used on input line 334.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/10-sphere.jpg, id=49, 351.3125pt x 225.84375pt>
 File: img/10-sphere.jpg Graphic file (type jpg)
 <use img/10-sphere.jpg>
-Package pdftex.def Info: img/10-sphere.jpg  used on input line 417.
+Package pdftex.def Info: img/10-sphere.jpg  used on input line 416.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/10-rastrigin.jpg, id=50, 351.3125pt x 225.84375pt>
 File: img/10-rastrigin.jpg Graphic file (type jpg)
 <use img/10-rastrigin.jpg>
-Package pdftex.def Info: img/10-rastrigin.jpg  used on input line 422.
+Package pdftex.def Info: img/10-rastrigin.jpg  used on input line 421.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/10-rosenbrock.jpg, id=51, 351.3125pt x 225.84375pt>
 File: img/10-rosenbrock.jpg Graphic file (type jpg)
 <use img/10-rosenbrock.jpg>
-Package pdftex.def Info: img/10-rosenbrock.jpg  used on input line 427.
+Package pdftex.def Info: img/10-rosenbrock.jpg  used on input line 426.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/20-sphere.jpg, id=52, 351.3125pt x 225.84375pt>
 File: img/20-sphere.jpg Graphic file (type jpg)
 <use img/20-sphere.jpg>
-Package pdftex.def Info: img/20-sphere.jpg  used on input line 509.
+Package pdftex.def Info: img/20-sphere.jpg  used on input line 508.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/20-rastrigin.jpg, id=53, 351.3125pt x 225.84375pt>
 File: img/20-rastrigin.jpg Graphic file (type jpg)
 <use img/20-rastrigin.jpg>
-Package pdftex.def Info: img/20-rastrigin.jpg  used on input line 514.
+Package pdftex.def Info: img/20-rastrigin.jpg  used on input line 513.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/20-rosenbrock.jpg, id=54, 351.3125pt x 225.84375pt>
 File: img/20-rosenbrock.jpg Graphic file (type jpg)
 <use img/20-rosenbrock.jpg>
-Package pdftex.def Info: img/20-rosenbrock.jpg  used on input line 519.
+Package pdftex.def Info: img/20-rosenbrock.jpg  used on input line 518.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/40-sphere.jpg, id=55, 351.3125pt x 225.84375pt>
 File: img/40-sphere.jpg Graphic file (type jpg)
 <use img/40-sphere.jpg>
-Package pdftex.def Info: img/40-sphere.jpg  used on input line 602.
+Package pdftex.def Info: img/40-sphere.jpg  used on input line 601.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/40-rastrigin.jpg, id=56, 351.3125pt x 225.84375pt>
 File: img/40-rastrigin.jpg Graphic file (type jpg)
 <use img/40-rastrigin.jpg>
-Package pdftex.def Info: img/40-rastrigin.jpg  used on input line 607.
+Package pdftex.def Info: img/40-rastrigin.jpg  used on input line 606.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/40-rosenbrock.jpg, id=57, 351.3125pt x 225.84375pt>
 File: img/40-rosenbrock.jpg Graphic file (type jpg)
 <use img/40-rosenbrock.jpg>
-Package pdftex.def Info: img/40-rosenbrock.jpg  used on input line 612.
+Package pdftex.def Info: img/40-rosenbrock.jpg  used on input line 611.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
  (c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.bbl [7] [8 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-sphere.jpg> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-rastrigin.jpg>] [9 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-rosenbrock.jpg>] [10 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-sphere.jpg>] [11 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-rastrigin.jpg> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-rosenbrock.jpg>] [12] [13 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-sphere.jpg> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-rastrigin.jpg>] [14 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-rosenbrock.jpg>] [15 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-sphere.jpg> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rastrigin.jpg>] [16 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rosenbrock.jpg>]) [17] (c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.aux)
 
