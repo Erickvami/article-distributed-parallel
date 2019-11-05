@@ -107,14 +107,14 @@ increase the performance of some population-based algorithms.
 
 \subsection{Serverless}
 
-Recently,  cloud providers such as Amazon Web Services (AWS), IBM Cloud, and
+Recently, cloud providers such as Amazon Web Services (AWS), IBM Cloud, and
 Google Cloud, offer a new alternative to programming through interfaces called
 Serverless Computing  [References], this platform consists in an effortless
 mechanism where developers upload the code into the platform and execute it as
 many times as it is required, scaling and allowing to do this in parallel. This
 way, the developers do not worry about servers, connections, and other
 configurations. In serverless, users pay only for what it is used. There is also
-the option to install some of these platforms locally; for instance, AWS [name]
+the option to install some of these platforms locally; for instance, AWS (Amazon Web Services)
 [Ref ] or Apache Open Whisk [Ref]. stall them into your own server to do your
 own local architecture serverless.
 
@@ -126,10 +126,13 @@ own local architecture serverless.
 \subsubsection{Serverless Function} 
 In math, a function is a relation between a set of inputs and an allowed set of
 outputs, with the idea that each input goes to a single output. However, in
-computer science, a function is defined as small bits of code that do only one
-thing and are easy to understand and support. In serverless,  events such as
-messages or HTTP requests can trigger these functions. Also, each function
-scales independently and is stateless with a short duration.
+computer science a function is defined as a unit of code that has a role into a
+greater code structure, works on varius inputs that usually are variables and throws a concrete
+output that are the result of process those variables. One of the main features that belongs to
+functions is that are stateless, they are focused on inputs and result with a simple process
+that does not require an state, in the moment the inputs get into the function are already generating an output.  
+In serverless,  events such as messages or HTTP requests can trigger these functions. 
+Also, each function scales independently and is stateless with a short duration.
 % I am not a fan of that definition of a function in CS - Mario
 % Explain a bit more the "Stateless" part - Mario 
 
@@ -145,12 +148,15 @@ adaptability for different problems.
 This architecture consist in 3 nodes, they are explained on the next points:
 
 \begin{itemize}
-  \item Manager: Here the multi-population is managed, it is initialized how to
-  process it, followed by the subpopulations, which when they are concepted
-  trigger an event that sends the subpopulations to be stored in a file JSON of
+  \item Manager: 
+  Here a population conformed by sub-populations is created and the architecture
+  initialize parameters to run the algorithm. Every time a sub-population is created 
+  % Here the multi-population is managed, it is initialized how to
+  % process it, followed by the sub-populations, which when they are concepted
+  triggers an event that sends the subpopulations to be stored in a file JSON of
   MongoDB (preventing to saturate the memory) and to a message queue that is
   directed to its subsequent processing in the “Receiver” section that is our
-  cluster of functions (Faas), because each subpopulation requires the execution
+  cluster of functions (Faas), because each sub-population requires the execution
   of a different algorithm, there is a different channel in the web sockets for
   each type of algorithm that triggers its respective serverless function. Once
   a subpopulation is processed, it is returned and a selection is made for the

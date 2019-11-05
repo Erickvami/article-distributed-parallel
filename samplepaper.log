@@ -1,17 +1,16 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.29)  4 NOV 2019 10:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.14)  4 NOV 2019 17:08
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.tex"
-(c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.tex
+**samplepaper.tex
+(./samplepaper.tex
 LaTeX2e <2019-10-01> patch level 1
-(c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/llncs.cls
+(./llncs.cls
 Document Class: llncs 2018/03/10 v2.20 
  LaTeX document class for Lecture Notes in Computer Science
-(c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
-(c:/texlive/2019/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -25,7 +24,8 @@ File: size10.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (c:/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/03/01 v1.8w multicolumn formatting (FMi)
 \c@tracingmulticols=\count88
 \mult@box=\box27
@@ -74,7 +74,8 @@ Package: multicol 2019/03/01 v1.8w multicolumn formatting (FMi)
 \mult@nat@firstbox=\box51
 \colbreak@box=\box52
 \mc@col@check@num=\count97
-) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/aliascnt.sty
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/aliascnt.sty
 Package: aliascnt 2018/09/07 v1.5 Alias counters (HO)
 )
 \c@chapter=\count98
@@ -127,25 +128,32 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@solution=\count116
 \c@remark=\count117
 \headlineindent=\dimen124
-) (c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
- (c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks18
-) (c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/10/08 v1.3c Standard LaTeX Graphics (DPC,SPQR)
- (c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
- (c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
-) (c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.aux
+)
+(./samplepaper.aux
 
 LaTeX Warning: Label `fig1' multiply defined.
 
@@ -227,7 +235,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
- (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count118
 \scratchdimen=\dimen127
@@ -240,28 +248,39 @@ LaTeX Font Info:    ... okay on input line 10.
 \MPnumerator=\count122
 \makeMPintoPDFobject=\count123
 \everyMPtoPDFconversion=\toks20
-) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
- (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
- (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
- (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-))) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
- (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
- (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
- (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)))) (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO)
- (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+))))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -269,18 +288,23 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
- (c:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 31.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 31.
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 31.
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
+31.
 LaTeX Font Info:    No file OMScmtt.fd. on input line 31.
 
 
@@ -288,126 +312,128 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 31.
 
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 64.
-(c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 6
+4.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
  [1
 
-{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <img/architectures.png, id=14, 715.67375pt x 353.32pt>
 File: img/architectures.png Graphic file (type png)
 <use img/architectures.png>
 Package pdftex.def Info: img/architectures.png  used on input line 122.
 (pdftex.def)             Requested size: 347.12354pt x 171.37077pt.
- [2 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/architectures.png>]
+ [2 <./img/architectures.png>]
 <img/multipopulation.png, id=21, 526.96875pt x 283.0575pt>
 File: img/multipopulation.png Graphic file (type png)
 <use img/multipopulation.png>
-Package pdftex.def Info: img/multipopulation.png  used on input line 171.
+Package pdftex.def Info: img/multipopulation.png  used on input line 177.
 (pdftex.def)             Requested size: 242.98541pt x 130.519pt.
  [3]
 <img/general diagram architecture 2.png, id=25, 582.67688pt x 307.64937pt>
 File: img/general diagram architecture 2.png Graphic file (type png)
 <use img/general diagram architecture 2.png>
-Package pdftex.def Info: img/general diagram architecture 2.png  used on input line 196.
+Package pdftex.def Info: img/general diagram architecture 2.png  used on input 
+line 202.
 (pdftex.def)             Requested size: 312.40906pt x 164.95459pt.
-
-Underfull \vbox (badness 5345) has occurred while \output is active []
-
- [4 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/multipopulation.png> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/general diagram architecture 2.PNG>]
-<img/subpopulationDefinition.png, id=31, 490.83376pt x 142.5325pt>
+<img/subpopulationDefinition.png, id=26, 490.83376pt x 142.5325pt>
 File: img/subpopulationDefinition.png Graphic file (type png)
 <use img/subpopulationDefinition.png>
-Package pdftex.def Info: img/subpopulationDefinition.png  used on input line 210.
+Package pdftex.def Info: img/subpopulationDefinition.png  used on input line 21
+6.
 (pdftex.def)             Requested size: 208.27623pt x 60.4809pt.
-<img/splittinPointUniform.png, id=32, 549.05125pt x 216.81pt>
+<img/splittinPointUniform.png, id=27, 549.05125pt x 216.81pt>
 File: img/splittinPointUniform.png Graphic file (type png)
 <use img/splittinPointUniform.png>
-Package pdftex.def Info: img/splittinPointUniform.png  used on input line 223.
+Package pdftex.def Info: img/splittinPointUniform.png  used on input line 229.
 (pdftex.def)             Requested size: 312.40906pt x 123.36794pt.
-<img/selection.png, id=33, 367.3725pt x 265.99374pt>
+<img/selection.png, id=28, 367.3725pt x 265.99374pt>
 File: img/selection.png Graphic file (type png)
 <use img/selection.png>
-Package pdftex.def Info: img/selection.png  used on input line 234.
+Package pdftex.def Info: img/selection.png  used on input line 240.
 (pdftex.def)             Requested size: 173.56177pt x 125.66646pt.
- [5 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/subpopulationDefinition.png> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/splittinPointUniform.png>]
+ [4 <./img/multipopulation.png>] [5 <./img/general diagram architecture 2.png> 
+<./img/subpopulationDefinition.png> <./img/splittinPointUniform.png>]
 <img/benchmark.png, id=39, 652.4375pt x 192.72pt>
 File: img/benchmark.png Graphic file (type png)
 <use img/benchmark.png>
-Package pdftex.def Info: img/benchmark.png  used on input line 258.
+Package pdftex.def Info: img/benchmark.png  used on input line 264.
 (pdftex.def)             Requested size: 242.98541pt x 71.77284pt.
-
-Underfull \vbox (badness 1616) has occurred while \output is active []
-
- [6 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/selection.png> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/benchmark.png>]
+ [6 <./img/selection.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 292.
+(Font)              <9> on input line 298.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 292.
-<img/2-sphere.jpg, id=45, 351.3125pt x 225.84375pt>
+(Font)              <6> on input line 298.
+<img/2-sphere.jpg, id=44, 351.3125pt x 225.84375pt>
 File: img/2-sphere.jpg Graphic file (type jpg)
 <use img/2-sphere.jpg>
-Package pdftex.def Info: img/2-sphere.jpg  used on input line 336.
+Package pdftex.def Info: img/2-sphere.jpg  used on input line 342.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/2-rastrigin.jpg, id=46, 351.3125pt x 225.84375pt>
+<img/2-rastrigin.jpg, id=45, 351.3125pt x 225.84375pt>
 File: img/2-rastrigin.jpg Graphic file (type jpg)
 <use img/2-rastrigin.jpg>
-Package pdftex.def Info: img/2-rastrigin.jpg  used on input line 341.
+Package pdftex.def Info: img/2-rastrigin.jpg  used on input line 347.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/2-rosenbrock.jpg, id=47, 351.3125pt x 225.84375pt>
+<img/2-rosenbrock.jpg, id=46, 351.3125pt x 225.84375pt>
 File: img/2-rosenbrock.jpg Graphic file (type jpg)
 <use img/2-rosenbrock.jpg>
-Package pdftex.def Info: img/2-rosenbrock.jpg  used on input line 346.
+Package pdftex.def Info: img/2-rosenbrock.jpg  used on input line 352.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/10-sphere.jpg, id=48, 351.3125pt x 225.84375pt>
+<img/10-sphere.jpg, id=47, 351.3125pt x 225.84375pt>
 File: img/10-sphere.jpg Graphic file (type jpg)
 <use img/10-sphere.jpg>
-Package pdftex.def Info: img/10-sphere.jpg  used on input line 428.
+Package pdftex.def Info: img/10-sphere.jpg  used on input line 434.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/10-rastrigin.jpg, id=49, 351.3125pt x 225.84375pt>
+<img/10-rastrigin.jpg, id=48, 351.3125pt x 225.84375pt>
 File: img/10-rastrigin.jpg Graphic file (type jpg)
 <use img/10-rastrigin.jpg>
-Package pdftex.def Info: img/10-rastrigin.jpg  used on input line 433.
+Package pdftex.def Info: img/10-rastrigin.jpg  used on input line 439.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/10-rosenbrock.jpg, id=50, 351.3125pt x 225.84375pt>
+<img/10-rosenbrock.jpg, id=49, 351.3125pt x 225.84375pt>
 File: img/10-rosenbrock.jpg Graphic file (type jpg)
 <use img/10-rosenbrock.jpg>
-Package pdftex.def Info: img/10-rosenbrock.jpg  used on input line 438.
+Package pdftex.def Info: img/10-rosenbrock.jpg  used on input line 444.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/20-sphere.jpg, id=51, 351.3125pt x 225.84375pt>
+<img/20-sphere.jpg, id=50, 351.3125pt x 225.84375pt>
 File: img/20-sphere.jpg Graphic file (type jpg)
 <use img/20-sphere.jpg>
-Package pdftex.def Info: img/20-sphere.jpg  used on input line 520.
+Package pdftex.def Info: img/20-sphere.jpg  used on input line 526.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/20-rastrigin.jpg, id=52, 351.3125pt x 225.84375pt>
+<img/20-rastrigin.jpg, id=51, 351.3125pt x 225.84375pt>
 File: img/20-rastrigin.jpg Graphic file (type jpg)
 <use img/20-rastrigin.jpg>
-Package pdftex.def Info: img/20-rastrigin.jpg  used on input line 525.
+Package pdftex.def Info: img/20-rastrigin.jpg  used on input line 531.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/20-rosenbrock.jpg, id=53, 351.3125pt x 225.84375pt>
+<img/20-rosenbrock.jpg, id=52, 351.3125pt x 225.84375pt>
 File: img/20-rosenbrock.jpg Graphic file (type jpg)
 <use img/20-rosenbrock.jpg>
-Package pdftex.def Info: img/20-rosenbrock.jpg  used on input line 530.
+Package pdftex.def Info: img/20-rosenbrock.jpg  used on input line 536.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/40-sphere.jpg, id=54, 351.3125pt x 225.84375pt>
+<img/40-sphere.jpg, id=53, 351.3125pt x 225.84375pt>
 File: img/40-sphere.jpg Graphic file (type jpg)
 <use img/40-sphere.jpg>
-Package pdftex.def Info: img/40-sphere.jpg  used on input line 613.
+Package pdftex.def Info: img/40-sphere.jpg  used on input line 619.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/40-rastrigin.jpg, id=55, 351.3125pt x 225.84375pt>
+<img/40-rastrigin.jpg, id=54, 351.3125pt x 225.84375pt>
 File: img/40-rastrigin.jpg Graphic file (type jpg)
 <use img/40-rastrigin.jpg>
-Package pdftex.def Info: img/40-rastrigin.jpg  used on input line 618.
+Package pdftex.def Info: img/40-rastrigin.jpg  used on input line 624.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
-<img/40-rosenbrock.jpg, id=56, 351.3125pt x 225.84375pt>
+<img/40-rosenbrock.jpg, id=55, 351.3125pt x 225.84375pt>
 File: img/40-rosenbrock.jpg Graphic file (type jpg)
 <use img/40-rosenbrock.jpg>
-Package pdftex.def Info: img/40-rosenbrock.jpg  used on input line 623.
+Package pdftex.def Info: img/40-rosenbrock.jpg  used on input line 629.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
- [7] [8 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-sphere.jpg> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-rastrigin.jpg>] [9 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/2-rosenbrock.jpg>] [10 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-sphere.jpg>] [11 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-rastrigin.jpg> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/10-rosenbrock.jpg>] [12] [13 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-sphere.jpg> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-rastrigin.jpg>] [14 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/20-rosenbrock.jpg>] [15 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-sphere.jpg> <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rastrigin.jpg>] [16 <c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/img/40-rosenbrock.jpg>] (c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.bbl) [17] (c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.aux)
+ [7 <./img/benchmark.png>] [8 <./img/2-sphere.jpg> <./img/2-rastrigin.jpg>] [9 
+<./img/2-rosenbrock.jpg>] [10 <./img/10-sphere.jpg>] [11 <./img/10-rastrigin.jp
+g> <./img/10-rosenbrock.jpg>] [12] [13 <./img/20-sphere.jpg> <./img/20-rastrigi
+n.jpg>] [14 <./img/20-rosenbrock.jpg>] [15 <./img/40-sphere.jpg> <./img/40-rast
+rigin.jpg>] [16 <./img/40-rosenbrock.jpg>]
+(./samplepaper.bbl) [17] (./samplepaper.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -416,15 +442,25 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2065 strings out of 492167
- 30373 string characters out of 6129173
- 130578 words of memory out of 5000000
+ 2064 strings out of 492167
+ 29943 string characters out of 6125388
+ 129578 words of memory out of 5000000
  6396 multiletter control sequences out of 15000+600000
  7801 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,7n,30p,347b,299s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on "c:/Users/mario/Google Drive/Proyectos/article-distributed-parallel/samplepaper.pdf" (17 pages, 1206821 bytes).
+ 46i,7n,30p,278b,299s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on samplepaper.pdf (17 pages, 1207066 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
