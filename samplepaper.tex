@@ -151,8 +151,6 @@ This architecture consist in 3 nodes, they are explained on the next points:
   \item Manager: 
   Here a population conformed by sub-populations is created and the architecture
   initialize parameters to run the algorithm. Every time a sub-population is created 
-  % Here the multi-population is managed, it is initialized how to
-  % process it, followed by the sub-populations, which when they are concepted
   triggers an event that sends the subpopulations to be stored in a file JSON of
   MongoDB (preventing to saturate the memory) and to a message queue that is
   directed to its subsequent processing in the “Receiver” section that is our
