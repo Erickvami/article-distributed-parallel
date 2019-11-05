@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.14)  4 NOV 2019 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.14)  5 NOV 2019 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -182,18 +182,6 @@ LaTeX Warning: Label `fig1' multiply defined.
 LaTeX Warning: Label `fig1' multiply defined.
 
 
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `table:resultados-2' multiply defined.
-
-
 LaTeX Warning: Label `table:resultados-2' multiply defined.
 
 
@@ -204,6 +192,18 @@ LaTeX Warning: Label `fig1' multiply defined.
 
 
 LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `table:resultados-2' multiply defined.
 
 
 LaTeX Warning: Label `table:ga-pso-parameters-20' multiply defined.
@@ -325,114 +325,114 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 <img/architectures.png, id=14, 715.67375pt x 353.32pt>
 File: img/architectures.png Graphic file (type png)
 <use img/architectures.png>
-Package pdftex.def Info: img/architectures.png  used on input line 122.
+Package pdftex.def Info: img/architectures.png  used on input line 133.
 (pdftex.def)             Requested size: 347.12354pt x 171.37077pt.
- [2 <./img/architectures.png>]
-<img/multipopulation.png, id=21, 526.96875pt x 283.0575pt>
+ [2]
+<img/multipopulation.png, id=20, 526.96875pt x 283.0575pt>
 File: img/multipopulation.png Graphic file (type png)
 <use img/multipopulation.png>
-Package pdftex.def Info: img/multipopulation.png  used on input line 177.
+Package pdftex.def Info: img/multipopulation.png  used on input line 186.
 (pdftex.def)             Requested size: 242.98541pt x 130.519pt.
- [3]
+ [3 <./img/architectures.png>]
 <img/general diagram architecture 2.png, id=25, 582.67688pt x 307.64937pt>
 File: img/general diagram architecture 2.png Graphic file (type png)
 <use img/general diagram architecture 2.png>
 Package pdftex.def Info: img/general diagram architecture 2.png  used on input 
-line 202.
+line 213.
 (pdftex.def)             Requested size: 312.40906pt x 164.95459pt.
-<img/subpopulationDefinition.png, id=26, 490.83376pt x 142.5325pt>
+ [4 <./img/multipopulation.png>]
+<img/subpopulationDefinition.png, id=30, 490.83376pt x 142.5325pt>
 File: img/subpopulationDefinition.png Graphic file (type png)
 <use img/subpopulationDefinition.png>
-Package pdftex.def Info: img/subpopulationDefinition.png  used on input line 21
-6.
+Package pdftex.def Info: img/subpopulationDefinition.png  used on input line 22
+7.
 (pdftex.def)             Requested size: 208.27623pt x 60.4809pt.
-<img/splittinPointUniform.png, id=27, 549.05125pt x 216.81pt>
+<img/splittinPointUniform.png, id=31, 549.05125pt x 216.81pt>
 File: img/splittinPointUniform.png Graphic file (type png)
 <use img/splittinPointUniform.png>
-Package pdftex.def Info: img/splittinPointUniform.png  used on input line 229.
+Package pdftex.def Info: img/splittinPointUniform.png  used on input line 240.
 (pdftex.def)             Requested size: 312.40906pt x 123.36794pt.
-<img/selection.png, id=28, 367.3725pt x 265.99374pt>
+<img/selection.png, id=32, 367.3725pt x 265.99374pt>
 File: img/selection.png Graphic file (type png)
 <use img/selection.png>
-Package pdftex.def Info: img/selection.png  used on input line 240.
+Package pdftex.def Info: img/selection.png  used on input line 251.
 (pdftex.def)             Requested size: 173.56177pt x 125.66646pt.
- [4 <./img/multipopulation.png>] [5 <./img/general diagram architecture 2.png> 
-<./img/subpopulationDefinition.png> <./img/splittinPointUniform.png>]
-<img/benchmark.png, id=39, 652.4375pt x 192.72pt>
+ [5 <./img/general diagram architecture 2.png> <./img/subpopulationDefinition.p
+ng>] [6 <./img/splittinPointUniform.png> <./img/selection.png>]
+<img/benchmark.png, id=43, 652.4375pt x 192.72pt>
 File: img/benchmark.png Graphic file (type png)
 <use img/benchmark.png>
-Package pdftex.def Info: img/benchmark.png  used on input line 264.
+Package pdftex.def Info: img/benchmark.png  used on input line 275.
 (pdftex.def)             Requested size: 242.98541pt x 71.77284pt.
- [6 <./img/selection.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 298.
+(Font)              <9> on input line 309.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 298.
+(Font)              <6> on input line 309.
 <img/2-sphere.jpg, id=44, 351.3125pt x 225.84375pt>
 File: img/2-sphere.jpg Graphic file (type jpg)
 <use img/2-sphere.jpg>
-Package pdftex.def Info: img/2-sphere.jpg  used on input line 342.
+Package pdftex.def Info: img/2-sphere.jpg  used on input line 353.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/2-rastrigin.jpg, id=45, 351.3125pt x 225.84375pt>
 File: img/2-rastrigin.jpg Graphic file (type jpg)
 <use img/2-rastrigin.jpg>
-Package pdftex.def Info: img/2-rastrigin.jpg  used on input line 347.
+Package pdftex.def Info: img/2-rastrigin.jpg  used on input line 358.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/2-rosenbrock.jpg, id=46, 351.3125pt x 225.84375pt>
 File: img/2-rosenbrock.jpg Graphic file (type jpg)
 <use img/2-rosenbrock.jpg>
-Package pdftex.def Info: img/2-rosenbrock.jpg  used on input line 352.
+Package pdftex.def Info: img/2-rosenbrock.jpg  used on input line 363.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/10-sphere.jpg, id=47, 351.3125pt x 225.84375pt>
 File: img/10-sphere.jpg Graphic file (type jpg)
 <use img/10-sphere.jpg>
-Package pdftex.def Info: img/10-sphere.jpg  used on input line 434.
+Package pdftex.def Info: img/10-sphere.jpg  used on input line 445.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/10-rastrigin.jpg, id=48, 351.3125pt x 225.84375pt>
 File: img/10-rastrigin.jpg Graphic file (type jpg)
 <use img/10-rastrigin.jpg>
-Package pdftex.def Info: img/10-rastrigin.jpg  used on input line 439.
+Package pdftex.def Info: img/10-rastrigin.jpg  used on input line 450.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/10-rosenbrock.jpg, id=49, 351.3125pt x 225.84375pt>
 File: img/10-rosenbrock.jpg Graphic file (type jpg)
 <use img/10-rosenbrock.jpg>
-Package pdftex.def Info: img/10-rosenbrock.jpg  used on input line 444.
+Package pdftex.def Info: img/10-rosenbrock.jpg  used on input line 455.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/20-sphere.jpg, id=50, 351.3125pt x 225.84375pt>
 File: img/20-sphere.jpg Graphic file (type jpg)
 <use img/20-sphere.jpg>
-Package pdftex.def Info: img/20-sphere.jpg  used on input line 526.
+Package pdftex.def Info: img/20-sphere.jpg  used on input line 537.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/20-rastrigin.jpg, id=51, 351.3125pt x 225.84375pt>
 File: img/20-rastrigin.jpg Graphic file (type jpg)
 <use img/20-rastrigin.jpg>
-Package pdftex.def Info: img/20-rastrigin.jpg  used on input line 531.
+Package pdftex.def Info: img/20-rastrigin.jpg  used on input line 542.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/20-rosenbrock.jpg, id=52, 351.3125pt x 225.84375pt>
 File: img/20-rosenbrock.jpg Graphic file (type jpg)
 <use img/20-rosenbrock.jpg>
-Package pdftex.def Info: img/20-rosenbrock.jpg  used on input line 536.
+Package pdftex.def Info: img/20-rosenbrock.jpg  used on input line 547.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/40-sphere.jpg, id=53, 351.3125pt x 225.84375pt>
 File: img/40-sphere.jpg Graphic file (type jpg)
 <use img/40-sphere.jpg>
-Package pdftex.def Info: img/40-sphere.jpg  used on input line 619.
+Package pdftex.def Info: img/40-sphere.jpg  used on input line 630.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/40-rastrigin.jpg, id=54, 351.3125pt x 225.84375pt>
 File: img/40-rastrigin.jpg Graphic file (type jpg)
 <use img/40-rastrigin.jpg>
-Package pdftex.def Info: img/40-rastrigin.jpg  used on input line 624.
+Package pdftex.def Info: img/40-rastrigin.jpg  used on input line 635.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
 <img/40-rosenbrock.jpg, id=55, 351.3125pt x 225.84375pt>
 File: img/40-rosenbrock.jpg Graphic file (type jpg)
 <use img/40-rosenbrock.jpg>
-Package pdftex.def Info: img/40-rosenbrock.jpg  used on input line 629.
+Package pdftex.def Info: img/40-rosenbrock.jpg  used on input line 640.
 (pdftex.def)             Requested size: 347.12354pt x 223.169pt.
- [7 <./img/benchmark.png>] [8 <./img/2-sphere.jpg> <./img/2-rastrigin.jpg>] [9 
-<./img/2-rosenbrock.jpg>] [10 <./img/10-sphere.jpg>] [11 <./img/10-rastrigin.jp
-g> <./img/10-rosenbrock.jpg>] [12] [13 <./img/20-sphere.jpg> <./img/20-rastrigi
-n.jpg>] [14 <./img/20-rosenbrock.jpg>] [15 <./img/40-sphere.jpg> <./img/40-rast
-rigin.jpg>] [16 <./img/40-rosenbrock.jpg>]
+ [7 <./img/benchmark.png>] [8 <./img/2-sphere.jpg>]
+[9 <./img/2-rastrigin.jpg> <./img/2-rosenbrock.jpg>] [10] [11 <./img/10-sphere.
+jpg> <./img/10-rastrigin.jpg>] [12 <./img/10-rosenbrock.jpg>] [13 <./img/20-sph
+ere.jpg> <./img/20-rastrigin.jpg>] [14 <./img/20-rosenbrock.jpg>] [15 <./img/40
+-sphere.jpg>] [16 <./img/40-rastrigin.jpg> <./img/40-rosenbrock.jpg>]
 (./samplepaper.bbl) [17] (./samplepaper.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -444,7 +444,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  2064 strings out of 492167
  29943 string characters out of 6125388
- 129578 words of memory out of 5000000
+ 131578 words of memory out of 5000000
  6396 multiletter control sequences out of 15000+600000
  7801 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -460,7 +460,7 @@ cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on samplepaper.pdf (17 pages, 1207066 bytes).
+Output written on samplepaper.pdf (17 pages, 1207983 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
