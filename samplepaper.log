@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.14)  5 NOV 2019 15:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.14)  5 NOV 2019 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -442,13 +442,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2064 strings out of 492167
- 29943 string characters out of 6125388
- 131578 words of memory out of 5000000
- 6396 multiletter control sequences out of 15000+600000
+ 2066 strings out of 492167
+ 29965 string characters out of 6125388
+ 131584 words of memory out of 5000000
+ 6398 multiletter control sequences out of 15000+600000
  7801 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,7n,30p,278b,299s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,7n,30p,278b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -460,7 +460,7 @@ cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on samplepaper.pdf (17 pages, 1207983 bytes).
+Output written on samplepaper.pdf (17 pages, 1208231 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
