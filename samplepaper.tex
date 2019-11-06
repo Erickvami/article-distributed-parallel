@@ -3,8 +3,95 @@
 % Version 2.20 of 2017/10/04
 %
 \documentclass[runningheads]{llncs}
-
+\usepackage{soul}
+\usepackage{tikz}
+\usetikzlibrary{calc}
 \usepackage{graphicx}
+
+\makeatletter
+\newif\if@anonymize
+
+\@anonymizetrue    % Uncomment to hide text
+%\@anonymizefalse  % Uncomment to show text
+
+\if@anonymize
+  \newcommand{\highlight@DoHighlight}{
+    \fill [outer sep = -15pt, inner sep = 0pt, color=black]
+          ($(begin highlight)+(0,8pt)$) rectangle ($(end highlight)+(0,-3pt)$) ;
+  }
+
+  \newcommand{\highlight@BeginHighlight}{
+    \coordinate (begin highlight) at (0,0) ;
+  }
+
+  \newcommand{\highlight@EndHighlight}{
+    \coordinate (end highlight) at (0,0) ;
+  }
+
+  \newdimen\highlight@previous
+  \newdimen\highlight@current
+  \newlength{\item@width}
+
+  \DeclareRobustCommand*\anonymize{%
+    \SOUL@setup
+    \def\SOUL@preamble{%
+      \begin{tikzpicture}[overlay, remember picture]
+        \highlight@BeginHighlight
+        \highlight@EndHighlight
+      \end{tikzpicture}%
+    }%
+    %
+    \def\SOUL@postamble{%
+      \begin{tikzpicture}[overlay, remember picture]
+        \highlight@EndHighlight
+        \highlight@DoHighlight
+      \end{tikzpicture}%
+    }%
+    %
+    \def\SOUL@everyhyphen{%
+      \discretionary{%
+        \SOUL@setkern\SOUL@hyphkern
+        \SOUL@sethyphenchar
+        \tikz[overlay, remember picture] \highlight@EndHighlight ;%
+      }{%
+      }{%
+        \SOUL@setkern\SOUL@charkern
+      }%
+    }%
+    %
+    \def\SOUL@everyexhyphen##1{%
+      \SOUL@setkern\SOUL@hyphkern
+      \settowidth{\item@width}{##1}%
+      \makebox[\item@width]{}%
+      \discretionary{%
+        \tikz[overlay, remember picture] \highlight@EndHighlight ;%
+      }{%
+      }{%
+        \SOUL@setkern\SOUL@charkern
+      }%
+    }%
+    %
+    \def\SOUL@everysyllable{%
+      \begin{tikzpicture}[overlay, remember picture]
+        \path let \p0 = (begin highlight), \p1 = (0,0) in \pgfextra
+          \global\highlight@previous=\y0
+          \global\highlight@current =\y1
+        \endpgfextra (0,0) ;
+        \ifdim\highlight@current < \highlight@previous
+          \highlight@DoHighlight
+          \highlight@BeginHighlight
+        \fi
+      \end{tikzpicture}%
+      \settowidth{\item@width}{\the\SOUL@syllable}%
+      \makebox[\item@width]{}%
+      \tikz[overlay, remember picture] \highlight@EndHighlight ;%
+    }%
+    \SOUL@
+  }
+\else
+  \newcommand{\anonymize}[1]{#1}
+\fi
+\makeatother
 
 
 \begin{document}
@@ -15,16 +102,16 @@
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
-\author{Erick Vargas Minguela\inst{1}\orcidID{0000-1111-2222-3333} \and
-Mario Garcia Valdez\inst{1}\orcidID{1111-2222-3333-4444} \and
-Third Author\inst{2}\orcidID{2222--3333-4444-5555}}
+\author{\anonymize{Erick Vargas Minguela}\inst{1}\orcidID{0000-1111-2222-3333} \and
+\anonymize{Mario Garcia Valdez}\inst{1}\orcidID{1111-2222-3333-4444} \and
+\anonymize{Third Author}\inst{2}\orcidID{2222--3333-4444-5555}}
 %
-\authorrunning{E. Vargas Minguela et al.}
+\authorrunning{\anonymize{E. Vargas Minguela} et al.}
 % First names are abbreviated in the running head.
 % If there are more than two authors, 'et al.' is used.
 %
 \institute{National Technological Institute of Mexico 
-\email{erick.vargas.minguela@gmail.com}\\
+\email{\anonymize{erick.vargas.minguela@gmail.com}}\\
 %\url{http://www.springer.com/gp/computer-science/lncs}\\
 \email{\{abc,lncs\}}}
 %
@@ -33,6 +120,7 @@ Third Author\inst{2}\orcidID{2222--3333-4444-5555}}
 \begin{abstract}
   % It seems like the abstract is incompleate, it is a good idea to 
   % write it at the end - Mario 
+  \anonymize{hello world}
     In this work, we present a software implementation that follows an
     event-driven architecture, designed to asynchronously distribute the
     processing of population-based algorithms. The search algorithm uses a
