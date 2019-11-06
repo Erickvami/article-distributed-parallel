@@ -238,9 +238,35 @@ output that is the result of the process those variables. One of the main featur
 functions is that they are stateless, they are focused on inputs and result with a simple process
 that does not require a state, at the moment the inputs get into the function are already generating an output. 
 In serverless, events such as messages or HTTP requests can trigger these functions. 
-Also, each function scales independently and is stateless with a short duration \cite{Baird2016}.
+Also, each function scales independently and is stateless with a short duration \cite{Baird2016,Cook2017}.
 % I am not a fan of that definition of a function in CS - Mario
 % Explain a bit more the "Stateless" part - Mario 
+
+\subsection{Asynchronous}
+
+Asynchronous algorithms consist of performing a certain action
+such as the movement of the particles in PSO or the crosses and mutations of the GA
+without the need for the execution of one to affect the other, in a few words a
+Individual execution of each without waiting times. This is very useful.
+when several threads are used in parallel execution because if the expected response of action, for example, a GA of 100 generations and a GA of 10 is
+it is preferable not to stop the search and give priority to 10 generations \cite{Santander-jim2018,Sherry2012,Goebel2016,Guerv2018}.
+Asynchronous functions are created in programming that has promising results response that is immediate and does not stop the main execution by secundary actions \cite{Moroney2017,Ambler2015}.
+
+An asynchronous architecture has what is known as execution queues in the that can be appreciated that give an added value that gives advantage 
+over other architectures by reducing waiting times and neglecting the concept that order is important, of course, this type of architectures 
+is not applicable to all cases but speaking in distributed systems where multiple population-based algorithms are executed
+with parallel execution, they result in a better degree of efficiency, in addition to reducing the number of control parameters 
+since they require having a decoupled architecture \cite{Ma2019,Santander-jim2018}.
+
+\subsection{Functional Programming}
+
+It is a very important programming paradigm that is based on lambda expression, created from math knowledge.
+The programming languages could be classified by programming styles, there are usually known as programming paradigms \cite{Kunasaikaran2016}.
+
+In the functional programming style the data does not exist independently or by themselves,
+but these happen in the form of arguments and are transformed as a flow in an exit through the functions. Each function is described as atomic
+because each one only has a simple operation that generates an expected result \cite{Kunasaikaran2016}.
+
 
 \section{Proposed architecture}
 
