@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex samplepaper"] 1572999600 "samplepaper.aux" "samplepaper.bbl" "samplepaper" 1572999601
+["bibtex samplepaper"] 1573003982 "samplepaper.aux" "samplepaper.bbl" "samplepaper" 1573003984
   "/usr/local/texlive/2019/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "samplepaper.aux" 1572999601 6333 a752f4d68a8045aae2f824cc40b3ead8 "pdflatex"
+  "samplepaper.aux" 1573003983 6332 af9687ae49a5c552aa56a83d2dff80aa "pdflatex"
   "samplepaper.bib" 1572999435 34202 8c752542a3df97465e6c9c114f8e9462 ""
   (generated)
-  "samplepaper.blg"
   "samplepaper.bbl"
-["pdflatex"] 1572999600 "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf" "samplepaper" 1572999601
-  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux" 1572999601 6333 a752f4d68a8045aae2f824cc40b3ead8 ""
-  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" 1572999597 27968 27940925b1e84736359801eecf851244 ""
+  "samplepaper.blg"
+["pdflatex"] 1573003982 "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf" "samplepaper" 1573003984
+  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.aux" 1573003983 6332 af9687ae49a5c552aa56a83d2dff80aa ""
+  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.tex" 1573003980 28484 2124bce7654a5c14ea1f7c5d70c2c27f ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -81,12 +81,12 @@
   "img/splittinPointUniform.png" 1572662898 85541 da507178258eddec9e5be751ee87894b ""
   "img/subpopulationDefinition.png" 1572662898 9019 2f0e81cab60c75c1e97e8b990e4f91d3 ""
   "llncs.cls" 1571942974 43467 a21466011e5ed5d4c3f1d5a9af897395 ""
-  "samplepaper.aux" 1572999601 6333 a752f4d68a8045aae2f824cc40b3ead8 "pdflatex"
-  "samplepaper.bbl" 1572999600 896 c1f5f99c5c8ed5ad9792ca3968b8d5ee "bibtex samplepaper"
-  "samplepaper.tex" 1572999597 27968 27940925b1e84736359801eecf851244 ""
+  "samplepaper.aux" 1573003983 6332 af9687ae49a5c552aa56a83d2dff80aa "pdflatex"
+  "samplepaper.bbl" 1573003982 896 c1f5f99c5c8ed5ad9792ca3968b8d5ee "bibtex samplepaper"
+  "samplepaper.tex" 1573003980 28484 2124bce7654a5c14ea1f7c5d70c2c27f ""
   (generated)
   "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.log"
-  "samplepaper.log"
-  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf"
-  "samplepaper.pdf"
   "samplepaper.aux"
+  "samplepaper.pdf"
+  "/Users/erickvargas/Documents/maestria/article-1/article-distributed-parallel/samplepaper.pdf"
+  "samplepaper.log"

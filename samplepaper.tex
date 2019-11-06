@@ -229,9 +229,15 @@ directly with their respective algorithms.
   \end{figure}
 
 \subsection{Splitting Point Uniform Migration}
-A uniform mask is created to apply the migration between individuals from 2
+
+This architecture communicates sub-populations using migrations, taking information from 2 sub-populations and mixing them 
+using a process similar to crossover in Genetic Algorithms, creating 2 completely new sub-populations
+every time a processed sub-population arrives into the Manager node and replacing them self in the multi-population.
+
+The migration created to this architecture is a method called Splitting Point Uniform that consist in a 
+uniform mask that is created to apply the migration between individuals, vectors or both of them, from 2
 sub-populations. The selected data are combined using the middle point between
-the selected points by the mask. This process iterates the 2 sub-populations to
+the active values points by the binary mask generated randomly. This process iterates the 2 sub-populations to
 randomly swap values and replace some of them with middle points.
 
 
