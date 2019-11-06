@@ -104,19 +104,24 @@ increase the performance of some population-based algorithms.
 %% what is presented in each section? 
 %% Check other papers to get the idea - Mario
 
+\section{State of the Art}
+
+% These sections can be optional, 
+% they can be part of the Intro, SoA, of a Concepts section - Mario
 
 \subsection{Serverless}
-
 Recently,  cloud providers such as Amazon Web Services (AWS), IBM Cloud, and
 Google Cloud, offer a new alternative to programming through interfaces called
 Serverless Computing  [References], this platform consists in an effortless
 mechanism where developers upload the code into the platform and execute it as
 many times as it is required, scaling and allowing to do this in parallel. This
 way, the developers do not worry about servers, connections, and other
-configurations. In serverless, users pay only for what it is used. There is also
-the option to install some of these platforms locally; for instance, AWS [name]
-[Ref ] or Apache Open Whisk [Ref]. stall them into your own server to do your
-own local architecture serverless.
+configurations. In serverless, users pay only for what they use, when talking
+about functions, they are charged for the number of times they are executed and
+the resources they need (memory and CPU time). There is also the option to
+install some of these platforms locally; for instance, AWS [name] [Ref ] or
+Apache Open Whisk [Ref]. stall them into your own server to do your own local
+architecture serverless.
 
 \begin{figure}[htp]
   \includegraphics[width=\textwidth]{img/architectures.png}
@@ -135,14 +140,15 @@ scales independently and is stateless with a short duration.
 
 \section{Proposed architecture}
 
-The propose is an architecture that allows to process a simple population that
-is divided into sub-populations distributing them to process in different ways
-and then communicating each other with purpose of increase the possibility to
-find the best fitness of a function. This architecture can accept the use of an
-indeterminate number of algorithms, allowing an easy hybridation and continuous
-adaptability for different problems.
+We propose a multipopulation architecture with a message-based distribution. The
+system distributes sub-populations sending them as messages in a task queue.
+Reading from the queue are stateless functions that execute a population-based
+optimization algorithm.  The architecture enables an easy way of adding more
+algorithms; to add another, we need to upload a new serverless function that
+takes a population as a message and returns the population that results from
+applying the search algorithm for a certain number of iterations.
 
-This architecture consist in 3 nodes, they are explained on the next points:
+This architecture consists of  3 nodes; they are explained next:
 
 \begin{itemize}
   \item Manager: Here the multi-population is managed, it is initialized how to
@@ -150,7 +156,7 @@ This architecture consist in 3 nodes, they are explained on the next points:
   trigger an event that sends the subpopulations to be stored in a file JSON of
   MongoDB (preventing to saturate the memory) and to a message queue that is
   directed to its subsequent processing in the “Receiver” section that is our
-  cluster of functions (Faas), because each subpopulation requires the execution
+  cluster of functions (FaaS), because each subpopulation requires the execution
   of a different algorithm, there is a different channel in the web sockets for
   each type of algorithm that triggers its respective serverless function. Once
   a subpopulation is processed, it is returned and a selection is made for the
