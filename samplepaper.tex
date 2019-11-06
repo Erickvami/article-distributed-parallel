@@ -40,8 +40,10 @@ Third Author\inst{2}\orcidID{2222--3333-4444-5555}}
     parameters of execution, allowing the hybridation of multiple algorithms, in
     this case Genetic Algorithms (GAs) and Particle Swarm Optimization (PSO).
     Using a message queue, each population is manipulated by asynchronous
-    serverless functions, taking advantage of functional programming. The
-    cloud-ready javascript implementation, includes a web-based application for
+    serverless functions, taking advantage of functional programming
+    % \cite{Kunasaikaran2016}
+    % No citations in abstract.
+    . This cloud-ready javascript implementation, includes a web-based application for
     the configuration and interaction with algorithms. We executed several
     experiments in order to validate the system, using benchmark functions and
     several configurations. Results show ...
@@ -83,20 +85,31 @@ parameters interacting with each other at the same time.
 
 In this work, we propose the use of several serverless functions to process
 small fragments from a population in a distributed way, turning a population
-into a multi-population. Independent functions, running asynchronously,
-process each sub-population. Also, sub-populations use the migration of data
+into a multi-population. Independent functions, running asynchronously by the 
+use of queues, to process each sub-population. Also, sub-populations use the migration of data
 between them, to help each other even if the algorithms or parameters of each
 sub-population are different. The objective is to prevent the algorithm from
-falling into optimal local values.
+falling into optimal local values and increase processing performance.
 
 Distributed and cloud-based architectures are used extensively in the software
 industry because of their high performance and lower overall cost.  Many systems
 are being created and migrating step by step to microservices and new serverless
 architectures, which proposes the use of “Function as a Service” (FaaS).
-Researchers are starting to exploit this type of architectures [References] in
+Researchers are starting to exploit this type of architectures \cite{Hellerstein2018,Everywhere,Baird2016} in
 heuristic optimization development, and here we take advantage of them to
 increase the performance of some population-based algorithms.
 
+This document shows what are serverless functions and their spot into the world
+of software architecture, describing its features and advantages of its implementation
+compared with others. Once that the concept of Serverless is understood we provide 
+information of the proposed architecture that mix sub-populations to increasing the 
+possibilities to find the best fitness of some benchmark functions by the use of queues and functions.
+In proposed architecture section every component is described with their role in the algorithm.
+Followed by several experiments to test if the architecture is giving the expected results, get an easy
+way to hybridation and a fast convergence, increasing the performance of existing algorithms as Genetic Algorithms
+and Particle Swarm Optimization making an scalable algorithm.
+To finalize the document we conclude with the response to the question that if the architecture is useful 
+to be applied on population-based algorithms and future work to remove deficiencies.
 %%
 %% A description of the paper goes here
 %% what are we proposing? You can start with the description in the abstract.  
@@ -104,24 +117,19 @@ increase the performance of some population-based algorithms.
 %% what is presented in each section? 
 %% Check other papers to get the idea - Mario
 
-\section{State of the Art}
-
-% These sections can be optional, 
-% they can be part of the Intro, SoA, of a Concepts section - Mario
 
 \subsection{Serverless}
-Recently,  cloud providers such as Amazon Web Services (AWS), IBM Cloud, and
+
+Recently, cloud providers such as Amazon Web Services (AWS), IBM Cloud, and
 Google Cloud, offer a new alternative to programming through interfaces called
 Serverless Computing  [References], this platform consists in an effortless
 mechanism where developers upload the code into the platform and execute it as
 many times as it is required, scaling and allowing to do this in parallel. This
 way, the developers do not worry about servers, connections, and other
-configurations. In serverless, users pay only for what they use, when talking
-about functions, they are charged for the number of times they are executed and
-the resources they need (memory and CPU time). There is also the option to
-install some of these platforms locally; for instance, AWS [name] [Ref ] or
-Apache Open Whisk [Ref]. stall them into your own server to do your own local
-architecture serverless.
+configurations. In serverless, users pay only for what it is used. There is also
+the option to install some of these platforms locally; for instance, AWS (Amazon Web Services)
+\cite{Baird2016} or Apache Open Whisk \cite{Guerv2018}. stall them into your own server to do your
+own local architecture serverless.
 
 \begin{figure}[htp]
   \includegraphics[width=\textwidth]{img/architectures.png}
@@ -131,32 +139,35 @@ architecture serverless.
 \subsubsection{Serverless Function} 
 In math, a function is a relation between a set of inputs and an allowed set of
 outputs, with the idea that each input goes to a single output. However, in
-computer science, a function is defined as small bits of code that do only one
-thing and are easy to understand and support. In serverless,  events such as
-messages or HTTP requests can trigger these functions. Also, each function
-scales independently and is stateless with a short duration.
+computer science a function is defined as a unit of code that has a role into a
+greater code structure, works on varius inputs that usually are variables and throws a concrete
+output that are the result of process those variables. One of the main features that belongs to
+functions is that are stateless, they are focused on inputs and result with a simple process
+that does not require an state, in the moment the inputs get into the function are already generating an output.  
+In serverless,  events such as messages or HTTP requests can trigger these functions. 
+Also, each function scales independently and is stateless with a short duration \cite{Baird2016}.
 % I am not a fan of that definition of a function in CS - Mario
 % Explain a bit more the "Stateless" part - Mario 
 
 \section{Proposed architecture}
 
-We propose a multipopulation architecture with a message-based distribution. The
-system distributes sub-populations sending them as messages in a task queue.
-Reading from the queue are stateless functions that execute a population-based
-optimization algorithm.  The architecture enables an easy way of adding more
-algorithms; to add another, we need to upload a new serverless function that
-takes a population as a message and returns the population that results from
-applying the search algorithm for a certain number of iterations.
+The propose is an architecture that allows to process a simple population that
+is divided into sub-populations distributing them to process in different ways
+and then communicating each other with purpose of increase the possibility to
+find the best fitness of a function. This architecture can accept the use of an
+indeterminate number of algorithms, allowing an easy hybridation and continuous
+adaptability for different problems.
 
-This architecture consists of  3 nodes; they are explained next:
+This architecture consist in 3 nodes, they are explained on the next points:
 
 \begin{itemize}
-  \item Manager: Here the multi-population is managed, it is initialized how to
-  process it, followed by the subpopulations, which when they are concepted
-  trigger an event that sends the subpopulations to be stored in a file JSON of
+  \item Manager: 
+  Here a population conformed by sub-populations is created and the architecture
+  initialize parameters to run the algorithm. Every time a sub-population is created 
+  triggers an event that sends the subpopulations to be stored in a file JSON of
   MongoDB (preventing to saturate the memory) and to a message queue that is
   directed to its subsequent processing in the “Receiver” section that is our
-  cluster of functions (FaaS), because each subpopulation requires the execution
+  cluster of functions (Faas), because each sub-population requires the execution
   of a different algorithm, there is a different channel in the web sockets for
   each type of algorithm that triggers its respective serverless function. Once
   a subpopulation is processed, it is returned and a selection is made for the
@@ -167,7 +178,7 @@ This architecture consists of  3 nodes; they are explained next:
   selection is made, a Splitting Point Uniform crossing will be made. The 2 new
   subpopulations replace their self and are resent it back to their respective
   serverless function and this process is repeited until completing the number
-  of assigned migrations for the multi-population. Of course this whole process
+  of assigned migrations for the multi-population \cite{Ma2019,Santander-jim2018}. Of course this whole process
   is performed asynchronously avoiding wait for all responses from serverless
   functions to perform a crossover or a update of the multi-population status
   \cite{Lovbjerg2001,Jimeno2019}. In the following figure you can see from
@@ -177,6 +188,8 @@ This architecture consists of  3 nodes; they are explained next:
   \includegraphics[width=0.7\textwidth]{img/multipopulation.png}
   \caption{Multipopulation representation.} \label{fig1}
   \end{figure}
+  The mechanism to send the sub-population to the serverless functions is create a queue
+  with a dimension of 2 positions that allow to compunicate in an asynchronous way.
 \item Message Provider: Its purpose is the creation of a sub-population messages
 queue which is the comunication channel between the sub-population Manager and
 the Receiver (FaaS), each message is a trigger for the execution of a GA or PSO
@@ -200,7 +213,7 @@ using Node JS as it can be see it in the General Architecture Flowchart.
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.9\textwidth]{img/general diagram architecture 2.png}
-  \caption{General Architecture Flowchart.} \label{fig1}
+  \caption{General Architecture Flowchart.} \label{fig2}
   \end{figure}
 
 \subsection{Sub-population definition}
@@ -214,40 +227,45 @@ directly with their respective algorithms.
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\textwidth]{img/subpopulationDefinition.png}
-  \caption{Sub-population composition.} \label{fig1}
+  \caption{Sub-population composition.} \label{fig3}
   \end{figure}
 
 \subsection{Splitting Point Uniform Migration}
-A uniform mask is created to apply the migration between individuals from 2
+
+This architecture communicates sub-populations using migrations, taking information from 2 sub-populations and mixing them 
+using a process similar to crossover in Genetic Algorithms, creating 2 completely new sub-populations
+every time a processed sub-population arrives into the Manager node and replacing them self in the multi-population.
+
+The migration created to this architecture is a method called Splitting Point Uniform that consist in a 
+uniform mask that is created to apply the migration between individuals, vectors or both of them, from 2
 sub-populations. The selected data are combined using the middle point between
-the selected points by the mask. This process iterates the 2 sub-populations to
-randomly swap values and replace some of them with middle points.
+the active values points by the binary mask generated randomly. This process iterates the 2 sub-populations to
+randomly swap values and replace some of them with middle points \cite{Kramer2017,Kaya2011}.
 
 
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.9\textwidth]{img/splittinPointUniform.png}
-  \caption{Splitting Point Uniform process.} \label{fig1}
+  \caption{Splitting Point Uniform process.} \label{fig4}
   \end{figure}
 
-  \subsection{Migration Selection}
-
-  Using migration selection by tournament keeping up the information of the best
-  sub-population of the multi-population.
+  \subsection{Migration Selection} The 2 sub-populations selected to realize migration are one arrived sub-population from a serverless function and another one 
+  using selection by tournament keeping up the information of the best
+  sub-population of the multi-population but without discarding posible sub-populations that in a near future could be the clue to find optimal values.
 
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.5\textwidth]{img/selection.png}
-  \caption{Selection by tournament.} \label{fig1}
+  \caption{Selection by tournament.} \label{fig5}
   \end{figure}
 
 
 \section{Experiments and Results}
 \subsection{Experiments}
-Now that an interaction between sub-populations with different algorithms it is
-working and  hybridation have been a success, using until now the added
-algorithms (GA and PSO) algorithms, all thanks to the developed architecture,
-lets procede to the experiments. This section is going to be the execution of
+Now that an interaction between sub-populations with different algorithms is
+working and  hybridizaation has been a success, using until now the added
+algorithms (GA and PSO) algorithms \cite{Kramer2017,Guerrero2017,Lalwani2019}, all thanks to the developed architecture,
+let's proceed to the experiments. This section is going to be the execution of
 several experiments from 2 to 40 dimensions, with a stop criterial of an error
 below  0.5E-8, without a parameter optimization method, waiting that the
 architecture by its self would be enough to increase the possibility to find a
@@ -262,7 +280,7 @@ for each sub-population.
 \begin{figure}[htp]
   \centering
     \includegraphics[width=0.7\textwidth]{img/benchmark.png}
-    \caption{Benchmark functions for experimentation.} \label{fig1}
+    \caption{Benchmark functions for experimentation.} \label{fig6}
     \end{figure}
 
 \subsection{Parameters Configuration} 
@@ -340,17 +358,17 @@ and the same with the others dimensions.
 
 \begin{figure}[htp]
 \includegraphics[width=\textwidth]{img/2-sphere.jpg}
-\caption{2 dimension experiments Sphere.} \label{fig1}
+\caption{2 dimension experiments Sphere.} \label{fig7}
 \end{figure}
 
 \begin{figure}[htp]
   \includegraphics[width=\textwidth]{img/2-rastrigin.jpg}
-  \caption{2 dimension experiments Rastrigin.} \label{fig1}
+  \caption{2 dimension experiments Rastrigin.} \label{fig8}
   \end{figure}
   
 \begin{figure}[htp]
   \includegraphics[width=\textwidth]{img/2-rosenbrock.jpg}
-  \caption{2 dimension experiments Rosenbrock.} \label{fig1}
+  \caption{2 dimension experiments Rosenbrock.} \label{fig9}
   \end{figure}
 
 \begin{table}[htp]
@@ -432,17 +450,17 @@ PSO Inercia factor & Random[0.5,4.0] \\
     
       \begin{figure}[htp]
         \includegraphics[width=\textwidth]{img/10-sphere.jpg}
-        \caption{10 dimensions experiments Sphere.} \label{fig1}
+        \caption{10 dimensions experiments Sphere.} \label{fig10}
         \end{figure}
 
         \begin{figure}[htp]
           \includegraphics[width=\textwidth]{img/10-rastrigin.jpg}
-          \caption{10 dimensions experiments Rastrigin.} \label{fig1}
+          \caption{10 dimensions experiments Rastrigin.} \label{fig11}
           \end{figure}
 
           \begin{figure}[htp]
             \includegraphics[width=\textwidth]{img/10-rosenbrock.jpg}
-            \caption{10 dimensions experiments Rosenbrock.} \label{fig1}
+            \caption{10 dimensions experiments Rosenbrock.} \label{fig12}
             \end{figure}
 
         \begin{table}[htp]
@@ -524,17 +542,17 @@ PSO Inercia factor & Random[0.5,4.0] \\
           
             \begin{figure}[htp]
               \includegraphics[width=\textwidth]{img/20-sphere.jpg}
-              \caption{20 dimensions experiments Sphere.} \label{fig1}
+              \caption{20 dimensions experiments Sphere.} \label{fig13}
               \end{figure}
       
               \begin{figure}[htp]
                 \includegraphics[width=\textwidth]{img/20-rastrigin.jpg}
-                \caption{20 dimensions experiments Rastrigin.} \label{fig1}
+                \caption{20 dimensions experiments Rastrigin.} \label{fig14}
                 \end{figure}
       
                 \begin{figure}[htp]
                   \includegraphics[width=\textwidth]{img/20-rosenbrock.jpg}
-                  \caption{20 dimensions experiments Rosenbrock.} \label{fig1}
+                  \caption{20 dimensions experiments Rosenbrock.} \label{fig15}
                   \end{figure}
 
                   \begin{table}[htp]
@@ -684,115 +702,5 @@ Of course it is expected to use this architecture using more algorithms than GA 
 
 \bibliography{samplepaper}
       \bibliographystyle{ieeetr}
-  %  \begin{thebibliography}{10}
-      
-    % \bibitem{Hellerstein2018}
-    % J.~M. Hellerstein, J.~Faleiro, J.~E. Gonzalez, J.~Schleier-Smith, V.~Sreekanti,
-    %   A.~Tumanov, and C.~Wu, ``{Serverless Computing: One Step Forward, Two Steps
-    %   Back},'' vol.~3, 2018.
-    
-    % \bibitem{Kramer2017}
-    % O.~Kramer, ``{Genetic Algorithm Essentials},'' {\em Springer International
-    %   Publishing AG}, vol.~679, pp.~11--20, 2017.
-    
-    % \bibitem{Guerrero2017}
-    % C.~Guerrero, I.~Lera, and C.~Juiz, ``{Genetic Algorithm for Multi-Objective
-    %   Optimization of Container Allocation in Cloud Architecture},'' {\em Journal
-    %   of Grid Computing}, pp.~1--23, 2017.
-    
-    % \bibitem{Lalwani2019}
-    % S.~Lalwani, H.~Sharma, S.~Chandra, S.~Kusum, D.~Jagdish, and C.~Bansal,
-    %   ``{REVIEW - COMPUTER ENGINEERING AND COMPUTER SCIENCE A Survey on Parallel
-    %   Particle Swarm Optimization Algorithms},'' {\em Arabian Journal for Science
-    %   and Engineering}, 2019.
-    
-    % \bibitem{Blum2005}
-    % S.~Blum, R.~Puisa, and M.~Wintermantel, ``{Adaptive Mutation Strategies for
-    %   Evolutionary Algorithms},'' {\em 2nd Weimar Optimization and Stochastic
-    %   Days}, pp.~1--13, 2005.
-    
-    % \bibitem{Everywhere}
-    % S.~Everywhere, ``{The Fn Project},''
-    
-    % \bibitem{Ma2019}
-    % H.~Ma, S.~Shen, M.~Yu, Z.~Yang, M.~Fei, and H.~Zhou, ``{Multi-population
-    %   techniques in nature inspired optimization algorithms : A comprehensive
-    %   survey},'' {\em Swarm and Evolutionary Computation}, vol.~44, no.~July 2017,
-    %   pp.~365--387, 2019.
-    
-    % \bibitem{Santander-jim2018}
-    % S.~Santander-jim and M.~A. Vega-rodr, ``{Comparative Analysis of
-    %   Intra-Algorithm Parallel Multiobjective Evolutionary Algorithms : Taxonomy
-    %   Implications on Bioinformatics Scenarios},'' vol.~9219, no.~c, pp.~1--15,
-    %   2018.
-    
-    % \bibitem{Sherry2012}
-    % D.~Sherry, K.~Veeramachaneni, J.~McDermott, and U.~M. O'Reilly, ``{Flex-GP:
-    %   Genetic programming on the cloud},'' {\em Lecture Notes in Computer Science
-    %   (including subseries Lecture Notes in Artificial Intelligence and Lecture
-    %   Notes in Bioinformatics)}, vol.~7248 LNCS, pp.~477--486, 2012.
-    
-    % \bibitem{Goebel2016}
-    % R.~Goebel, {\em {29th Australasian Joint Conference on Artificial Intelligence,
-    %   AI 2016}}, vol.~9992 LNAI.
-    % \newblock 2016.
-    
-    % \bibitem{Guerv2018}
-    % J.~J.~M. Guerv and J.~M. Garc, ``{Introducing an Event-Based Architecture for
-    %   Concurrent and Distributed Evolutionary Algorithms},'' vol.~1, pp.~399--410,
-    %   2018.
-    
-    % \bibitem{Moroney2017}
-    % L.~Moroney, {\em {The Definitive Guide to Firebase: Build Android Apps on
-    %   Google's Mobile Platform}}.
-    % \newblock 2017.
-    
-    % \bibitem{Ambler2015}
-    % T.~Ambler and N.~Cloud, {\em {JavaScript frameworks for modern web dev}}.
-    % \newblock 2015.
-    
-    % \bibitem{Barwell2016}
-    % A.~D. Barwell, C.~Brown, and K.~Hammond, ``{USING PROGRAM SHAPING AND
-    %   ALGORITHMIC SKELETONS TO PARALLELISE AN EVOLUTIONARY MULTI-AGENT SYSTEM IN
-    %   ERLANG Wojciech Turek , Aleksander Byrski},'' vol.~35, pp.~792--818, 2016.
-    
-    % \bibitem{Paper2017}
-    % C.~Paper and E.~Alba, ``{Distributed Genetic Algorithms on Portable Devices for
-    %   Smart Cities},'' no.~May, 2017.
-    
-    % \bibitem{Technische2016}
-    % J.~L. Technische, ``{C6.3 Island (migration) models: evolutionary algorithms
-    %   based on punctuated equilibria},'' no.~January 2000, 2016.
-    
-    % \bibitem{Kunasaikaran2016}
-    % J.~Kunasaikaran and A.~Iqbal, ``{A Brief Overview of Functional Programming
-    %   Languages},'' {\em electronic Journal of Computer Science and Information
-    %   Technology (eJCSIT)}, vol.~6, no.~1, pp.~32--36, 2016.
-    
-    % \bibitem{Hows2014}
-    % D.~Hows, P.~Membrey, and E.~Plugge, ``{MongoDB Basics},'' {\em MongoDB Basics},
-    %   2014.
-    
-    % \bibitem{Cook2017}
-    % J.~Cook, {\em {Docker for Data Science}}.
-    % \newblock 2017.
-    
-    % \bibitem{Lovbjerg2001}
-    % M.~L{\o}vbjerg and T.~K. Rasmussen, ``{Hybrid Particle Swarm Optimiser with
-    %   Breeding and Subpopulations},'' {\em Proc. 3rd Genetic Evolutionary
-    %   Computation Conf.}, pp.~469 --476, 2001.
-    
-    % \bibitem{Jimeno2019}
-    % H.~M.~A. Jimeno, M.~J.~L. S{\'{a}}nchez, and R.~H. Rico, ``{Multipopulation ‑
-    %   based multi ‑ level parallel enhanced Jaya algorithms},'' {\em The Journal
-    %   of Supercomputing}, no.~0123456789, 2019.
-    
-    % \bibitem{Roberts2016}
-    % M.~Roberts, ``{Serverless Architectures},'' 2016.
-    
-    % \bibitem{Kaya2011}
-    % Y.~Kaya, M.~Uyar, and R.~Tek$\backslash$D{\{}j{\}}n, ``{A Novel Crossover
-    %   Operator for Genetic Algorithms: Ring Crossover},'' no.~May 2014, 2011.
-    
-    % \end{thebibliography}
+  
 \end{document}
