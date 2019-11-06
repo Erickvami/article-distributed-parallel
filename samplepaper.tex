@@ -120,19 +120,19 @@
 \begin{abstract}
   % It seems like the abstract is incompleate, it is a good idea to 
   % write it at the end - Mario 
-    In this work, we present a software implementation that follows an
-    event-driven architecture, designed to asynchronously distribute the
-    processing of population-based algorithms. The search algorithm uses a
-    multipopulation approach, creating multiple populations with different
-    parameters of execution, allowing the hybridation of multiple algorithms, in
-    this case Genetic Algorithms (GAs) and Particle Swarm Optimization (PSO).
-    Using a message queue, each population is manipulated by asynchronous
-    serverless functions, taking advantage of functional programming
+  In this work, we present a software implementation that follows an
+  event-driven architecture, designed to asynchronously distribute the
+  processing of population-based algorithms. The search algorithm uses a
+  multi-population approach, creating multiple populations with different
+  parameters of execution, allowing the hybridization of multiple algorithms, in
+  this case Genetic Algorithms (GAs) and Particle Swarm Optimization (PSO).
+  Using a message queue, each population is manipulated by asynchronous
+  serverless functions, taking advantage of functional programming
     % \cite{Kunasaikaran2016}
     % No citations in abstract.
-    . This cloud-ready javascript implementation, includes a web-based application for
+    .This cloud-ready javascript implementation includes a web-based application for
     the configuration and interaction with algorithms. We executed several
-    experiments in order to validate the system, using benchmark functions and
+    experiments to validate the system, using benchmark functions and
     several configurations. Results show ...
 
     % Results here 
@@ -191,12 +191,12 @@ of software architecture, describing its features and advantages of its implemen
 compared with others. Once that the concept of Serverless is understood we provide 
 information of the proposed architecture that mix sub-populations to increasing the 
 possibilities to find the best fitness of some benchmark functions by the use of queues and functions.
-In proposed architecture section every component is described with their role in the algorithm.
+In the proposed architecture section every component is described with their role in the algorithm.
 Followed by several experiments to test if the architecture is giving the expected results, get an easy
-way to hybridation and a fast convergence, increasing the performance of existing algorithms as Genetic Algorithms
-and Particle Swarm Optimization making an scalable algorithm.
+way to hybridization and fast convergence, increasing the performance of existing algorithms as Genetic Algorithms
+and Particle Swarm Optimization making a scalable algorithm.
 To finalize the document we conclude with the response to the question that if the architecture is useful 
-to be applied on population-based algorithms and future work to remove deficiencies.
+to be applied to population-based algorithms and future work to remove deficiencies.
 %%
 %% A description of the paper goes here
 %% what are we proposing? You can start with the description in the abstract.  
@@ -214,9 +214,9 @@ to be applied on population-based algorithms and future work to remove deficienc
 
 
 Recently, cloud providers such as Amazon Web Services (AWS), IBM Cloud, and
-Google Cloud, offer a new alternative to programming through interfaces called
-Serverless Computing  [References], this platform consists in an effortless
-mechanism where developers upload the code into the platform and execute it as
+Google Cloud, offers a new alternative to programming through interfaces called
+Serverless Computing [References], this platform consists of an effortless
+a mechanism where developers upload the code into the platform and execute it as
 many times as it is required, scaling and allowing to do this in parallel. This
 way, the developers do not worry about servers, connections, and other
 configurations. In serverless, users pay only for what it is used. There is also
@@ -232,23 +232,22 @@ the option to install some of these platforms locally; for instance, AWS (Amazon
 \subsubsection{Serverless Function} 
 In math, a function is a relation between a set of inputs and an allowed set of
 outputs, with the idea that each input goes to a single output. However, in
-computer science a function is defined as a unit of code that has a role into a
-greater code structure, works on varius inputs that usually are variables and throws a concrete
-output that are the result of process those variables. One of the main features that belongs to
-functions is that are stateless, they are focused on inputs and result with a simple process
-that does not require an state, in the moment the inputs get into the function are already generating an output.  
-In serverless,  events such as messages or HTTP requests can trigger these functions. 
+computer science, a function is defined as a unit of code that has a role in a
+greater code structure, works on various inputs that usually are variables and throws a concrete
+output that is the result of the process those variables. One of the main features that belong to
+functions is that they are stateless, they are focused on inputs and result with a simple process
+that does not require a state, at the moment the inputs get into the function are already generating an output. 
+In serverless, events such as messages or HTTP requests can trigger these functions. 
 Also, each function scales independently and is stateless with a short duration \cite{Baird2016}.
 % I am not a fan of that definition of a function in CS - Mario
 % Explain a bit more the "Stateless" part - Mario 
 
 \section{Proposed architecture}
 
-The propose is an architecture that allows to process a simple population that
+The propose is an architecture that allows processing of a simple population that
 is divided into sub-populations distributing them to process in different ways
-and then communicating each other with purpose of increase the possibility to
-find the best fitness of a function. This architecture can accept the use of an
-indeterminate number of algorithms, allowing an easy hybridation and continuous
+and then communicating each other with the purpose of increase the possibility to
+find the best fitness of a function. This architecture can accept the use of an indeterminate number of algorithms, allowing an easy hybridization and continuous
 adaptability for different problems.
 
 This architecture consist in 3 nodes, they are explained on the next points:
@@ -256,52 +255,48 @@ This architecture consist in 3 nodes, they are explained on the next points:
 \begin{itemize}
   \item Manager: 
   Here a population conformed by sub-populations is created and the architecture
-  initialize parameters to run the algorithm. Every time a sub-population is created 
-  triggers an event that sends the subpopulations to be stored in a file JSON of
-  MongoDB (preventing to saturate the memory) and to a message queue that is
-  directed to its subsequent processing in the “Receiver” section that is our
-  cluster of functions (Faas), because each sub-population requires the execution
-  of a different algorithm, there is a different channel in the web sockets for
-  each type of algorithm that triggers its respective serverless function. Once
-  a subpopulation is processed, it is returned and a selection is made for the
-  sub-population migration. The migration selection is made by taking the
-  population attribute of the subpopulation that was returned and the
-  subpopulation that it have been selected among the best 2, it should be noted
-  that the decision to identify the best from the 2 is made randomly. Once the
-  selection is made, a Splitting Point Uniform crossing will be made. The 2 new
-  subpopulations replace their self and are resent it back to their respective
-  serverless function and this process is repeited until completing the number
-  of assigned migrations for the multi-population \cite{Ma2019,Santander-jim2018}. Of course this whole process
-  is performed asynchronously avoiding wait for all responses from serverless
-  functions to perform a crossover or a update of the multi-population status
-  \cite{Lovbjerg2001,Jimeno2019}. In the following figure you can see from
-  illustrative way how the multi-population is composed.
+ initialize parameters to run the algorithm. Every time a sub-population is created 
+ triggers an event that sends the subpopulations to be stored in a file JSON of
+ MongoDB (preventing to saturate the memory) and to a message queue that is
+ directed to its subsequent processing in the “Receiver” section that is our cluster of functions (Faas), because each sub-population requires the execution
+ of a different algorithm, there is a different channel in the web sockets for
+ each type of algorithm that triggers its respective serverless function. Once a subpopulation is processed, 
+ it is returned and a selection is made for the sub-population migration. The migration selection is made by taking 
+ the population attribute of the subpopulation that was returned and the subpopulation that it has been selected 
+ among the best 2, it should be noted that the decision to identify the best from the 2 is made randomly. 
+ Once the selection is made, a Splitting Point Uniform crossing will be made. The 2 new
+ subpopulations replace their self and are resent it back to their respective serverless function and this process is repeated until completing the number
+ of assigned migrations for the multi-population \cite{Ma2019,Santander-jim2018}. Of course this whole process
+ is performed asynchronously avoiding the wait for all responses from serverless
+ functions to perform a crossover or an update of the multi-population status
+ \cite{Lovbjerg2001,Jimeno2019}. In the following figure, you can see from
+ the illustrative way how the multi-population is composed.
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.7\textwidth]{img/multipopulation.png}
   \caption{Multipopulation representation.} \label{fig1}
   \end{figure}
-  The mechanism to send the sub-population to the serverless functions is create a queue
-  with a dimension of 2 positions that allow to compunicate in an asynchronous way.
-\item Message Provider: Its purpose is the creation of a sub-population messages
-queue which is the comunication channel between the sub-population Manager and
+  The mechanism to send the sub-population to the serverless functions is creating a queue
+ with a dimension of 2 positions that asynchronously allow communicating.
+\item Message Provider: Its purpose is the creation of a sub-population messages 
+queue which is the communication channel between the sub-population Manager and
 the Receiver (FaaS), each message is a trigger for the execution of a GA or PSO
 function. Thanks to the message queue, it is possible to perform the serverless
-functions asynchronously, avoiding that the algorithm wait for responses
+functions asynchronously, avoiding that the algorithm waits for responses
 independently of their duration and the simultaneous evaluation of different
 sub-populations independent of its algorithm or characteristics.
 \item Receiver: The following section contains the Serverless functions of the
-algorithms to be executed, reduced the best possible using the functional
+algorithms to be executed, reducing the best possible using the functional
 programming paradigm so that they can be converted into FaaS without problems,
-in addition to achieving a completely clean and fast execution
+in addition to achieving a completely clean and fast execution.
 \cite{Roberts2016} . Each message received on this node is executed in the form
-of a multi-threaded process in parallel, this allows to having more than one
-population-based search algorithm running at the same time, and making a copy of
-itself each algorithm function as required.
+of a multi-threaded process in parallel, this allows having more than one
+population-based search algorithm running at the same time and making a copy of
+itself each algorithm functions as required.
 \end{itemize}
 
 To develop this architecture the applied technologies are based in JavaScript
-using Node JS as it can be see it in the General Architecture Flowchart.
+using Node JS as it can be seen in the General Architecture Flowchart.
 
 \begin{figure}[htp]
   \centering
@@ -326,14 +321,13 @@ directly with their respective algorithms.
 \subsection{Splitting Point Uniform Migration}
 
 This architecture communicates sub-populations using migrations, taking information from 2 sub-populations and mixing them 
-using a process similar to crossover in Genetic Algorithms, creating 2 completely new sub-populations
-every time a processed sub-population arrives into the Manager node and replacing them self in the multi-population.
+using a process similar to a crossover in Genetic Algorithms, creating 2 completely new sub-populations
+every time a processed sub-population arrives into the Manager node and replacing themselves in the multi-population.
 
-The migration created to this architecture is a method called Splitting Point Uniform that consist in a 
-uniform mask that is created to apply the migration between individuals, vectors or both of them, from 2
+The migration created to this architecture is a method called Splitting Point Uniform that consists of a uniform mask that is created to apply the migration between individuals, vectors or both of them, from 2
 sub-populations. The selected data are combined using the middle point between
 the active values points by the binary mask generated randomly. This process iterates the 2 sub-populations to
-randomly swap values and replace some of them with middle points \cite{Kramer2017,Kaya2011}.
+randomly swap values and replaces some of them with middle points \cite{Kramer2017,Kaya2011}.
 
 
 \begin{figure}[htp]
@@ -342,9 +336,9 @@ randomly swap values and replace some of them with middle points \cite{Kramer201
   \caption{Splitting Point Uniform process.} \label{fig4}
   \end{figure}
 
-  \subsection{Migration Selection} The 2 sub-populations selected to realize migration are one arrived sub-population from a serverless function and another one 
+  \subsection{Migration Selection} The 2 sub-populations selected to realize migration is one arrived sub-population from a serverless function and another one 
   using selection by tournament keeping up the information of the best
-  sub-population of the multi-population but without discarding posible sub-populations that in a near future could be the clue to find optimal values.
+  sub-population of the multi-population but without discarding possible sub-populations that in a near future could be the clue to find optimal values.
 
 \begin{figure}[htp]
   \centering
@@ -355,19 +349,19 @@ randomly swap values and replace some of them with middle points \cite{Kramer201
 
 \section{Experiments and Results}
 \subsection{Experiments}
-Now that an interaction between sub-populations with different algorithms is
-working and  hybridizaation has been a success, using until now the added
+Now that interaction between sub-populations with different algorithms is
+working and hybridization has been a success, using until now the added
 algorithms (GA and PSO) algorithms \cite{Kramer2017,Guerrero2017,Lalwani2019}, all thanks to the developed architecture,
 let's proceed to the experiments. This section is going to be the execution of
 several experiments from 2 to 40 dimensions, with a stop criterial of an error
-below  0.5E-8, without a parameter optimization method, waiting that the
+below 0.5E-8, without a parameter optimization method, waiting that the
 architecture by its self would be enough to increase the possibility to find a
 better optimal result than the traditional methods. All this hoping that the
-results will probe the needness of this kind of architecture on increasing
+results will probe the needs of this kind of architecture on increasing
 dimensions. To test if the architecture was useful, several experiments were
 made to solve benchmark functions, for this case the functions are Sphere,
 Rastrigin and Rosenbrock. Using 10 sub-population for each experiment and
-maximum 4 migrations per sub-population with different algorithms and parameters
+a maximum of 4 migrations per sub-population with different algorithms and parameters
 for each sub-population.
 
 \begin{figure}[htp]
@@ -378,11 +372,11 @@ for each sub-population.
 
 \subsection{Parameters Configuration} 
 
-This architecture modifies the traditional way to work with population based
+This architecture modifies the traditional way to work with population-based
 algorithms, then the experiments could not be parameterized as usually are.
 
 Then the experiments are scaled by their number of evaluations and the
-parameters must be configured to be adjusted to the next criterial, using the
+parameters must be configured to be adjusted to the next criteria, using the
 next expression:
 
 \begin{equation}
@@ -390,9 +384,9 @@ next expression:
    Evaluations = 10^{5} Dimensions
    \end{equation}
 
-For example, if the experiment has 2 dimensions, the maximum number of
-evaluations will be 200,0000, for 10 dimensions will be 1,000,000 of evaluacions
-and the same with the others dimensions.
+   For example, if the experiment has 2 dimensions, the maximum number of
+   evaluations will be 200,0000, for 10 dimensions will be 1,000,000 of evaluations
+   and the same with the other dimensions.
 
 
 
@@ -780,17 +774,16 @@ PSO Inercia factor & Random[0.5,4.0] \\
 %
 \section{Conclusion}
 
-This architecture is completely scalable and useful for hybridation of multiple algorithms,
-until now is only GA and PSO but according with the results with this kind of architecture
+This architecture is completely scalable and useful for hybridization of multiple algorithms,
+until now is only GA and PSO but according to the results with this kind of architecture
 there is no limit and it works better than multi-populations with only one algorithm, also
 every experiment executes in short times because serverless functions searching in an asynchronous way getting a fast convergence.
 
 \section{Future work}
 
-To get a continuous improvement it is believed that it is required a sort of mutation applied to the 
-sub-populations. This mutation would be a swapping type, taking the algoritm parameters from the best and the worst 
-sub-populations, increasing the possibilities to get and optimal result, preventing get stucked into a local optimum.
-Of course it is expected to use this architecture using more algorithms than GA and PSO.
+To get a continuous improvement it is believed that it is required a sort of mutation applied to the sub-populations. This mutation would be a swapping type, taking the algorithm parameters from the best and the worst 
+sub-populations, increasing the possibilities to get an optimal result, preventing get stuck into a local optimum.
+Of course, it is expected to use this architecture using more algorithms than GA and PSO.
 
 
 \bibliography{samplepaper}
