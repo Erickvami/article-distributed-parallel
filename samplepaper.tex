@@ -40,7 +40,7 @@ Third Author\inst{2}\orcidID{2222--3333-4444-5555}}
     parameters of execution, allowing the hybridation of multiple algorithms, in
     this case Genetic Algorithms (GAs) and Particle Swarm Optimization (PSO).
     Using a message queue, each population is manipulated by asynchronous
-    serverless functions, taking advantage of functional programming. The
+    serverless functions, taking advantage of functional programming \cite{Kunasaikaran2016}. The
     cloud-ready javascript implementation, includes a web-based application for
     the configuration and interaction with algorithms. We executed several
     experiments in order to validate the system, using benchmark functions and
@@ -93,7 +93,7 @@ Distributed and cloud-based architectures are used extensively in the software
 industry because of their high performance and lower overall cost.  Many systems
 are being created and migrating step by step to microservices and new serverless
 architectures, which proposes the use of “Function as a Service” (FaaS).
-Researchers are starting to exploit this type of architectures [References] in
+Researchers are starting to exploit this type of architectures \cite{Hellerstein2018,Everywhere,Baird2016} in
 heuristic optimization development, and here we take advantage of them to
 increase the performance of some population-based algorithms.
 
@@ -143,7 +143,7 @@ output that are the result of process those variables. One of the main features 
 functions is that are stateless, they are focused on inputs and result with a simple process
 that does not require an state, in the moment the inputs get into the function are already generating an output.  
 In serverless,  events such as messages or HTTP requests can trigger these functions. 
-Also, each function scales independently and is stateless with a short duration.
+Also, each function scales independently and is stateless with a short duration \cite{Baird2016}.
 % I am not a fan of that definition of a function in CS - Mario
 % Explain a bit more the "Stateless" part - Mario 
 
@@ -176,7 +176,7 @@ This architecture consist in 3 nodes, they are explained on the next points:
   selection is made, a Splitting Point Uniform crossing will be made. The 2 new
   subpopulations replace their self and are resent it back to their respective
   serverless function and this process is repeited until completing the number
-  of assigned migrations for the multi-population. Of course this whole process
+  of assigned migrations for the multi-population \cite{Ma2019,Santander-jim2018}. Of course this whole process
   is performed asynchronously avoiding wait for all responses from serverless
   functions to perform a crossover or a update of the multi-population status
   \cite{Lovbjerg2001,Jimeno2019}. In the following figure you can see from
@@ -211,7 +211,7 @@ using Node JS as it can be see it in the General Architecture Flowchart.
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.9\textwidth]{img/general diagram architecture 2.png}
-  \caption{General Architecture Flowchart.} \label{fig1}
+  \caption{General Architecture Flowchart.} \label{fig2}
   \end{figure}
 
 \subsection{Sub-population definition}
@@ -225,7 +225,7 @@ directly with their respective algorithms.
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\textwidth]{img/subpopulationDefinition.png}
-  \caption{Sub-population composition.} \label{fig1}
+  \caption{Sub-population composition.} \label{fig3}
   \end{figure}
 
 \subsection{Splitting Point Uniform Migration}
@@ -238,13 +238,13 @@ The migration created to this architecture is a method called Splitting Point Un
 uniform mask that is created to apply the migration between individuals, vectors or both of them, from 2
 sub-populations. The selected data are combined using the middle point between
 the active values points by the binary mask generated randomly. This process iterates the 2 sub-populations to
-randomly swap values and replace some of them with middle points.
+randomly swap values and replace some of them with middle points \cite{Kramer2017,Kaya2011}.
 
 
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.9\textwidth]{img/splittinPointUniform.png}
-  \caption{Splitting Point Uniform process.} \label{fig1}
+  \caption{Splitting Point Uniform process.} \label{fig4}
   \end{figure}
 
   \subsection{Migration Selection} The 2 sub-populations selected to realize migration are one arrived sub-population from a serverless function and another one 
@@ -254,7 +254,7 @@ randomly swap values and replace some of them with middle points.
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.5\textwidth]{img/selection.png}
-  \caption{Selection by tournament.} \label{fig1}
+  \caption{Selection by tournament.} \label{fig5}
   \end{figure}
 
 
@@ -262,7 +262,7 @@ randomly swap values and replace some of them with middle points.
 \subsection{Experiments}
 Now that an interaction between sub-populations with different algorithms it is
 working and  hybridation have been a success, using until now the added
-algorithms (GA and PSO) algorithms, all thanks to the developed architecture,
+algorithms (GA and PSO) algorithms \cite{Kramer2017,Guerrero2017,Lalwani2019}, all thanks to the developed architecture,
 lets procede to the experiments. This section is going to be the execution of
 several experiments from 2 to 40 dimensions, with a stop criterial of an error
 below  0.5E-8, without a parameter optimization method, waiting that the
@@ -278,7 +278,7 @@ for each sub-population.
 \begin{figure}[htp]
   \centering
     \includegraphics[width=0.7\textwidth]{img/benchmark.png}
-    \caption{Benchmark functions for experimentation.} \label{fig1}
+    \caption{Benchmark functions for experimentation.} \label{fig6}
     \end{figure}
 
 \subsection{Parameters Configuration} 
@@ -356,17 +356,17 @@ and the same with the others dimensions.
 
 \begin{figure}[htp]
 \includegraphics[width=\textwidth]{img/2-sphere.jpg}
-\caption{2 dimension experiments Sphere.} \label{fig1}
+\caption{2 dimension experiments Sphere.} \label{fig7}
 \end{figure}
 
 \begin{figure}[htp]
   \includegraphics[width=\textwidth]{img/2-rastrigin.jpg}
-  \caption{2 dimension experiments Rastrigin.} \label{fig1}
+  \caption{2 dimension experiments Rastrigin.} \label{fig8}
   \end{figure}
   
 \begin{figure}[htp]
   \includegraphics[width=\textwidth]{img/2-rosenbrock.jpg}
-  \caption{2 dimension experiments Rosenbrock.} \label{fig1}
+  \caption{2 dimension experiments Rosenbrock.} \label{fig9}
   \end{figure}
 
 \begin{table}[htp]
@@ -448,17 +448,17 @@ PSO Inercia factor & Random[0.5,4.0] \\
     
       \begin{figure}[htp]
         \includegraphics[width=\textwidth]{img/10-sphere.jpg}
-        \caption{10 dimensions experiments Sphere.} \label{fig1}
+        \caption{10 dimensions experiments Sphere.} \label{fig10}
         \end{figure}
 
         \begin{figure}[htp]
           \includegraphics[width=\textwidth]{img/10-rastrigin.jpg}
-          \caption{10 dimensions experiments Rastrigin.} \label{fig1}
+          \caption{10 dimensions experiments Rastrigin.} \label{fig11}
           \end{figure}
 
           \begin{figure}[htp]
             \includegraphics[width=\textwidth]{img/10-rosenbrock.jpg}
-            \caption{10 dimensions experiments Rosenbrock.} \label{fig1}
+            \caption{10 dimensions experiments Rosenbrock.} \label{fig12}
             \end{figure}
 
         \begin{table}[htp]
@@ -540,17 +540,17 @@ PSO Inercia factor & Random[0.5,4.0] \\
           
             \begin{figure}[htp]
               \includegraphics[width=\textwidth]{img/20-sphere.jpg}
-              \caption{20 dimensions experiments Sphere.} \label{fig1}
+              \caption{20 dimensions experiments Sphere.} \label{fig13}
               \end{figure}
       
               \begin{figure}[htp]
                 \includegraphics[width=\textwidth]{img/20-rastrigin.jpg}
-                \caption{20 dimensions experiments Rastrigin.} \label{fig1}
+                \caption{20 dimensions experiments Rastrigin.} \label{fig14}
                 \end{figure}
       
                 \begin{figure}[htp]
                   \includegraphics[width=\textwidth]{img/20-rosenbrock.jpg}
-                  \caption{20 dimensions experiments Rosenbrock.} \label{fig1}
+                  \caption{20 dimensions experiments Rosenbrock.} \label{fig15}
                   \end{figure}
 
                   \begin{table}[htp]

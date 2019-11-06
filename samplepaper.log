@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.14)  5 NOV 2019 17:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.14)  5 NOV 2019 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -158,49 +158,7 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 LaTeX Warning: Label `fig1' multiply defined.
 
 
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
 LaTeX Warning: Label `table:resultados-2' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
 
 
 LaTeX Warning: Label `table:resultados-2' multiply defined.
@@ -438,8 +396,8 @@ Package pdftex.def Info: img/40-rosenbrock.jpg  used on input line 645.
 <./img/2-rosenbrock.jpg>] [10] [11 <./img/10-sphere.jpg> <./img/10-rastrigin.jp
 g>] [12 <./img/10-rosenbrock.jpg>] [13 <./img/20-sphere.jpg> <./img/20-rastrigi
 n.jpg>] [14 <./img/20-rosenbrock.jpg>] [15 <./img/40-sphere.jpg>] [16 <./img/40
--rastrigin.jpg> <./img/40-rosenbrock.jpg>] (./samplepaper.bbl) [17] (./samplepa
-per.aux)
+-rastrigin.jpg> <./img/40-rosenbrock.jpg>] (./samplepaper.bbl [17]) [18] (./sam
+plepaper.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -448,13 +406,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2066 strings out of 492167
- 29965 string characters out of 6125388
- 131584 words of memory out of 5000000
- 6398 multiletter control sequences out of 15000+600000
+ 2089 strings out of 492167
+ 30178 string characters out of 6125388
+ 131741 words of memory out of 5000000
+ 6421 multiletter control sequences out of 15000+600000
  7801 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,7n,30p,278b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,7n,30p,278b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -466,10 +424,10 @@ cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on samplepaper.pdf (17 pages, 1208884 bytes).
+Output written on samplepaper.pdf (18 pages, 1213435 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 133 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
