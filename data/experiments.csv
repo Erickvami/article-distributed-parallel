@@ -1,4 +1,4 @@
-{1 => 2, 2 => 3, 3 => 5, 4 => 10, 5 => 20, 6 => 40}
+Function, Algorithm, Dimensions, Fitness
 Rastrigin, GA, 2, 0
 Rastrigin, GA, 3, 3.11573E-11
 Rastrigin, GA, 10, 2.65585E-08
