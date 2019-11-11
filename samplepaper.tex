@@ -73,47 +73,61 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 %
 %
 \section{Introduction}
-A universe of solutions can exist for a single optimization problem and
-sometimes is too big and complex to solve it traditionally. That is why
-heuristic, population-based algorithms, and other types of methods can be
-applied.  Population-based algorithms are useful to solve combinatory problems;
-however,  the performance of an algorithm depends on the problem and initial
-conditions. Usually, an algorithm is suitable for only a specific type of
-problem, and it is not always easy to know which algorithm is more fitting. Even
-assuming that we selected an appropriate algorithm, we must also find the
-appropriate parameters. To deal with these problems, parallel and hybrid
-architectures have been proposed. The clear advantage of these architectures is
-the faster execution of the algorithms. However, there is also the ability to
-change the search dynamically, having multiple algorithms with different
-parameters interacting with each other at the same time. 
+A universe of candidate solutions can exist for a single optimization problem,
+and sometimes traditional methods are to slow or fail to find an optimal
+solution. That is why heuristic, population-based algorithms, and other types of
+methods can be applied to find a good enough solution in a reasonable
+time-frame. Population-based algorithms are useful to solve combinatory
+problems; however,  the performance of an algorithm depends on the problem and
+initial conditions. Usually, an algorithm is suitable for only a specific type
+of problems, and it is not always easy to know which algorithm is more fitting.
+Even assuming that we selected an appropriate algorithm, we must also find the
+appropriate parameters.  Some parameters affect the accuracy of the solution and
+the convergence speed of the algorithms as they affect the degree of exploration
+or exploitation of the search space.  Hybrid algorithms that combine two or more
+heuristics can benefit from the strengths of each. For instance, a genetic
+algorithm could find a promising global solution while another algorithm, more
+suitable for a local search, finds the global optimum. To deal with these problems,
+parallel and hybrid architectures have been proposed. The clear advantage of
+these architectures is the faster execution of the algorithms. However, there is
+also the ability to change the search dynamically, having multiple algorithms
+with different parameters interacting with each other at the same time. 
 
-In this work, we propose the use of several serverless functions to process
-small fragments from a population in a distributed way, turning a population
-into a multi-population. Independent functions, running asynchronously by the 
-use of queues, to process each sub-population. Also, sub-populations use the migration of data
-between them, to help each other even if the algorithms or parameters of each
-sub-population are different. The objective is to prevent the algorithm from
-falling into optimal local values and increase processing performance.
+In this work, we present an implementation of an event-driven architecture
+proposed in [Anonymous]. We also propose alternative methods of migration between 
+populations that compansates for differences in the execution-time of the
+functions. 
 
-Distributed and cloud-based architectures are used extensively in the software
-industry because of their high performance and lower overall cost.  Many systems
-are being created and migrating step by step to microservices and new serverless
-architectures, which proposes the use of “Function as a Service” (FaaS).
-Researchers are starting to exploit this type of architectures \cite{Hellerstein2018,Everywhere,Baird2016} in
-heuristic optimization development, and here we take advantage of them to
-increase the performance of some population-based algorithms.
+The   use of serverless functions to process small
+fragments from a population in a distributed way, turning a population into a
+multi-population. The main components are stateless functions, running
+asynchronously, and communicating using message-queues,  to process each
+sub-population. Also, sub-populations use the migration of data between them, to
+help each other even if the algorithms or parameters of each sub-population are
+different. The objective is to prevent the algorithm from falling into optimal
+local values and along with increasing the processing performance.
 
-This document shows what are serverless functions and their spot into the world
-of software architecture, describing its features and advantages of its implementation
-compared with others. Once that the concept of Serverless is understood we provide 
-information of the proposed architecture that mix sub-populations to increasing the 
-possibilities to find the best fitness of some benchmark functions by the use of queues and functions.
-In the proposed architecture section every component is described with their role in the algorithm.
-Followed by several experiments to test if the architecture is giving the expected results, get an easy
-way to hybridization and fast convergence, increasing the performance of existing algorithms as Genetic Algorithms
-and Particle Swarm Optimization making a scalable algorithm.
-To finalize the document we conclude with the response to the question that if the architecture is useful 
-to be applied to population-based algorithms and future work to remove deficiencies.
+%This document shows what are serverless functions and their spot into the world
+%of software architecture, describing its features and advantages of its
+%implementation compared with others. Once that the concept of Serverless is
+%understood  
+% I think this can be explained briefly in the state of the art - Mario
+
+%%%%% BEGIN (needs work)
+we provide information of the proposed architecture that mix
+sub-populations to increasing the possibilities to find the best fitness of some
+benchmark functions by the use of queues and functions. In the proposed
+architecture section every component is described with their role in the
+algorithm. Followed by several experiments to test if the architecture is giving
+the expected results, get an easy way to hybridization and fast convergence,
+increasing the performance of existing algorithms as Genetic Algorithms and
+Particle Swarm Optimization making a scalable algorithm. To finalize the
+document we conclude with the response to the question that if the architecture
+is useful to be applied to population-based algorithms and future work to remove
+deficiencies.
+%%%%% END (needs work): There is a king of standar way of writing this last part
+% we will leave it to the end. - Mario
+
 %%
 %% A description of the paper goes here
 %% what are we proposing? You can start with the description in the abstract.  
@@ -124,11 +138,24 @@ to be applied to population-based algorithms and future work to remove deficienc
 
 \section{State of the Art}
 
+Distributed and cloud-based architectures are used extensively in the software
+industry because of their high performance and lower overall cost.  Many systems
+are being created and migrating step by step to microservices and new serverless
+architectures, which proposes the use of “Function as a Service” (FaaS).
+Researchers are starting to exploit this type of architectures
+\cite{Hellerstein2018,Everywhere,Baird2016} in heuristic optimization
+development, and here we take advantage of them to increase the performance of
+some population-based algorithms.
+
 
 \subsection{Serverless}
 % These sections can be optional, 
 % they can be part of the Intro, SoA, of a Concepts section - Mario
 
+% Multi-population
+% Parallel, Distributed 
+% Cloud
+% Serverless
 
 Recently, cloud providers such as Amazon Web Services (AWS), IBM Cloud, and
 Google Cloud, offers a new alternative to programming through interfaces called
