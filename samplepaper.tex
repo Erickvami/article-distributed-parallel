@@ -156,12 +156,17 @@ because each subpopulation will search in a particular area. Recombination or
 migration between subpopulations is needed to avoid a premature convergence of
 candidate solutions. An additional advantage of multi-populations is that each
 subpopulation could be processed in parallel. Several works in multi-population
-optimization demonstrate \cite{wu2016differential} that the method can easily
+optimization demonstrate that the method can easily
 integrate various nature-inspired optimization algorithms, and it often performs
-better than single-population optimization algorithms \cite{ma2019multi}.
+better than single-population optimization algorithms 
+\cite{wu2016differential,nseef2016adaptive}.
 
 
 \subsection{Parallel, Distributed}
+Multi-population algorithm are initial
+
+
+
 Distributed and cloud-based architectures are used extensively in the software
 industry because of their high performance and lower overall cost. Many systems
 are being created and migrating step by step to microservices and new serverless
@@ -803,6 +808,11 @@ short times because serverless functions searching in an asynchronous way
 getting a fast convergence.
 
 \section{Future work}
+
+% Reference with interesting challenges: li2015multi 
+% Dynamic optimization needs: a non-fixed number of populations, 
+% how to increase (measure) diversity in dynamic optimization problems.
+% restrict or not restrict populations in certain areas.
 
 To get a continuous improvement it is believed that it is required a sort of
 mutation applied to the sub-populations. This mutation would be a swapping type,
