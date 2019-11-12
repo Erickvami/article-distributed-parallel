@@ -137,7 +137,7 @@ stateless functions, and more algorithms can be added in the same way.
 
 % The title of these subsections will be removed, they are just place-holders
 % References are pending
-\subsection{Multi-population >}
+\subsection{Multi-population}
 In the past few decades, nature-inspired optimization algorithms have been
 applied to solve complex real-world problems \cite{yang2014nature}. Algorithms
 inspired in natural processes,  include evolutionary algorithms (EAs)
@@ -161,7 +161,7 @@ integrate various nature-inspired optimization algorithms, and it often performs
 better than single-population optimization algorithms \cite{ma2019multi}.
 
 
-\subsection{Parallel, Distributed >}
+\subsection{Parallel, Distributed}
 Distributed and cloud-based architectures are used extensively in the software
 industry because of their high performance and lower overall cost. Many systems
 are being created and migrating step by step to microservices and new serverless
@@ -171,7 +171,7 @@ Researchers are starting to exploit this type of architectures in heuristic opti
 development, and here we take advantage of them to increase the performance of
 some population-based algorithms.
 
-\subsection{Cloud, Serverless >}
+\subsection{Cloud, Serverless}
 % These sections can be optional, 
 % they can be part of the Intro, SoA, of a Concepts section - Mario
 
@@ -250,9 +250,9 @@ because each one only has a simple operation that generates an expected result
 
 \section{Proposed architecture}
 
-The propose is an architecture that allows processing of a simple population
-that is divided into sub-populations distributing them to process in different
-ways and then communicating each other with the purpose of increase the
+The proposal is an architecture that allows processing of a single population
+that is divided into sub-populations, distributing them to process in different
+ways, and then communicating each other with the purpose of increase the
 possibility to find the best fitness of a function. This architecture can accept
 the use of an indeterminate number of algorithms, allowing an easy hybridization
 and continuous adaptability for different problems.
@@ -260,7 +260,7 @@ and continuous adaptability for different problems.
 This architecture consist in 3 nodes, they are explained on the next points:
 
 \begin{itemize}
-  \item Manager: 
+  \item {\bf Manager}: 
   Here a population conformed by sub-populations is created and the architecture
   initialize parameters to run the algorithm. Every time a sub-population is
   created triggers an event that sends the subpopulations to be stored in a file
@@ -291,7 +291,7 @@ This architecture consist in 3 nodes, they are explained on the next points:
   The mechanism to send the sub-population to the serverless functions is
  creating a queue with a dimension of 2 positions that asynchronously allow
  communicating.
-\item Message Provider: Its purpose is the creation of a sub-population messages
+\item {\bf Message Provider}: Its purpose is the creation of a sub-population messages
 queue which is the communication channel between the sub-population Manager and
 the Receiver (FaaS), each message is a trigger for the execution of a GA or PSO
 function. Thanks to the message queue, it is possible to perform the serverless
