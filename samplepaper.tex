@@ -27,7 +27,8 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 % First names are abbreviated in the running head.
 % If there are more than two authors, 'et al.' is used.
 %
-\institute{National Technological Institute of Mexico 
+% \institute{National Technological Institute of Mexico
+\institute{Hidden institute
 \email{XXXXXXXXXX@XXXX.com}\\
 %\url{http://www.springer.com/gp/computer-science/lncs}\\
 \email{\{abc,lncs\}}}
@@ -36,19 +37,27 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 %
 \begin{abstract}
   % It seems like the abstract is incompleate, it is a good idea to 
-  % write it at the end - Mario 
+  % write it at the end - Mario
+  % You can't present software implementations, but a methodology that
+  % you have tested - JJ
   In this work, we present a software implementation that follows an
   event-driven architecture, designed to asynchronously distribute the
   processing of population-based algorithms. The search algorithm uses a
   multi-population approach, creating multiple populations with different
   parameters of execution, allowing the hybridization of multiple algorithms, in
   this case Genetic Algorithms (GAs) and Particle Swarm Optimization (PSO).
-  Using a message queue, each population is manipulated by asynchronous
+  Using a message queue, each population is handled by asynchronous
   serverless functions, taking advantage of functional programming
+  % "taking advantage of" is not really it. Really, it needs to be
+  % that way.
     % \cite{Kunasaikaran2016}
     % No citations in abstract.
-    .This cloud-ready javascript implementation includes a web-based application for
-    the configuration and interaction with algorithms. We executed several
+    .This cloud-ready JavaScript implementation includes a web-based
+    application for
+    % Why is it cloud ready? - JJ
+    the configuration and interaction with algorithms. We executed
+    several
+    % That's an implementation detail - JJ
     experiments to validate the system, using benchmark functions and
     several configurations. Results show ...
 
@@ -62,7 +71,6 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
    % Multi-population. 
 
 
-
 \keywords{Multi-population  
   \and Asynchronous 
   \and Sub-population 
@@ -73,40 +81,86 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 %
 %
 \section{Introduction}
+
 A universe of candidate solutions can exist for a single optimization problem,
-and sometimes traditional methods are to slow or fail to find an optimal
-solution. That is why heuristic, population-based algorithms, and other types of
+and sometimes traditional methods are too slow or fail to find an optimal
+solution. % What do you mean by "traditional" methods? - JJ
+That is why heuristic, population-based algorithms, and other types of
 methods can be applied to find a good enough solution in a reasonable
 time-frame. Population-based algorithms are useful to solve combinatory
 problems; however,  the performance of an algorithm depends on the problem and
 initial conditions. Usually, an algorithm is suitable for only a specific type
-of problems, and it is not always easy to know which algorithm is more fitting.
+of problems, and it is not always easy to know which algorithm is more
+fitting.
+% Up to here this is already known in an evolutionary algorithm
+% conference. I also don't get your point
+% Probably what you want to say is something along the lines of
+% "The no free lunch theorem states that there's no single algorithm
+% that can find adequate solutions for all possible problems. In
+% general, a single algorithm will need fine-tuning of its parameters
+% to find the best possible solution in an adequate amount of
+% time...."
+% Then you can continue into the next paragraph, where you propose a
+% solution - JJ
+
 Even assuming that we selected an appropriate algorithm, we must also find the
 appropriate parameters.  Some parameters affect the accuracy of the solution and
 the convergence speed of the algorithms as they affect the degree of exploration
 or exploitation of the search space.  Hybrid algorithms that combine two or more
-heuristics can benefit from the strengths of each. For instance, a genetic
-algorithm could find a promising global solution while another algorithm, more
+heuristics can benefit from the strengths of each. % You need to
+                                % define what you mean by hybrid
+                                % algorithm. Actually, this algorithms
+                                % is not hybrid, but a combination of
+                                % several algorithms. - JJ 
+
+For instance, a genetic
+algorithm could find a promising global solution that is not optimal while another algorithm, more
 suitable for a local search, finds the global optimum. To deal with these problems,
-parallel and hybrid architectures have been proposed. The clear advantage of
+parallel and hybrid architectures have been proposed. % Parallel
+                                % architectures were proposed mainly
+                                % for speed. You really need to
+                                % qualify this - JJ
+The clear advantage of
 these architectures is the faster execution of the algorithms. However, there is
-also the ability to change the search dynamically, having multiple algorithms
-with different parameters interacting with each other at the same time. 
+also the ability to change the search dynamically, % You can do that
+                                % in sequential architectures too - JJ
+having multiple algorithms
+with different parameters interacting with each other at the same
+time. % Now you're arriving somewhere. But you need to:
+% 1. Add more references. Most claims must have a reference to support it.
+% 2. State clearly from the beginning, and in a positive way (that is,
+% don't use the reasoning: this sucks, so we need something better)
+% what is your intention: use a parallel architecture for combined,
+% parameter-free-algorithms.
+% 3. 
 
 In this work, we present an implementation of an event-driven architecture
-proposed in [Anonymous] in which they propose the use of serverless functions to
-process small fragments from a population in a distributed way, turning a
-population into a multi-population. The main components are stateless functions,
-running asynchronously, and communicating using message-queues, to process each
+proposed in [Anonymous]; this is a so-called {\em serverless}
+architecture that
+processes small fragments % small? fragments? Aren't they independent populations?
+from a population in a distributed way, turning a
+population into a multi-population. % they're simply independent
+                                % populations - JJ
+The main components are stateless functions,
+running asynchronously, and communicating using message-queues, that process each
 sub-population. Also, sub-populations use the migration of data between them, to
 help each other even if the algorithms or parameters of each sub-population are
 different. The objective is to prevent the algorithm from falling into optimal
-local values and along with increasing the processing performance. This new
-implementation uses Javascript for the full-stack, and it is designed to be
+local values and along with increasing the processing performance.
+% But simple parallel evolutionary algorithms can also do the same
+% thing. You don't need to use two algorithms at the same time - JJ
+This new
+implementation uses JavaScript for the full stack, and it is designed to be
 executed locally or in a cloud environment. The implementation includes a
-web-based application to execute and monitor experiments interactively.  We also
+web-based application to execute and monitor experiments
+interactively. % implementation detail, best left for the conclusions
+               % - JJ
+We also
 propose alternative methods of migration between populations to compensate for
-differences in the execution time of the functions.  
+differences in the execution time of the functions. % This is probably
+                                % one of the main points of the
+                                % paper. Should be enphasized more
+                                % - JJ
 
 
 %This document shows what are serverless functions and their spot into the world
@@ -118,7 +172,7 @@ differences in the execution time of the functions.
 %%%%% BEGIN (needs work)
 
 To evaluate the software implementation and the capability of a hybrid solution,
-we conducted several experiments using benchmark functions, comparing the
+we conducted several experiments using different benchmark functions, comparing the
 results of single versus hybrid algorithms. For the experiments, we choose to
 compare the PSO and GA algorithms, as they are well understood, and there are
 several implementations in the literature. We implemented both algorithms as
@@ -132,6 +186,13 @@ stateless functions, and more algorithms can be added in the same way.
 %% what are the findings? 
 %% what is presented in each section? 
 %% Check other papers to get the idea - Mario
+
+The rest of the paper is organized as follows: next section is devoted
+to analyzing the state of the art in multi-population, multi-paradigm,
+stateless evolutionary algorithms. The architecture proposed is
+presented in Section \ref{sec:architecture} and put to work in the
+Section \ref{sec:exp}. Finally, we present our conclusions and the
+future lines of work.
 
 \section{State of the Art}
 
@@ -254,6 +315,7 @@ because each one only has a simple operation that generates an expected result
 
 
 \section{Proposed architecture}
+\label{sec:architecture}
 
 The proposal is an architecture that allows processing of a single population
 that is divided into sub-populations, distributing them to process in different
@@ -373,7 +435,9 @@ points \cite{Kramer2017,Kaya2011}.
   \end{figure}
 
 
-\section{Experiments and Results}
+  \section{Experiments and Results}
+  \label{sec:exp}
+  
 \subsection{Experiments}
 Now that interaction between sub-populations with different algorithms is
 working and hybridization has been a success, using until now the added
@@ -789,7 +853,17 @@ PSO Inercia factor & Random[0.5,4.0] \\
               Rosenbrock GA-PSO & 0.018538924 & 0.525086565 & 15\\
               \hline
               \end{tabular}
-              \end{table}
+            \end{table}
+
+            \begin{figure}
+              \centering
+                \includegraphics[width=0.32\linewidth]{img/rastrigin-boxplot.png}
+                \includegraphics[width=0.32\linewidth]{img/sphere-boxplot.png}
+                \includegraphics[width=0.32\linewidth]{img/rosenbrock-boxplot.png}
+              \caption{Boxplot of results for, from left to right,
+                Rastrigin, Sphere and Rosenbrock functions.\label{fig:boxplot}}
+            \end{figure}
+            
 % ---- Bibliography ----
 %
 % BibTeX users should specify bibliography style 'splncs04'.
