@@ -318,17 +318,20 @@ because each one only has a simple operation that generates an expected result
 \label{sec:architecture}
 
 The proposal is an architecture that allows processing of a single population
-that is divided into sub-populations, distributing them to process in different
-ways, and then communicating each other with the purpose of increase the
-possibility to find the best fitness of a function. This architecture can accept
+that is divided into sub-populations, distributing them to processes in different
+ways, and then communicating with each other with the purpose of increasing the
+possibility to find the highest fitness of a function. This architecture can accept
 the use of an indeterminate number of algorithms, allowing an easy hybridization
-and continuous adaptability for different problems.
+and continuous adaptability for different problems. % A reference to a
+                                % figure should go around here - JJ
 
-This architecture consist in 3 nodes, they are explained on the next points:
+% Before nodes, you need to explain the overall layout of the
+% architecture - JJ
+This architecture consist in 3 nodes, % Nodes or types of nodes?
+they are explained on the next points:
 
 \begin{itemize}
-  \item {\bf Manager}: 
-  Here a population conformed by sub-populations is created and the architecture
+  \item {\bf Manager}: This node creates a population conformed by sub-populations is created and the architecture
   initialize parameters to run the algorithm. Every time a sub-population is
   created triggers an event that sends the subpopulations to be stored in a file
   JSON of MongoDB (preventing to saturate the memory) and to a message queue
