@@ -333,8 +333,10 @@ they are explained on the next points:
 \begin{itemize}
   \item {\bf Manager}: This node creates a population conformed by sub-populations is created and the architecture
   initialize parameters to run the algorithm. Every time a sub-population is
-  created triggers an event that sends the subpopulations to be stored in a file
-  JSON of MongoDB (preventing to saturate the memory) and to a message queue
+  created triggers an event that sends the subpopulations to be stored in a 
+  JSON file into the MongoDB data store (preventing to saturate the
+  memory) % what do you mean here? - JJ
+  and to a message queue
   that is directed to its subsequent processing in the “Receiver” section that
   is our cluster of functions (Faas), because each sub-population requires the
   execution of a different algorithm, there is a different channel in the web
@@ -362,13 +364,18 @@ they are explained on the next points:
  creating a queue with a dimension of 2 positions that asynchronously allow
  communicating.
 \item {\bf Message Provider}: Its purpose is the creation of a sub-population messages
-queue which is the communication channel between the sub-population Manager and
+  queue which is the communication channel % A queue is not a channel,
+                                % it's _in_ a channel - JJ
+  between the sub-population Manager and
 the Receiver (FaaS), each message is a trigger for the execution of a GA or PSO
 function. Thanks to the message queue, it is possible to perform the serverless
-functions asynchronously, avoiding that the algorithm waits for responses
+functions asynchronously, avoiding waiting states in the algorithm
+while responses arrive, 
 independently of their duration and the simultaneous evaluation of different
 sub-populations independent of its algorithm or characteristics.
-\item Receiver: The following section contains the Serverless functions of the
+\item Receiver: The following section contains the Serverless
+  functions of the % which section? Are you talking about the receiver
+                   % itself? - JJ
 algorithms to be executed, reducing the best possible using the functional
 programming paradigm so that they can be converted into FaaS without problems,
 in addition to achieving a completely clean and fast
@@ -379,7 +386,8 @@ of itself each algorithm functions as required.
 \end{itemize}
 
 To develop this architecture the applied technologies are based in JavaScript
-using Node JS as it can be seen in the General Architecture Flowchart.
+using Node JS as it can be seen in the General Architecture Flowchart
+shown in Figure \ref{fig2}.
 
 \begin{figure}[htp]
   \centering
@@ -390,11 +398,16 @@ using Node JS as it can be seen in the General Architecture Flowchart.
 \subsection{Sub-population definition}
 
 Individuals are created composed of 2 types of information, the one that is
-active or useful for crossing and the one that is not. The population contains
-the series of possible solutions, while the rest contains the information on how
+active or useful for crossing and the one that is not. % this is not a
+                                % proper definition. - JJ
+The population contains
+the series of possible solutions, while the rest % what is the rest? -
+% JJ
+% Please rewrite this - JJ
+contains the information on how
 the processing for the search of the optimal solutions will be executed, linked
 directly with their respective algorithms.
-
+Y
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\textwidth]{img/subpopulationDefinition.png}
@@ -403,17 +416,22 @@ directly with their respective algorithms.
 
 \subsection{Splitting Point Uniform Migration}
 
-This architecture communicates sub-populations using migrations, taking
+This architecture communicates sub-populations using migrations,
+taking
+% It's not an architecture, unless you mean the overall architecture - JJ
 information from 2 sub-populations and mixing them using a process similar to a
 crossover in Genetic Algorithms, creating 2 completely new sub-populations every
 time a processed sub-population arrives into the Manager node and replacing
 themselves in the multi-population.
 
-The migration created to this architecture is a method called Splitting Point
+The migration created to % to? For? - JJ
+this architecture is a method called Splitting Point
 Uniform that consists of a uniform mask that is created to apply the migration
-between individuals, vectors or both of them, from 2 sub-populations. The
-selected data are combined using the middle point between the active values
-points by the binary mask generated randomly. This process iterates the 2
+between individuals, vectors or both of them, from two sub-populations. The
+selected data are combined using the midpoint between the active values
+points by the binary mask generated randomly. % Not clear. Maybe a
+                                % picture? - JJ
+This process iterates the 2
 sub-populations to randomly swap values and replaces some of them with middle
 points \cite{Kramer2017,Kaya2011}.
 
@@ -447,10 +465,12 @@ working and hybridization has been a success, using until now the added
 algorithms (GA and PSO) algorithms \cite{Kramer2017,Guerrero2017,Lalwani2019},
 all thanks to the developed architecture, let's proceed to the experiments. This
 section is going to be the execution of several experiments from 2 to 40
-dimensions, with a stop criterial of an error below 0.5E-8, without a parameter
-optimization method, waiting that the architecture by its self would be enough
-to increase the possibility to find a better optimal result than the traditional
-methods. All this hoping that the results will probe the needs of this kind of
+dimensions, with a stop criteria of an error below 0.5E-8, without a parameter
+optimization method, waiting that the architecture by itself would be enough
+to increase the possibility of finding a better optimal result than the traditional
+methods. All this hoping that the results will probe % probe or prove?
+                                % - JJ
+the needs of this kind of
 architecture on increasing dimensions. To test if the architecture was useful,
 several experiments were made to solve benchmark functions, for this case the
 functions are Sphere, Rastrigin and Rosenbrock. Using 10 sub-population for each
@@ -463,14 +483,15 @@ algorithms and parameters for each sub-population.
     \caption{Benchmark functions for experimentation.} \label{fig6}
     \end{figure}
 
-\subsection{Parameters Configuration} 
+\subsection{Parameter Configuration} 
 
-This architecture modifies the traditional way to work with population-based
-algorithms, then the experiments could not be parameterized as usually are.
+This architecture modifies the traditional way of working with population-based
+algorithms, then the experiments could not be parameterized as they
+usually are. % Probably rewrite this sentence - JJ
 
 Then the experiments are scaled by their number of evaluations and the
 parameters must be configured to be adjusted to the next criteria, using the
-next expression:
+next expression: % I don't understand this sentence - JJ
 
 \begin{equation}
     \label{eq:hesitancy-interpretation}
@@ -485,7 +506,7 @@ next expression:
 
 
 
-
+% How are these parameters computed? - JJ
 
 
 
