@@ -7,7 +7,7 @@ data$Dimensions <- as.factor(data$Dimensions)
 data.Rastrigin <- data[ data$Function == "Rastrigin", ]
 
 ggplot(data.Rastrigin, aes(x=Dimensions,y=Fitness,color=Algorithm))+geom_point()
-ggplot(data.Rastrigin, aes(x=Dimensions,y=Fitness,fill=Algorithm))+geom_boxplot(notch=TRUE)+theme_tufte()
+ggplot(data.Rastrigin, aes(x=Dimensions,y=Fitness,fill=Algorithm))+geom_boxplot(notch=TRUE)+scale_y_log10()+theme_tufte()
 ggsave("rastrigin-boxplot.png",width=190, units="mm")
 
 data.Sphere <- data[ data$Function == "Sphere", ]
