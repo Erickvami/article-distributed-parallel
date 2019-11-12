@@ -133,6 +133,13 @@ stateless functions, and more algorithms can be added in the same way.
 %% what is presented in each section? 
 %% Check other papers to get the idea - Mario
 
+The rest of the paper is organized as follows: next section is devoted
+to analyzing the state of the art in multi-population, multi-paradigm,
+stateless evolutionary algorithms. The architecture proposed is
+presented in Section \ref{sec:architecture} and put to work in the
+Section \ref{sec:exp}. Finally, we present our conclusions and the
+future lines of work.
+
 \section{State of the Art}
 
 % The title of these subsections will be removed, they are just place-holders
@@ -249,6 +256,7 @@ because each one only has a simple operation that generates an expected result
 
 
 \section{Proposed architecture}
+\label{sec:architecture}
 
 The proposal is an architecture that allows processing of a single population
 that is divided into sub-populations, distributing them to process in different
@@ -368,7 +376,9 @@ points \cite{Kramer2017,Kaya2011}.
   \end{figure}
 
 
-\section{Experiments and Results}
+  \section{Experiments and Results}
+  \label{sec:exp}
+  
 \subsection{Experiments}
 Now that interaction between sub-populations with different algorithms is
 working and hybridization has been a success, using until now the added
