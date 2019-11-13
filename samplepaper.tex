@@ -7,6 +7,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{graphicx}
+\usepackage{tabularx}
 
 
 
@@ -541,7 +542,7 @@ next expression: % I don't understand this sentence - JJ
     \caption{Parameters used by the algorithms for 2 and 10 dimensions. The Random mutation for GA includes the Tournament2, Tournament3, Random, RandomLinearRank, Sequential, Fittest variants. Fitness function is minimized in both cases.}
     \label{table:ga-pso-parameters-2}
     \centering
-    \begin{tabular}{|l|c|c|c|c|}
+    \begin{tabularx}{\linewidth}{|l|X|X|X|X|}
     \hline
     Parameter & \multicolumn{4}{c|}{Values for dimensions} \\
       \hline
@@ -574,7 +575,7 @@ next expression: % I don't understand this sentence - JJ
     \hline
     PSO Inercia factor & \multicolumn{4}{c|}{Random[0.5,4.0]} \\
     \hline
-    \end{tabular}
+    \end{tabularx}
     \end{table}
 
 % \begin{figure}[htp]
