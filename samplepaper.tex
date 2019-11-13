@@ -9,9 +9,11 @@
 \usepackage{graphicx}
 
 
+
+
 \begin{document}
 %
-\title{An Event-based Architecture for Cross-Breed Multi-population Bio-inspired Optimization Algorithms}
+\title{An Event-based Architecture for Cross-Breed Multi-population  Optimization Algorithms}
 %
 %\titlerunning{Abbreviated paper title}
 % If the paper title is too long for the running head, you can set
@@ -83,74 +85,69 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 
 In the past few decades, nature-inspired optimization algorithms have been
 applied to solve complex real-world problems \cite{yang2014nature}. Algorithms
-inspired in natural processes  include evolutionary algorithms (EAs)
-\cite{back1996evolutionary} and swarm intelligence (SI) \cite{kennedy2006swarm}, among others.
+inspired in natural processes,  include evolutionary algorithms (EAs)
+\cite{back1996evolutionary} and swarm intelligence (SI) \cite{kennedy2006swarm}.
 These population-based algorithms share the common characteristic of using an initial set of
 random candidate solutions that are later used to generate a new set of
-candidates, using a nature-inspired heuristic. Popular EAs are Genetic Algorithms (GAs),
-Genetic Programming (GP), grey wolf optimization (GWO) and Differential Evolution (DE), 
+candidates, using a nature-inspired heuristic.
+%%% Optional
+% Maybe to much detail, this list is optional. It is Is here to remind the reader 
+% of the plethora of algorithms available; many have been applied successfully to tackle complex problems.  
+% if accepted references will be added
+Popular EAs are Genetic Algorithms (GAs), Genetic Programming (GP), 
+grey wolf optimization (GWO) and Differential Evolution (DE), 
 while examples of (SI) are particle swarm optimization (PSO) and
-ant colony algorithms (ACO). 
+ant colony algorithms (ACO).
+%%% 
 % Insert here a quick reminder of the island model in GAs 
-As in nature, population-based algorithms are intrinsically parallel and
-asynchronous. Because of that, researchers have been proposing some form of
-parallelization since the earlier works \cite{muhlenbein1988evolution} with the
-objective of increasing the speed of these algorithms. One of the models
-proposed for parallization The concept of having several isolated populations 
-
-
-As in nature, population-based algorithms are intrinsically parallel and
-asynchronous. To increase the speed of these algorithms, researchers have been
-proposing some form of parallelization, since the earlier days
-\cite{muhlenbein1988evolution}. 
-%% Island Model
-One of the first concepts proposed for
-parallelization was the island model, which lead to an increased performance
-\cite{gorges1990explicit,grosso1985computer} by dividing a large population
-into communicated subpopulations.
-%% Multi-population
-Since then, the concept has been applied to
-other population-based algorithms, and generalized as multi-population based
-methods. Multi-population based methods divide the original population into
-smaller subpopulations or islands, with every subpopulation carrying out the
-algorithm independently, with synchronous or asynchronous communication with the
-rest of the islands. This relative isolation helps in maintaining an overall
-diversity since each subpopulation will search in a particular area, at least
-between communications. The recombination mentioned above (mixing) or migration
-between subpopulations is needed to avoid a premature convergence of candidate
-solutions since smaller populations are known to perform better for a given
-problem than bigger populations. However, it gives them the added advantage of
-parallel operation. Additionally, and in some cases, multi-population algorithms
-scale better than expected due to the interaction between the algorithm and the
-paralellism of the operation \cite{ALBA20027}.
-
-However, in most cases what is run in the different islands is
-homogeneous, or at any rate the same algorithm. As long as this
-parallel operation is not synchronous, this need not be the case,
-which is why several works in multi-population
+%   
+%%%
+%%%
+% General definition of multi-population to cover all methods 
+% Highlighting the differences 
+In general, multi-population based methods divide the original
+population into smaller subpopulations or islands, in which each subpopulation
+iterates independently. This isolation helps in maintaining an overall diversity
+because each subpopulation will search in a particular area. Recombination or
+migration between subpopulations is needed to avoid a premature convergence of
+candidate solutions. An additional advantage of multi-populations is that each
+subpopulation could be processed in parallel. Several works in multi-population
 optimization demonstrate that the method can easily
-integrate various nature-inspired optimization, or, as a matter of
-fact, any, algorithms, and it often performs
-better than single-population  or homogeneous-algorithm optimization algorithms 
+integrate various nature-inspired optimization algorithms, and it often performs
+better than single-population optimization algorithms 
 \cite{wu2016differential,nseef2016adaptive}.
 % Connect with the idea of heterogeneous populations 
 % Explan the proposed method of mixing many algorithms through population streams  
 
-Even assuming that we selected an appropriate algorithm, we must also find the
+
+
+%A universe of candidate solutions can exist for a single optimization problem,
+%and sometimes conversional algorithms like Genetic Algorithms or Particle Swarm Optimization, 
+%for their own are too slow or fail to find an optimal
+%solution. As the known No Free Lunch theorem says there is no perfect algorithm 
+%that will work for everything and % What do you mean by "traditional" methods? - JJ
+% That is why heuristic, population-based algorithms, and other types of
+% methods can be applied to find a good enough solution in a reasonable
+% time-frame. Population-based algorithms are useful to solve combinatory
+% problems; however,  the performance of an algorithm depends on the problem and
+% initial conditions. Usually, an algorithm is suitable for only a specific type
+% of problems, and it is not always easy to know which algorithm is more
+% fitting.
+% Up to here this is already known in an evolutionary algorithm
+% conference. I also don't get your point
+% Probably what you want to say is something along the lines of
+% "The no free lunch theorem states that there's no single algorithm
+% that can find adequate solutions for all possible problems. In
+% general, a single algorithm will need fine-tuning of its parameters
+% to find the best possible solution in an adequate amount of
+% time...."
+% Then you can continue into the next paragraph, where you propose a
+% solution - JJ
+%% 
+even assuming that we selected an appropriate algorithm, we must also find the
 appropriate parameters.  Some parameters affect the accuracy of the solution and
-the convergence speed of the algorithms as they tip the balance between exploration
-and exploitation of the search space. Heterogenous algorithms add
-another degree of freedom to the problem of finding the correct
-parameter settings for an algorithm; in this work we will simply use
-random settings withing a certain range to avoid this problem.
-% Two things here
-% * Add references to former work
-% * Explain why some parameters, like the population size, are not
-% generated randomly too - JJ
-
-
-% This belongs to a separate paragrahp
-Cross-breed multi-population algorithm that combine two or more
+the convergence speed of the algorithms as they affect the degree of exploration
+or exploitation of the search space.  cross-breed multi-population algorithm that combine two or more
 heuristics can benefit from the strengths of each. % You need to
                                 % define what you mean by hybrid
                                 % algorithm. Actually, this algorithms
@@ -178,23 +175,18 @@ time. % Now you're arriving somewhere. But you need to:
 % parameter-free-algorithms.
 % 3. 
 
-
-% a paragraph that binds that previous paragraph to our work in this paper. Why is this related to what we presented above? - JJ
-In this work, we present a new version of the event-driven architecture
+In this work, we present an implementation of an event-driven architecture
 proposed in [Anonymous]; this is a so-called {\em serverless}
 architecture that
 processes independent small populations with their own characteristics % small? fragments? Aren't they independent populations?
-from a population of populations in a distributed way, working together to find an optimal value. % Please rephrase. You mention "population" 3 times in a single sentence - JJ
-The main components % of what? - JJ
-are stateless functions,
-running asynchronously, % They always do - JJ
-and communicating using message-queues, that process each
-sub-population. % Maybe previous to this a small introduction about cloud-native applications - JJ
-Also, sub-populations use the migration of data % What kind of data? - JJ
-between them, to
+from a population of populations in a distributed way, working together to find an optimal value. % they're simply independent
+                                % populations - JJ
+The main components are stateless functions,
+running asynchronously, and communicating using message-queues, that process each
+sub-population. Also, sub-populations use the migration of data between them, to
 help each other even if the algorithms or parameters of each sub-population are
-different. The objective is to prevent the algorithm from falling into local optimal
-values balancing inconvenients of a determinated population-based algorithm with the others. % Please check grammar, but also say which problems it balances - JJ
+different. The objective is to prevent the algorithm from falling into optimal
+local values balancing inconvenients of a determinated population-based algorithm with the others.
 This mechanism is driven by events, on arriving processed sub-population migrating with a random selection 
 from the best 2 sub-populations, keeping diversity but with a sort of elitism. 
 % But simple parallel evolutionary algorithms can also do the same
@@ -221,8 +213,7 @@ differences in the execution time of the functions. % This is probably
 
 %%%%% BEGIN (needs work)
 
-To evaluate the software implementation and the capability of a 
-cross-breed multi-population solution,
+To evaluate the software implementation and the capability of a cross-breed multi-population solution,
 we conducted several experiments using different benchmark functions, comparing the
 results of single versus cross-breed multi-population algorithms. For the experiments, we choose to
 compare the PSO and GA algorithms, as they are well understood, and there are
@@ -258,9 +249,7 @@ future lines of work.
 
 
 \subsection{Parallel, Distributed}
-The most common form of parallelization is to exploit the capabilities of multi-core CPUs and
-GPUs.   
-
+Multi-population algorithm are initial
 
 
 
@@ -389,8 +378,7 @@ they are explained on the next points:
   \cite{Ma2019,Santander-jim2018}. Of course this whole process is performed
   asynchronously avoiding the wait for all responses from serverless functions
   to perform a crossover or an update of the multi-population status
-  \cite{Lovbjerg2001,Jimeno2019}. In the following figure, you can see from the
-  illustrative way how the multi-population is composed.
+  \cite{Lovbjerg2001,Jimeno2019}. 
 % \begin{figure}[htp]
 %   \centering
 %   \includegraphics[width=0.7\textwidth]{img/multipopulation.png}
@@ -425,14 +413,12 @@ To develop this architecture the applied technologies are based in JavaScript
 using Node JS as it can be seen in the General Architecture Flowchart
 shown in Figure \ref{fig2}.
 
-% I don't think this figure is appropriate for a paper.
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.9\textwidth]{img/Architecture diagram.png}
   \caption{General Architecture Flowchart.} \label{fig2}
   \end{figure}
-  % Could be OK for the presentation, divided in 3 slides - JJ
-  
+
 \subsection{Sub-population definition}
 
 Individuals are created composed of 2 types of information, the one that is
@@ -536,55 +522,61 @@ next expression: % I don't understand this sentence - JJ
    Evaluations = 10^{5} Dimensions
    \end{equation}
 
-For example, if the experiment has 2 dimensions, the maximum number of
-   evaluations will be 200,000, for 10 dimensions will be 1,000,000 of evaluations
-   and likewise with the other dimensions.
+   For example, if the experiment has 2 dimensions, the maximum number of
+   evaluations will be 200,0000, for 10 dimensions will be 1,000,000 of evaluations
+   and the same with the other dimensions.
 
 
-   Parametrization used is shown in Table \ref{table:ga-pso-parameters}.
-   %Justification of these parameters and how they scale with size must be included here - JJ
+
 
 
 % How are these parameters computed? - JJ
 
 
 
-   \begin{table}[h!tp]
-    \caption{Parameters used by the algorithms for 2 and 10 dimensions. The Random mutation for GA includes the Tournament2, Tournament3, Random, RandomLinearRank, Sequential, Fittest variants. Fitness function is minimized in both cases.}
-    \label{table:ga-pso-parameters}
+   \begin{table}[htp]
+    \caption{2 dimension parameters}
+    \label{table:ga-pso-parameters-2}
     \centering
-    \begin{tabular}{|l|c|c|}
+    \begin{tabular}{|l|l|}
     \hline
-    Parameter & \multicolumn{2}{c|}{Values for dimensions} \\
-      \hline
-      & 2 & 10, 20, 40 \\
+    Parameter & Value \\
     \hline
-    GA Generations & 50 &  70\\
     \hline
-     GA Population size & 100 & 200\\
+    GA Optimization & Minimize \\
     \hline
-    GA Mutation &  \multicolumn{2}{c|}{Random}\\
+    GA Generations & 50 \\
     \hline
-    GA Crossover selection & \multicolumn{2}{c|}{Tournament3} \\
+    GA Dimensions & 2 \\
     \hline
-    GA Crossover percentage & \multicolumn{2}{c|}{Random[10\%, 80\%]} \\
+    GA Population size & 100 \\
     \hline
-    GA Mutation percentage & \multicolumn{2}{c|}{Random[10\%,50\%]} \\
+    GA Mutation & Random(Tournament2,Tournament3,Random \\
+    &  ,RandomLinearRank,Sequential,Fittest)\\
     \hline
-    GA Crossover function & \multicolumn{2}{c|}{1 point crossover} \\
+    GA Crossover selection & Tournament3 \\
     \hline
-    GA Mutation Function & \multicolumn{2}{c|}{Gaussian} \\
-      \hline 
-      \hline
-    PSO Iterations & 50 & 70\\
+    GA Crossover percentage & Random[10\%, 80\%] \\
     \hline
-    PSO Vector size & 100 & 200\\
+    GA Mutation percentage & Random[10\%,50\%] \\
     \hline
-    PSO Social factor & \multicolumn{2}{c|}{Random[0.5,4.0]} \\
+    GA Crossover function & Uniforme de punto medio \\
     \hline
-    PSO Individual factor & \multicolumn{2}{c|}{Random[0.5,4.0]} \\
+    GA Mutation Function & gaussian \\
     \hline
-    PSO Inercia factor & \multicolumn{2}{c|}{Random[0.5,4.0]} \\
+    PSO Optimization & Minimiza \\
+    \hline
+    PSO Iterations & 50 \\
+    \hline
+    PSO Dimensions & 2 \\
+    \hline
+    PSO Vector size & 100 \\
+    \hline
+    PSO Social factor & Random[0.5,4.0] \\
+    \hline
+    PSO Individual factor & Random[0.5,4.0] \\
+    \hline
+    PSO Inercia factor & Random[0.5,4.0] \\
     \hline
     \end{tabular}
     \end{table}
@@ -608,33 +600,78 @@ For example, if the experiment has 2 dimensions, the maximum number of
     \caption{2 dimensional experiment results}
     \label{table:resultados-2}
     \centering
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|c|c|}
     \hline
-    Fn & Best & AVG & Experiment Number \\
+    Fn & Average \\
     \hline
     \hline
-    Rastrigin GA & 0 & 1.65377E-08 & 15\\
+    Rastrigin GA & 1.65377E-08\\
     \hline
-    Rastrigin PSO & 0 & 1.8872E-12 & 15\\
+    Rastrigin PSO & 1.8872E-12\\
     \hline
-    Rastrigin GA-PSO & 0 & 0 & 15\\
+    Rastrigin GA-PSO & 0\\
     \hline
-    Sphere GA & 4.53222E-18 & 4.36977E-10 & 15\\
+    Sphere GA  & 4.36977E-10\\
     \hline
-    Sphere PSO & 0 & 7.8012E-12 & 15\\
+    Sphere PSO & 7.8012E-12\\
     \hline
-    Sphere GA-PSO & 0 & 4.33161E-14 & 15\\
+    Sphere GA-PSO & 4.33161E-14\\
     \hline
-    Rosenbrock GA & 1.62335E-13 & 1.24176E-08 & 15\\
+    Rosenbrock GA & 1.24176E-08\\
     \hline
-    Rosenbrock PSO & 1.11674E-12 & 2.47795E-06 & 15\\
+    Rosenbrock PSO & 2.47795E-06\\
     \hline
-    Rosenbrock GA-PSO & 9.5809E-14 & 6.90695E-09 & 15\\
+    Rosenbrock GA-PSO & 6.90695E-09\\
     \hline
     \end{tabular}
     \end{table}
   
-
+    \begin{table}[htp]
+      \caption{10 dimensions parameters}
+      \label{table:ga-pso-parameters-10}
+      \centering
+      \begin{tabular}{|l|l|}
+      \hline
+      Parameter & Value \\
+      \hline
+      \hline
+      GA Optimization & Minimiza \\
+      \hline
+GA Generations & 70 \\
+      \hline
+GA Dimensions & 10 \\
+      \hline
+GA Population size & 200 \\
+      \hline
+GA Mutation & Random(Tournament2,Tournament3,Random \\
+      &  ,RandomLinearRank,Sequential,Fittest)\\
+      \hline
+GA Crossover selection& Tournament3\\
+      \hline
+GA Crossover percentage & Random[10\%, 80\%] \\
+      \hline
+GA Mutation percentage & Random[10\%,50\%] \\
+      \hline
+GA Crossover function & Uniforme de punto medio \\
+      \hline
+GA Mutation Function & gaussian \\
+      \hline
+PSO Optimization & Minimiza \\
+      \hline
+PSO Iterations & 70 \\
+      \hline
+PSO Dimensions & 10 \\
+      \hline
+PSO Vector size & 200 \\
+      \hline
+PSO Social factor & Random[0.5,4.0] \\
+      \hline
+PSO Individual factor & Random[0.5,4.0] \\
+      \hline
+PSO Inercia factor & Random[0.5,4.0] \\
+      \hline
+      \end{tabular}
+      \end{table}
     
       % \begin{figure}[htp]
       %   \includegraphics[width=\textwidth]{img/10-sphere.jpg}
@@ -655,31 +692,78 @@ For example, if the experiment has 2 dimensions, the maximum number of
           \caption{10 dimensional experiment results}
           \label{table:resultados-2}
           \centering
-          \begin{tabular}{|l|l|l|l|}
+          \begin{tabular}{|l|l|}
           \hline
-          Fn & Best & Average & Experiment Number \\
+          Fn  & Average\\
           \hline
           \hline
-          Rastrigin GA & 3.21768E-09 & 2.38015E-06 & 15\\
+          Rastrigin GA & 2.38015E-06\\
           \hline
-          Rastrigin PSO & 7.8586E-11 & 2.715716161 & 15\\
+          Rastrigin PSO & 2.715716161\\
           \hline
-          Rastrigin GA-PSO & 8.01492E-12 & 5.08668E-09 & 15\\
+          Rastrigin GA-PSO & 5.08668E-09\\
           \hline
-          Sphere GA & 1.84051E-09 & 2.5389E-08 & 15\\
+          Sphere GA & 2.5389E-08\\
           \hline
-          Sphere PSO & 4.50351E-11 & 4.72855E-09 & 15\\
+          Sphere PSO & 4.72855E-09\\
           \hline
-          Sphere GA-PSO & 3.33851E-11 & 1.30062E-09 & 15\\
+          Sphere GA-PSO & 1.30062E-09\\
           \hline
-          Rosenbrock GA & 9.58323E-07 & 1.24176E-08 & 15\\
+          Rosenbrock GA & 1.24176E-08\\
           \hline
-          Rosenbrock PSO & 4.16711E-07 & 4.431565444 & 15\\
+          Rosenbrock PSO & 4.431565444\\
           \hline
-          Rosenbrock GA-PSO & 3.62472E-07 & 0.000240251 & 15\\
+          Rosenbrock GA-PSO & 0.000240251\\
           \hline
           \end{tabular}
           \end{table}
+
+          \begin{table}[htp]
+            \caption{Parametros experimentos 20 dimensiones}
+            \label{table:ga-pso-parameters-20}
+            \centering
+            \begin{tabular}{|l|l|}
+            \hline
+            Parameter & Value \\
+            \hline
+            \hline
+            GA Optimization & Minimiza \\
+            \hline
+            GA Generations & 70 \\
+            \hline
+            GA Dimensions & 20 \\
+            \hline
+            GA Population size & 200 \\
+            \hline
+            GA Mutation & Random(Tournament2,Tournament3,Random \\
+            &  ,RandomLinearRank,Sequential,Fittest)\\
+            \hline
+            GA Crossover selection & Tournament3 \\
+            \hline
+            GA Crossover percentage & Random[10\%, 80\%] \\
+            \hline
+            GA Mutation percentage & Random[10\%,50\%] \\
+            \hline
+            GA Crossover function & Uniforme de punto medio \\
+            \hline
+            GA Mutation Function & gaussian \\
+            \hline
+            PSO Optimization & Minimiza \\
+            \hline
+            PSO Iterations & 70 \\
+            \hline
+            PSO Dimensions & 20 \\
+            \hline
+            PSO Vector size & 200 \\
+            \hline
+            PSO Social factor & Random[0.5,4.0] \\
+            \hline
+            PSO Individual factor & Random[0.5,4.0] \\
+            \hline
+            PSO Inercia factor & Random[0.5,4.0] \\
+            \hline
+            \end{tabular}
+            \end{table}
           
             % \begin{figure}[htp]
             %   \includegraphics[width=\textwidth]{img/20-sphere.jpg}
@@ -701,31 +785,78 @@ For example, if the experiment has 2 dimensions, the maximum number of
     \caption{Resultados 20 dimensiones}
     \label{table:resultados-2}
     \centering
-    \begin{tabular}{|l|l|l|l|}
+    \begin{tabular}{|l|l|}
     \hline
-    Fn & Best & Average & Experiment Number \\
+    Fn  & Average\\
     \hline
     \hline
-    Rastrigin GA & 0.000808633 & 0.220596203 & 15\\
+    Rastrigin GA & 0.220596203\\
     \hline
-    Rastrigin PSO & 3.988070734 & 25.51777514 & 15\\
+    Rastrigin PSO & 25.51777514\\
     \hline
-    Rastrigin GA-PSO & 9.13E-09 & 7.38E-02 & 15\\
+    Rastrigin GA-PSO & 7.38E-02\\
     \hline
-    Sphere GA & 1.84051E-09 & 9.22715E-06 & 15\\
+    Sphere GA & 9.22715E-06\\
     \hline
-    Sphere PSO & 7.04E-11 & 3.50E-07 & 15\\
+    Sphere PSO & 3.50E-07\\
     \hline
-    Sphere GA-PSO & 9.11E-11 & 2.13E-08 & 15\\
+    Sphere GA-PSO & 2.13E-08\\
     \hline
-    Rosenbrock GA & 0.000348015 & 0.010958941 & 15\\
+    Rosenbrock GA  & 0.010958941\\
     \hline
-    Rosenbrock PSO & 9.119539342 & 13.37613983 & 15\\
+    Rosenbrock PSO & 13.37613983\\
     \hline
-    Rosenbrock GA-PSO & 2.31663E-05 & 0.005608855 & 15\\
+    Rosenbrock GA-PSO & 0.005608855\\
     \hline
     \end{tabular}
     \end{table}
+
+    \begin{table}[htp]
+      \caption{Parametros experimentos 40 dimensiones}
+      \label{table:ga-pso-parameters-20}
+      \centering
+      \begin{tabular}{|c|c|}
+      \hline
+      Parameter & Value \\
+      \hline
+      \hline
+      GA Optimization& Minimiza \\
+      \hline
+      GA Generations & 70 \\
+      \hline
+      GA Dimensions & 40 \\
+      \hline
+      GA Population size & 200 \\
+      \hline
+      GA Mutation & Random(Tournament2,Tournament3,Random \\
+      &  ,RandomLinearRank,Sequential,Fittest)\\
+      \hline
+      GA Crossover selection & Tournament3 \\
+      \hline
+      GA Crossover percentage & Random[10\%, 80\%] \\
+      \hline
+      GA Mutation percentage & Random[10\%,50\%] \\
+      \hline
+      GA Crossover function & Uniforme de punto medio \\
+      \hline
+      GA Mutation Function & gaussian \\
+      \hline
+      PSO Optimization & Minimiza \\
+      \hline
+      PSO Iterations & 70 \\
+      \hline
+      PSO Dimensions & 40 \\
+      \hline
+      PSO Vector size& 200 \\
+      \hline
+      PSO Social factor & Random[0.5,4.0] \\
+      \hline
+      PSO Individual factor & Random[0.5,4.0] \\
+      \hline
+      PSO Inercia factor & Random[0.5,4.0] \\
+      \hline
+      \end{tabular}
+      \end{table}
     
       % \begin{figure}[htp]
       %   \includegraphics[width=\textwidth]{img/40-sphere.jpg}
@@ -746,28 +877,28 @@ For example, if the experiment has 2 dimensions, the maximum number of
               \caption{Resultados 40 dimensiones}
               \label{table:resultados-2}
               \centering
-              \begin{tabular}{|l|l|l|l|}
+              \begin{tabular}{|l|l|}
               \hline
-              Fn & Best & Average & Experiment Number \\
+              Fn  & Average\\
               \hline
               \hline
-              Rastrigin GA & 1.95478879 & 3.560837088 & 15\\
+              Rastrigin GA & 3.560837088\\
               \hline
-              Rastrigin PSO & 29.06596132 & 130.2865863 & 15\\
+              Rastrigin PSO & 130.2865863\\
               \hline
-              Rastrigin GA-PSO & 2.46E-04 & 2.13E+00 & 15\\
+              Rastrigin GA-PSO & 2.13E+00\\
               \hline
-              Sphere GA & 0.002686956 & 0.005302951 & 15\\
+              Sphere GA  & 0.005302951\\
               \hline
-              Sphere PSO & 8.68E-11 & 2.07E-03 & 15\\
+              Sphere PSO  & 2.07E-03\\
               \hline
-              Sphere GA-PSO & 2.00E-10 & 1.41E-04 & 15\\
+              Sphere GA-PSO  & 1.41E-04\\
               \hline
-              Rosenbrock GA & 0.000348015 & 106.9287542 & 15\\
+              Rosenbrock GA & 106.9287542\\
               \hline
-              Rosenbrock PSO & 0.032708559 & 0.368395353 & 15\\
+              Rosenbrock PSO & 0.368395353\\
               \hline
-              Rosenbrock GA-PSO & 0.018538924 & 0.525086565 & 15\\
+              Rosenbrock GA-PSO & 0.525086565\\
               \hline
               \end{tabular}
             \end{table}
@@ -789,7 +920,7 @@ For example, if the experiment has 2 dimensions, the maximum number of
 % \bibliographystyle{splncs04}
 % \bibliography{mybibliography}
 %
-\section{Conclusions and future work}
+\section{Conclusion}
 
 This architecture is completely scalable and useful for implementation of
 multiple algorithms, until now is only GA and PSO but according to the results
@@ -798,7 +929,7 @@ cross-breed multi-population with only one algorithm, also every experiment exec
 short times because serverless functions searching in an asynchronous way
 getting a fast convergence.
 
-%\section{Future work}
+\section{Future work}
 
 % Reference with interesting challenges: li2015multi 
 % Dynamic optimization needs: a non-fixed number of populations, 
@@ -812,16 +943,8 @@ increasing the possibilities to get an optimal result, preventing get stuck into
 a local optimum. Of course, it is expected to use this architecture using more
 algorithms than GA and PSO.
 
-% Maybe add randomizing all elements of the population, including
-% population and number of generations - JJ
 
-\section*{Acknowledgements}
-
-Acks\\
-taking this much\\
-space
-
-\bibliography{multipopulation}
+\bibliography{samplepaper}
       \bibliographystyle{ieeetr}
   
 \end{document}
