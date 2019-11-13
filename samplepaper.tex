@@ -13,7 +13,7 @@
 
 \begin{document}
 %
-\title{An Event-based Architecture for Multi-population Optimization Algorithms}
+\title{An Event-based Architecture for Cross-Breed Multi-population  Optimization Algorithms}
 %
 %\titlerunning{Abbreviated paper title}
 % If the paper title is too long for the running head, you can set
@@ -44,7 +44,7 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
   event-driven architecture, designed to asynchronously distribute the
   processing of population-based algorithms. The search algorithm uses a
   multi-population approach, creating multiple populations with different
-  parameters of execution, allowing the hybridization of multiple algorithms, in
+  parameters of execution, allowing the implementation of multiple algorithms, in
   this case Genetic Algorithms (GAs) and Particle Swarm Optimization (PSO).
   Using a message queue, each population is handled by asynchronous
   serverless functions, taking advantage of functional programming
@@ -52,7 +52,7 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
   % that way.
     % \cite{Kunasaikaran2016}
     % No citations in abstract.
-    .This cloud-ready JavaScript implementation includes a web-based
+    .This cloud-based JavaScript implementation includes a web-based
     application for
     % Why is it cloud ready? - JJ
     the configuration and interaction with algorithms. We executed
@@ -75,7 +75,8 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
   \and Asynchronous 
   \and Sub-population 
   \and Serverless 
-  \and Distributed.}
+  \and Distributed.
+  \and cross-breed multi-population}
 \end{abstract}
 %
 %
@@ -83,15 +84,15 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 \section{Introduction}
 
 A universe of candidate solutions can exist for a single optimization problem,
-and sometimes traditional methods are too slow or fail to find an optimal
-solution. % What do you mean by "traditional" methods? - JJ
-That is why heuristic, population-based algorithms, and other types of
-methods can be applied to find a good enough solution in a reasonable
-time-frame. Population-based algorithms are useful to solve combinatory
-problems; however,  the performance of an algorithm depends on the problem and
-initial conditions. Usually, an algorithm is suitable for only a specific type
-of problems, and it is not always easy to know which algorithm is more
-fitting.
+and sometimes conversional algorithms like Genetic Algorithms or Particle Swarm Optimization, for their own are too slow or fail to find an optimal
+solution. As the known No Free Lunch theorem says there is no perfect algorithm that will work for everything and % What do you mean by "traditional" methods? - JJ
+% That is why heuristic, population-based algorithms, and other types of
+% methods can be applied to find a good enough solution in a reasonable
+% time-frame. Population-based algorithms are useful to solve combinatory
+% problems; however,  the performance of an algorithm depends on the problem and
+% initial conditions. Usually, an algorithm is suitable for only a specific type
+% of problems, and it is not always easy to know which algorithm is more
+% fitting.
 % Up to here this is already known in an evolutionary algorithm
 % conference. I also don't get your point
 % Probably what you want to say is something along the lines of
@@ -102,11 +103,10 @@ fitting.
 % time...."
 % Then you can continue into the next paragraph, where you propose a
 % solution - JJ
-
-Even assuming that we selected an appropriate algorithm, we must also find the
+even assuming that we selected an appropriate algorithm, we must also find the
 appropriate parameters.  Some parameters affect the accuracy of the solution and
 the convergence speed of the algorithms as they affect the degree of exploration
-or exploitation of the search space.  Hybrid algorithms that combine two or more
+or exploitation of the search space.  cross-breed multi-population algorithm that combine two or more
 heuristics can benefit from the strengths of each. % You need to
                                 % define what you mean by hybrid
                                 % algorithm. Actually, this algorithms
@@ -116,7 +116,7 @@ heuristics can benefit from the strengths of each. % You need to
 For instance, a genetic
 algorithm could find a promising global solution that is not optimal while another algorithm, more
 suitable for a local search, finds the global optimum. To deal with these problems,
-parallel and hybrid architectures have been proposed. % Parallel
+parallel and cross-breed multi-population algorithms architecture have been proposed. % Parallel
                                 % architectures were proposed mainly
                                 % for speed. You really need to
                                 % qualify this - JJ
@@ -137,23 +137,24 @@ time. % Now you're arriving somewhere. But you need to:
 In this work, we present an implementation of an event-driven architecture
 proposed in [Anonymous]; this is a so-called {\em serverless}
 architecture that
-processes small fragments % small? fragments? Aren't they independent populations?
-from a population in a distributed way, turning a
-population into a multi-population. % they're simply independent
+processes independent small populations with their own characteristics % small? fragments? Aren't they independent populations?
+from a population of populations in a distributed way, working together to find an optimal value. % they're simply independent
                                 % populations - JJ
 The main components are stateless functions,
 running asynchronously, and communicating using message-queues, that process each
 sub-population. Also, sub-populations use the migration of data between them, to
 help each other even if the algorithms or parameters of each sub-population are
 different. The objective is to prevent the algorithm from falling into optimal
-local values and along with increasing the processing performance.
+local values balancing inconvenients of a determinated population-based algorithm with the others.
+This mechanism is driven by events, on arriving processed sub-population migrating with a random selection 
+from the best 2 sub-populations, keeping diversity but with a sort of elitism. 
 % But simple parallel evolutionary algorithms can also do the same
 % thing. You don't need to use two algorithms at the same time - JJ
-This new
-implementation uses JavaScript for the full stack, and it is designed to be
-executed locally or in a cloud environment. The implementation includes a
-web-based application to execute and monitor experiments
-interactively. % implementation detail, best left for the conclusions
+% This new
+% implementation uses JavaScript for the full stack, and it is designed to be
+% executed locally or in a cloud environment. The implementation includes a
+% web-based application to execute and monitor experiments
+% interactively. % implementation detail, best left for the conclusions
                % - JJ
 We also
 propose alternative methods of migration between populations to compensate for
@@ -171,9 +172,9 @@ differences in the execution time of the functions. % This is probably
 
 %%%%% BEGIN (needs work)
 
-To evaluate the software implementation and the capability of a hybrid solution,
+To evaluate the software implementation and the capability of a cross-breed multi-population solution,
 we conducted several experiments using different benchmark functions, comparing the
-results of single versus hybrid algorithms. For the experiments, we choose to
+results of single versus cross-breed multi-population algorithms. For the experiments, we choose to
 compare the PSO and GA algorithms, as they are well understood, and there are
 several implementations in the literature. We implemented both algorithms as
 stateless functions, and more algorithms can be added in the same way.
@@ -321,7 +322,7 @@ The proposal is an architecture that allows processing of a single population
 that is divided into sub-populations, distributing them to processes in different
 ways, and then communicating with each other with the purpose of increasing the
 possibility to find the highest fitness of a function. This architecture can accept
-the use of an indeterminate number of algorithms, allowing an easy hybridization
+the use of an indeterminate number of algorithms, allowing an easy cross-breed multi-population 
 and continuous adaptability for different problems. % A reference to a
                                 % figure should go around here - JJ
 
@@ -461,7 +462,7 @@ points \cite{Kramer2017,Kaya2011}.
   
 \subsection{Experiments}
 Now that interaction between sub-populations with different algorithms is
-working and hybridization has been a success, using until now the added
+working and cross-breed multi-population has been a success, using until now the added
 algorithms (GA and PSO) algorithms \cite{Kramer2017,Guerrero2017,Lalwani2019},
 all thanks to the developed architecture, let's proceed to the experiments. This
 section is going to be the execution of several experiments from 2 to 40
@@ -898,10 +899,10 @@ PSO Inercia factor & Random[0.5,4.0] \\
 %
 \section{Conclusion}
 
-This architecture is completely scalable and useful for hybridization of
+This architecture is completely scalable and useful for implementation of
 multiple algorithms, until now is only GA and PSO but according to the results
 with this kind of architecture there is no limit and it works better than
-multi-populations with only one algorithm, also every experiment executes in
+cross-breed multi-population with only one algorithm, also every experiment executes in
 short times because serverless functions searching in an asynchronous way
 getting a fast convergence.
 
