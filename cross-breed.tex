@@ -193,18 +193,23 @@ time. % Now you're arriving somewhere. But you need to:
 % parameter-free-algorithms.
 % 3. 
 
-In this work, we present an implementation of an event-driven architecture
+
+% a paragraph that binds that previous paragraph to our work in this paper. Why is this related to what we presented above? - JJ
+In this work, we present a new version of the event-driven architecture
 proposed in [Anonymous]; this is a so-called {\em serverless}
 architecture that
 processes independent small populations with their own characteristics % small? fragments? Aren't they independent populations?
-from a population of populations in a distributed way, working together to find an optimal value. % they're simply independent
-                                % populations - JJ
-The main components are stateless functions,
-running asynchronously, and communicating using message-queues, that process each
-sub-population. Also, sub-populations use the migration of data between them, to
+from a population of populations in a distributed way, working together to find an optimal value. % Please rephrase. You mention "population" 3 times in a single sentence - JJ
+The main components % of what? - JJ
+are stateless functions,
+running asynchronously, % They always do - JJ
+and communicating using message-queues, that process each
+sub-population. % Maybe previous to this a small introduction about cloud-native applications - JJ
+Also, sub-populations use the migration of data % What kind of data? - JJ
+between them, to
 help each other even if the algorithms or parameters of each sub-population are
-different. The objective is to prevent the algorithm from falling into optimal
-local values balancing inconvenients of a determinated population-based algorithm with the others.
+different. The objective is to prevent the algorithm from falling into local optimal
+values balancing inconvenients of a determinated population-based algorithm with the others. % Please check grammar, but also say which problems it balances - JJ
 This mechanism is driven by events, on arriving processed sub-population migrating with a random selection 
 from the best 2 sub-populations, keeping diversity but with a sort of elitism. 
 % But simple parallel evolutionary algorithms can also do the same
