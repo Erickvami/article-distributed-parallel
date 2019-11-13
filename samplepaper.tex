@@ -414,12 +414,14 @@ To develop this architecture the applied technologies are based in JavaScript
 using Node JS as it can be seen in the General Architecture Flowchart
 shown in Figure \ref{fig2}.
 
+% I don't think this figure is appropriate for a paper.
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.9\textwidth]{img/Architecture diagram.png}
   \caption{General Architecture Flowchart.} \label{fig2}
   \end{figure}
-
+  % Could be OK for the presentation, divided in 3 slides - JJ
+  
 \subsection{Sub-population definition}
 
 Individuals are created composed of 2 types of information, the one that is
@@ -535,49 +537,42 @@ next expression: % I don't understand this sentence - JJ
 
 
 
-   \begin{table}[htp]
-    \caption{2 dimension parameters}
+   \begin{table}[h!tp]
+    \caption{Parameters used by the algorithms for 2 and 10 dimensions. The Random mutation for GA includes the Tournament2, Tournament3, Random, RandomLinearRank, Sequential, Fittest variants. Fitness function is minimized in both cases.}
     \label{table:ga-pso-parameters-2}
     \centering
-    \begin{tabular}{|l|l|}
+    \begin{tabular}{|l|c|c|c|c|}
     \hline
-    Parameter & Value \\
+    Parameter & \multicolumn{4}{c|}{Values for dimensions} \\
+      \hline
+      & 2 & 10 & 20 & 40 \\
     \hline
+    GA Generations & 50 &  \multicolumn{3}{c|}{70} \\
     \hline
-    GA Optimization & Minimize \\
+     GA Population size & 100 &  \multicolumn{3}{c|}{200}\\
     \hline
-    GA Generations & 50 \\
+    GA Mutation &  \multicolumn{4}{c|}{Random}\\
     \hline
-    GA Dimensions & 2 \\
+    GA Crossover selection & \multicolumn{4}{c|}{Tournament3} \\
     \hline
-    GA Population size & 100 \\
+    GA Crossover percentage & \multicolumn{4}{c|}{Random[10\%, 80\%]} \\
     \hline
-    GA Mutation & Random(Tournament2,Tournament3,Random \\
-    &  ,RandomLinearRank,Sequential,Fittest)\\
+    GA Mutation percentage & \multicolumn{4}{c|}{Random[10\%,50\%]} \\
     \hline
-    GA Crossover selection & Tournament3 \\
+    GA Crossover function & \multicolumn{4}{c|}{1 point crossover} \\
     \hline
-    GA Crossover percentage & Random[10\%, 80\%] \\
+    GA Mutation Function & \multicolumn{4}{c|}{Gaussian} \\
+      \hline 
+      \hline
+    PSO Iterations & 50 & \multicolumn{3}{c|}{70} \\
     \hline
-    GA Mutation percentage & Random[10\%,50\%] \\
+    PSO Vector size & 100 & \multicolumn{3}{c|}{200} \\
     \hline
-    GA Crossover function & Uniforme de punto medio \\
+    PSO Social factor & \multicolumn{4}{c|}{Random[0.5,4.0]} \\
     \hline
-    GA Mutation Function & gaussian \\
+    PSO Individual factor & \multicolumn{4}{c|}{Random[0.5,4.0]} \\
     \hline
-    PSO Optimization & Minimiza \\
-    \hline
-    PSO Iterations & 50 \\
-    \hline
-    PSO Dimensions & 2 \\
-    \hline
-    PSO Vector size & 100 \\
-    \hline
-    PSO Social factor & Random[0.5,4.0] \\
-    \hline
-    PSO Individual factor & Random[0.5,4.0] \\
-    \hline
-    PSO Inercia factor & Random[0.5,4.0] \\
+    PSO Inercia factor & \multicolumn{4}{c|}{Random[0.5,4.0]} \\
     \hline
     \end{tabular}
     \end{table}
@@ -627,52 +622,7 @@ next expression: % I don't understand this sentence - JJ
     \end{tabular}
     \end{table}
   
-    \begin{table}[htp]
-      \caption{10 dimensions parameters}
-      \label{table:ga-pso-parameters-10}
-      \centering
-      \begin{tabular}{|l|l|}
-      \hline
-      Parameter & Value \\
-      \hline
-      \hline
-      GA Optimization & Minimiza \\
-      \hline
-GA Generations & 70 \\
-      \hline
-GA Dimensions & 10 \\
-      \hline
-GA Population size & 200 \\
-      \hline
-GA Mutation & Random(Tournament2,Tournament3,Random \\
-      &  ,RandomLinearRank,Sequential,Fittest)\\
-      \hline
-GA Crossover selection& Tournament3\\
-      \hline
-GA Crossover percentage & Random[10\%, 80\%] \\
-      \hline
-GA Mutation percentage & Random[10\%,50\%] \\
-      \hline
-GA Crossover function & Uniforme de punto medio \\
-      \hline
-GA Mutation Function & gaussian \\
-      \hline
-PSO Optimization & Minimiza \\
-      \hline
-PSO Iterations & 70 \\
-      \hline
-PSO Dimensions & 10 \\
-      \hline
-PSO Vector size & 200 \\
-      \hline
-PSO Social factor & Random[0.5,4.0] \\
-      \hline
-PSO Individual factor & Random[0.5,4.0] \\
-      \hline
-PSO Inercia factor & Random[0.5,4.0] \\
-      \hline
-      \end{tabular}
-      \end{table}
+
     
       % \begin{figure}[htp]
       %   \includegraphics[width=\textwidth]{img/10-sphere.jpg}
@@ -718,53 +668,6 @@ PSO Inercia factor & Random[0.5,4.0] \\
           \hline
           \end{tabular}
           \end{table}
-
-          \begin{table}[htp]
-            \caption{Parametros experimentos 20 dimensiones}
-            \label{table:ga-pso-parameters-20}
-            \centering
-            \begin{tabular}{|l|l|}
-            \hline
-            Parameter & Value \\
-            \hline
-            \hline
-            GA Optimization & Minimiza \\
-            \hline
-            GA Generations & 70 \\
-            \hline
-            GA Dimensions & 20 \\
-            \hline
-            GA Population size & 200 \\
-            \hline
-            GA Mutation & Random(Tournament2,Tournament3,Random \\
-            &  ,RandomLinearRank,Sequential,Fittest)\\
-            \hline
-            GA Crossover selection & Tournament3 \\
-            \hline
-            GA Crossover percentage & Random[10\%, 80\%] \\
-            \hline
-            GA Mutation percentage & Random[10\%,50\%] \\
-            \hline
-            GA Crossover function & Uniforme de punto medio \\
-            \hline
-            GA Mutation Function & gaussian \\
-            \hline
-            PSO Optimization & Minimiza \\
-            \hline
-            PSO Iterations & 70 \\
-            \hline
-            PSO Dimensions & 20 \\
-            \hline
-            PSO Vector size & 200 \\
-            \hline
-            PSO Social factor & Random[0.5,4.0] \\
-            \hline
-            PSO Individual factor & Random[0.5,4.0] \\
-            \hline
-            PSO Inercia factor & Random[0.5,4.0] \\
-            \hline
-            \end{tabular}
-            \end{table}
           
             % \begin{figure}[htp]
             %   \includegraphics[width=\textwidth]{img/20-sphere.jpg}
@@ -811,53 +714,6 @@ PSO Inercia factor & Random[0.5,4.0] \\
     \hline
     \end{tabular}
     \end{table}
-
-    \begin{table}[htp]
-      \caption{Parametros experimentos 40 dimensiones}
-      \label{table:ga-pso-parameters-20}
-      \centering
-      \begin{tabular}{|c|c|}
-      \hline
-      Parameter & Value \\
-      \hline
-      \hline
-      GA Optimization& Minimiza \\
-      \hline
-      GA Generations & 70 \\
-      \hline
-      GA Dimensions & 40 \\
-      \hline
-      GA Population size & 200 \\
-      \hline
-      GA Mutation & Random(Tournament2,Tournament3,Random \\
-      &  ,RandomLinearRank,Sequential,Fittest)\\
-      \hline
-      GA Crossover selection & Tournament3 \\
-      \hline
-      GA Crossover percentage & Random[10\%, 80\%] \\
-      \hline
-      GA Mutation percentage & Random[10\%,50\%] \\
-      \hline
-      GA Crossover function & Uniforme de punto medio \\
-      \hline
-      GA Mutation Function & gaussian \\
-      \hline
-      PSO Optimization & Minimiza \\
-      \hline
-      PSO Iterations & 70 \\
-      \hline
-      PSO Dimensions & 40 \\
-      \hline
-      PSO Vector size& 200 \\
-      \hline
-      PSO Social factor & Random[0.5,4.0] \\
-      \hline
-      PSO Individual factor & Random[0.5,4.0] \\
-      \hline
-      PSO Inercia factor & Random[0.5,4.0] \\
-      \hline
-      \end{tabular}
-      \end{table}
     
       % \begin{figure}[htp]
       %   \includegraphics[width=\textwidth]{img/40-sphere.jpg}
