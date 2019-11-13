@@ -83,9 +83,48 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 %
 \section{Introduction}
 
-A universe of candidate solutions can exist for a single optimization problem,
-and sometimes conversional algorithms like Genetic Algorithms or Particle Swarm Optimization, for their own are too slow or fail to find an optimal
-solution. As the known No Free Lunch theorem says there is no perfect algorithm that will work for everything and % What do you mean by "traditional" methods? - JJ
+In the past few decades, nature-inspired optimization algorithms have been
+applied to solve complex real-world problems \cite{yang2014nature}. Algorithms
+inspired in natural processes,  include evolutionary algorithms (EAs)
+\cite{back1996evolutionary} and swarm intelligence (SI) \cite{kennedy2006swarm}.
+These population-based algorithms share the common characteristic of using an initial set of
+random candidate solutions that are later used to generate a new set of
+candidates, using a nature-inspired heuristic.
+%%% Optional
+% Maybe to much detail, this list is optional. It is Is here to remind the reader 
+% of the plethora of algorithms available; many have been applied successfully to tackle complex problems.  
+% if accepted references will be added
+Popular EAs are Genetic Algorithms (GAs), Genetic Programming (GP), 
+grey wolf optimization (GWO) and Differential Evolution (DE), 
+while examples of (SI) are particle swarm optimization (PSO) and
+ant colony algorithms (ACO).
+%%% 
+% Insert here a quick reminder of the island model in GAs 
+%   
+%%%
+%%%
+% General definition of multi-population to cover all methods 
+% Highlighting the differences 
+In general, multi-population based methods divide the original
+population into smaller subpopulations or islands, in which each subpopulation
+iterates independently. This isolation helps in maintaining an overall diversity
+because each subpopulation will search in a particular area. Recombination or
+migration between subpopulations is needed to avoid a premature convergence of
+candidate solutions. An additional advantage of multi-populations is that each
+subpopulation could be processed in parallel. Several works in multi-population
+optimization demonstrate that the method can easily
+integrate various nature-inspired optimization algorithms, and it often performs
+better than single-population optimization algorithms 
+\cite{wu2016differential,nseef2016adaptive}.
+
+
+
+
+%A universe of candidate solutions can exist for a single optimization problem,
+%and sometimes conversional algorithms like Genetic Algorithms or Particle Swarm Optimization, 
+%for their own are too slow or fail to find an optimal
+%solution. As the known No Free Lunch theorem says there is no perfect algorithm 
+%that will work for everything and % What do you mean by "traditional" methods? - JJ
 % That is why heuristic, population-based algorithms, and other types of
 % methods can be applied to find a good enough solution in a reasonable
 % time-frame. Population-based algorithms are useful to solve combinatory
@@ -103,6 +142,7 @@ solution. As the known No Free Lunch theorem says there is no perfect algorithm 
 % time...."
 % Then you can continue into the next paragraph, where you propose a
 % solution - JJ
+%% 
 even assuming that we selected an appropriate algorithm, we must also find the
 appropriate parameters.  Some parameters affect the accuracy of the solution and
 the convergence speed of the algorithms as they affect the degree of exploration
@@ -200,28 +240,11 @@ future lines of work.
 % The title of these subsections will be removed, they are just place-holders
 % References are pending
 \subsection{Multi-population}
-In the past few decades, nature-inspired optimization algorithms have been
-applied to solve complex real-world problems \cite{yang2014nature}. Algorithms
-inspired in natural processes,  include evolutionary algorithms (EAs)
-\cite{back1996evolutionary} and swarm intelligence (SI) \cite{kennedy2006swarm}.
-These algorithms have the common characteristic of using an initial set of
-random candidate solutions that are then used to generate a new set of
-candidates using a nature-inspired heuristic. Popular EAs are Genetic Algorithms
-(GAs), Genetic Programming (GP), grey wolf optimization (GWO) and Differential
-Evolution (DE), while examples of (SI) are particle swarm optimization (PSO) and
-ant colony algorithms (ACO). Borrowing from the island model in GAs, other
-population-based algorithms employ the same technique to improve their
-performance. In general, multi-population based methods divide the original
-population into smaller subpopulations or islands, in which each subpopulation
-iterates independently. This isolation helps in maintaining an overall diversity
-because each subpopulation will search in a particular area. Recombination or
-migration between subpopulations is needed to avoid a premature convergence of
-candidate solutions. An additional advantage of multi-populations is that each
-subpopulation could be processed in parallel. Several works in multi-population
-optimization demonstrate that the method can easily
-integrate various nature-inspired optimization algorithms, and it often performs
-better than single-population optimization algorithms 
-\cite{wu2016differential,nseef2016adaptive}.
+
+% Connect with the idea of heterogeneous populations 
+% Mixing many algorithms   
+
+
 
 
 \subsection{Parallel, Distributed}
