@@ -509,13 +509,17 @@ algorithms and parameters for each sub-population.
 
 \subsection{Parameter Configuration} 
 
-This architecture modifies the traditional way of working with population-based
-algorithms, then the experiments could not be parameterized as they
-usually are. % Probably rewrite this sentence - JJ
+On this architecture it is not counted the number of iterations by a synchronous way, then we don't know 
+if the algorithm is just interating more than usual and taking more computational resources with a real stop criterial.
+To solve the mencioned problematic there is used a method that defines when to stop the algorithms using as a metric value 
+the number of evaluations. Using a maximum number of evaluations it could be defined an acceptable criterial to stop, gived by the next ecuation.
+% This architecture modifies the traditional way of working with population-based
+% algorithms, then the experiments could not be parameterized as they
+% usually are. % Probably rewrite this sentence - JJ
 
-Then the experiments are scaled by their number of evaluations and the
-parameters must be configured to be adjusted to the next criteria, using the
-next expression: % I don't understand this sentence - JJ
+% Then the experiments are scaled by their number of evaluations and the
+% parameters must be configured to be adjusted to the next criteria, using the
+% next expression: % I don't understand this sentence - JJ
 
 \begin{equation}
     \label{eq:hesitancy-interpretation}
@@ -782,7 +786,7 @@ PSO Inercia factor & Random[0.5,4.0] \\
 
                   \begin{table}[htp]
 
-    \caption{Resultados 20 dimensiones}
+    \caption{20 dimensional experiment results}
     \label{table:resultados-2}
     \centering
     \begin{tabular}{|l|l|}
@@ -874,7 +878,7 @@ PSO Inercia factor & Random[0.5,4.0] \\
       %       \end{figure}
 
             \begin{table}[htp]
-              \caption{Resultados 40 dimensiones}
+              \caption{40 dimensional results}
               \label{table:resultados-2}
               \centering
               \begin{tabular}{|l|l|}
