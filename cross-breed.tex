@@ -7,9 +7,6 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{graphicx}
-\usepackage{tabularx}
-
-
 
 
 \begin{document}
@@ -563,40 +560,40 @@ For example, if the experiment has 2 dimensions, the maximum number of
     \caption{Parameters used by the algorithms for 2 and 10 dimensions. The Random mutation for GA includes the Tournament2, Tournament3, Random, RandomLinearRank, Sequential, Fittest variants. Fitness function is minimized in both cases.}
     \label{table:ga-pso-parameters}
     \centering
-    \begin{tabularx}{\linewidth}{|l|X|X|X|X|}
+    \begin{tabular}{|l|c|c|}
     \hline
-    Parameter & \multicolumn{4}{c|}{Values for dimensions} \\
+    Parameter & \multicolumn{2}{c|}{Values for dimensions} \\
       \hline
-      & 2 & 10 & 20 & 40 \\
+      & 2 & 10, 20, 40 \\
     \hline
-    GA Generations & 50 &  \multicolumn{3}{c|}{70} \\
+    GA Generations & 50 &  70\\
     \hline
-     GA Population size & 100 &  \multicolumn{3}{c|}{200}\\
+     GA Population size & 100 & 200\\
     \hline
-    GA Mutation &  \multicolumn{4}{c|}{Random}\\
+    GA Mutation &  \multicolumn{2}{c|}{Random}\\
     \hline
-    GA Crossover selection & \multicolumn{4}{c|}{Tournament3} \\
+    GA Crossover selection & \multicolumn{2}{c|}{Tournament3} \\
     \hline
-    GA Crossover percentage & \multicolumn{4}{c|}{Random[10\%, 80\%]} \\
+    GA Crossover percentage & \multicolumn{2}{c|}{Random[10\%, 80\%]} \\
     \hline
-    GA Mutation percentage & \multicolumn{4}{c|}{Random[10\%,50\%]} \\
+    GA Mutation percentage & \multicolumn{2}{c|}{Random[10\%,50\%]} \\
     \hline
-    GA Crossover function & \multicolumn{4}{c|}{1 point crossover} \\
+    GA Crossover function & \multicolumn{2}{c|}{1 point crossover} \\
     \hline
-    GA Mutation Function & \multicolumn{4}{c|}{Gaussian} \\
+    GA Mutation Function & \multicolumn{2}{c|}{Gaussian} \\
       \hline 
       \hline
-    PSO Iterations & 50 & \multicolumn{3}{c|}{70} \\
+    PSO Iterations & 50 & 70\\
     \hline
-    PSO Vector size & 100 & \multicolumn{3}{c|}{200} \\
+    PSO Vector size & 100 & 200\\
     \hline
-    PSO Social factor & \multicolumn{4}{c|}{Random[0.5,4.0]} \\
+    PSO Social factor & \multicolumn{2}{c|}{Random[0.5,4.0]} \\
     \hline
-    PSO Individual factor & \multicolumn{4}{c|}{Random[0.5,4.0]} \\
+    PSO Individual factor & \multicolumn{2}{c|}{Random[0.5,4.0]} \\
     \hline
-    PSO Inercia factor & \multicolumn{4}{c|}{Random[0.5,4.0]} \\
+    PSO Inercia factor & \multicolumn{2}{c|}{Random[0.5,4.0]} \\
     \hline
-    \end{tabularx}
+    \end{tabular}
     \end{table}
 
 % \begin{figure}[htp]
