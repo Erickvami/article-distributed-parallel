@@ -650,33 +650,65 @@ Every experiment was carried out 15 times, using % way which kind of
 \subsection{Results}
 \label{subs:results}
 %
-\begin{table}[htp]
+\begin{table}[h!tp]
   \caption{2,10,20,40 dimensional experiment result averages}
   \label{table:resultados-2}
   \centering
-  \begin{tabular}{|c|c|c|c|c|}
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Thu Nov 14 13:02:26 2019
+\begin{tabular}{rllrrr}
   \hline
-  Fn & 2D & 10D & 20D & 40D \\
+Dimensions & Algorithm & Function & Average & SD & Best \\ 
   \hline
-  \hline
-  Rastrigin GA & 1.65377E-08 & 2.38015E-06 & 0.220596203 & 3.560837088  \\
-  \hline
-  Rastrigin PSO & 1.8872E-12 & 2.715716161 & 25.51777514 & 130.2865863  \\
-  \hline
-  Rastrigin GA-PSO & 0 & 5.08668E-09 & 7.38E-02 & 2.13E+00\\
-  \hline
-  Sphere GA  & 4.36977E-10 & 2.5389E-08 & 9.22715E-06  & 0.005302951 \\
-  \hline
-  Sphere PSO & 7.8012E-12 & 4.72855E-09 & 3.50E-07 & 2.07E-03\\
-  \hline
-  Sphere GA-PSO & 4.33161E-14 & 1.30062E-09 & 2.13E-08  & 1.41E-04\\
-  \hline
-  Rosenbrock GA & 1.24176E-08 & 1.24176E-08 & 0.010958941  & 106.9287542   \\
-  \hline
-  Rosenbrock PSO & 2.47795E-06 & 4.431565444 & 13.37613983  & 0.368395353   \\
-  \hline
-  Rosenbrock GA-PSO & 6.90695E-09 & 0.000240251 & 0.005608855 & 0.525086565  \\
-  \hline
+  2 & GA-PSO & Rastrigin & 0.00E+00 & 0.00E+00 & 0.00E+00 \\ 
+  2 & GA-PSO & Rosenbrock & 6.91E-09 & 1.57E-08 & 9.58E-14 \\ 
+  2 & GA-PSO & Sphere & 4.33E-14 & 1.37E-13 & 0.00E+00 \\ 
+  2 & GA & Rastrigin & 1.65E-08 & 1.94E-08 & 0.00E+00 \\ 
+  2 & GA & Rosenbrock & 1.24E-08 & 2.27E-08 & 1.62E-13 \\ 
+  2 & GA & Sphere & 4.37E-10 & 1.17E-09 & 4.53E-18 \\ 
+  2 & PSO & Rastrigin & 1.89E-12 & 7.31E-12 & 0.00E+00 \\ 
+  2 & PSO & Rosenbrock & 2.48E-06 & 9.59E-06 & 1.12E-12 \\ 
+  2 & PSO & Sphere & 7.80E-12 & 2.06E-11 & 0.00E+00 \\ 
+  3 & GA-PSO & Rastrigin & 7.72E-09 & 2.40E-08 & 0.00E+00 \\ 
+  3 & GA-PSO & Sphere & 6.28E-10 & 2.39E-09 & 0.00E+00 \\ 
+  3 & GA & Rastrigin & 1.21E-08 & 1.98E-08 & 9.98E-13 \\ 
+  3 & GA & Sphere & 4.20E-11 & 1.41E-10 & 1.74E-15 \\ 
+  3 & PSO & Rastrigin & 0.00E+00 & 0.00E+00 & 0.00E+00 \\ 
+  3 & PSO & Sphere & 3.30E-11 & 1.18E-10 & 0.00E+00 \\ 
+  5 & GA-PSO & Rastrigin & 5.57E-08 & 1.71E-07 & 0.00E+00 \\ 
+  5 & GA-PSO & Sphere & 8.68E-09 & 1.74E-08 & 0.00E+00 \\ 
+  5 & GA & Rastrigin & 1.27E-08 & 1.48E-08 & 4.68E-12 \\ 
+  5 & GA & Sphere & 5.89E-09 & 8.62E-09 & 4.41E-11 \\ 
+  5 & PSO & Rastrigin & 6.54E-01 & 1.71E+00 & 0.00E+00 \\ 
+  5 & PSO & Sphere & 1.48E-03 & 5.74E-03 & 0.00E+00 \\ 
+  10 & GA-PSO & Rastrigin & 5.09E-09 & 1.15E-08 & 8.01E-12 \\ 
+  10 & GA-PSO & Rosenbrock & 2.40E-04 & 4.63E-04 & 3.62E-07 \\ 
+  10 & GA-PSO & Sphere & 1.30E-09 & 2.67E-09 & 3.34E-11 \\ 
+  10 & GA & Rastrigin & 2.38E-06 & 5.86E-06 & 3.22E-09 \\ 
+  10 & GA & Rosenbrock & 1.67E-04 & 2.88E-04 & 9.58E-07 \\ 
+  10 & GA & Sphere & 2.54E-08 & 2.13E-08 & 1.84E-09 \\ 
+  10 & PSO & Rastrigin & 2.72E+00 & 3.87E+00 & 7.86E-11 \\ 
+  10 & PSO & Rosenbrock & 4.43E+00 & 1.07E+01 & 4.17E-07 \\ 
+  10 & PSO & Sphere & 3.08E-02 & 1.19E-01 & 4.50E-11 \\ 
+  20 & GA-PSO & Rastrigin & 7.38E-02 & 2.58E-01 & 9.13E-09 \\ 
+  20 & GA-PSO & Rosenbrock & 5.61E-03 & 5.85E-03 & 2.32E-05 \\ 
+  20 & GA-PSO & Sphere & 2.13E-08 & 2.95E-08 & 9.11E-11 \\ 
+  20 & GA & Rastrigin & 2.21E-01 & 4.30E-01 & 8.09E-04 \\ 
+  20 & GA & Rosenbrock & 1.10E-02 & 1.71E-02 & 3.48E-04 \\ 
+  20 & GA & Sphere & 9.23E-06 & 7.55E-06 & 1.85E-06 \\ 
+  20 & PSO & Rastrigin & 2.55E+01 & 4.04E+01 & 3.99E+00 \\ 
+  20 & PSO & Rosenbrock & 1.34E+01 & 3.68E+00 & 9.12E+00 \\ 
+  20 & PSO & Sphere & 3.50E-07 & 9.46E-07 & 7.04E-11 \\ 
+  40 & GA-PSO & Rastrigin & 2.13E+00 & 1.83E+00 & 2.46E-04 \\ 
+  40 & GA-PSO & Rosenbrock & 5.25E-01 & 4.71E-01 & 1.85E-02 \\ 
+  40 & GA-PSO & Sphere & 1.41E-04 & 3.63E-04 & 2.00E-10 \\ 
+  40 & GA & Rastrigin & 3.56E+00 & 1.47E+00 & 1.95E+00 \\ 
+  40 & GA & Rosenbrock & 1.07E+02 & 1.66E+02 & 3.29E+01 \\ 
+  40 & GA & Sphere & 5.30E-03 & 1.85E-03 & 2.69E-03 \\ 
+  40 & PSO & Rastrigin & 1.30E+02 & 1.12E+02 & 2.91E+01 \\ 
+  40 & PSO & Rosenbrock & 3.68E-01 & 3.28E-01 & 3.27E-02 \\ 
+  40 & PSO & Sphere & 2.07E-03 & 8.01E-03 & 8.68E-11 \\ 
+ 
   \end{tabular}
   \end{table}
   
