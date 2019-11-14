@@ -531,61 +531,48 @@ points \cite{Kramer2017,Kaya2011}.
 
   \section{Experiments and Results}
   \label{sec:exp}
-  
-\subsection{Experiments}
-Now that interaction between sub-populations with different algorithms is
-working and cross-breed multi-population has been a success, using until now the added
-algorithms (GA and PSO) algorithms \cite{Kramer2017,Guerrero2017,Lalwani2019},
-all thanks to the developed architecture, let's proceed to the experiments. This
-section is going to be the execution of several experiments from 2 to 40
-dimensions, with a stop criteria of an error below 0.5E-8, without a parameter
-optimization method, waiting that the architecture by itself would be enough
-to increase the possibility of finding a better optimal result than the traditional
-methods. All this hoping that the results will probe % probe or prove?
-                                % - JJ
-the needs of this kind of
-architecture on increasing dimensions. To test if the architecture was useful,
-several experiments were made to solve benchmark functions, for this case the
-functions are Sphere, Rastrigin and Rosenbrock. Using 10 sub-population for each
-experiment and a maximum of 4 migrations per sub-population with different
-algorithms and parameters for each sub-population.
 
+  In this section we will first present the experiments that have been
+  made, including the configuration of parameters that has been used,
+  to then proceed to present and discuss the results in Subsection
+  \ref{subs:results}. 
+    
+  \subsection{Experiments}
+
+With the configuration shown in the section above, we performed a
+series of runs to check that results obtained were, at least, similar
+to similar estups, and we were satisfied with them; we need to prove,
+however, they obtain a good performance on benchmark functions, and
+what is their relative performance in a controlled environment.
+
+% ----------------- This intro eliminated ---------------------------------
+% Now that interaction between sub-populations with different algorithms is
+% working and cross-breed multi-population has been a success, using until now the added
+% algorithms (GA and PSO) algorithms \cite{Kramer2017,Guerrero2017,Lalwani2019},
+% all thanks to the developed architecture, let's proceed to the
+% experiments.
+% --------------------------------------------------------------------------
+%
 \begin{figure}[htp]
   \centering
     \includegraphics[width=0.7\textwidth]{img/benchmark.png}
-    \caption{Benchmark functions for experimentation.} \label{fig6}
+    \caption{Benchmark functions for experimentation.} \label{fig:functions}
     \end{figure}
-
-\subsection{Parameter Configuration} 
-
-This architecture modifies the traditional way of working with population-based
-algorithms, then the experiments could not be parameterized as they
-usually are. % Probably rewrite this sentence - JJ
-
-Then the experiments are scaled by their number of evaluations and the
-parameters must be configured to be adjusted to the next criteria, using the
-next expression: % I don't understand this sentence - JJ
-
-\begin{equation}
-    \label{eq:hesitancy-interpretation}
-   Evaluations = 10^{5} Dimensions
-   \end{equation}
-
-For example, if the experiment has 2 dimensions, the maximum number of
-   evaluations will be 200,000, for 10 dimensions will be 1,000,000 of evaluations
-   and likewise with the other dimensions.
-
-
-   Parametrization used is shown in Table \ref{table:ga-pso-parameters}.
-   %Justification of these parameters and how they scale with size must be included here - JJ
-
-
-% How are these parameters computed? - JJ
-
-
+%
+First, we will select the functions we are going to apply this
+framework to. We will be working on continuous optimization, since
+they are hard optimization problems and have also been chosen for
+benchmarks such as BBOB \cite{hansen2010bbob}; out of these functions,
+we have chosen Rastrigin, Sphere and Rosenbrock, which are represented
+in Figure \ref{fig:functions}. They have a different
+degree of difficulty, can be scaled to different dimensions (as all
+the rest of the benchmark functions), and they can at least give us an
+idea of how single-breed (GA or PSO) algorithms perform compared to
+our cross-breed (GA+PSO) version.
+%
 
    \begin{table}[h!tp]
-    \caption{Parameters used by the algorithms for 2 and 10 dimensions. The Random mutation for GA includes the Tournament2, Tournament3, Random, RandomLinearRank, Sequential, Fittest variants. Fitness function is minimized in both cases.}
+    \caption{Parameters used by the algorithms for all dimensions. The Random mutation for GA includes the Tournament2, Tournament3, Random, RandomLinearRank, Sequential, Fittest variants. Fitness function is minimized in both cases.}
     \label{table:ga-pso-parameters}
     \centering
     \begin{tabular}{|l|c|c|}
@@ -622,23 +609,47 @@ For example, if the experiment has 2 dimensions, the maximum number of
     PSO Inercia factor & \multicolumn{2}{c|}{Random[0.5,4.0]} \\
     \hline
     \end{tabular}
-    \end{table}
+\end{table}
 
-% \begin{figure}[htp]
-% \includegraphics[width=\textwidth]{img/2-sphere.jpg}
-% \caption{2 dimension experiments Sphere.} \label{fig7}
-% \end{figure}
+The parameters used for these algorithms are shown in table
+\ref{table:ga-pso-parameters}. In every algorithm run, we will use  a
+stop criteria of an error below 0.5E-8. The cross-breed algorithm
+itself used 10 sub-populations for each
+experiment and a maximum of 4 migrations per sub-population..
+Since this was intended mainly
+as a first approach to the performance of the cross-breed algorith, we
+did not perform any kind of optimization in the parameter space. Note
+that we use random parametrization for every population, except for
+the number of iterations before migration takes place and the vector
+size (in the case of PSO) % Please clarify what's this vector size, I
+                          % have no idea - JJ
+or population size (in the case of the GA). We kept these number
+fixed, and also did not vary it except for the smallest case
+(dimensions = 2). This was made mainly for the sake of a fair
+comparison between two algorithms, but in principle, and as a line of
+research we could approach in the future, this could also be either
+random or adaptive depending on the number of dimensions.
 
-% \begin{figure}[htp]
-%   \includegraphics[width=\textwidth]{img/2-rastrigin.jpg}
-%   \caption{2 dimension experiments Rastrigin.} \label{fig8}
-%   \end{figure}
-  
-% \begin{figure}[htp]
-%   \includegraphics[width=\textwidth]{img/2-rosenbrock.jpg}
-%   \caption{2 dimension experiments Rosenbrock.} \label{fig9}
-%   \end{figure}
+The maximum number of evaluations follows this equation:
+\begin{equation}
+    \label{eq:hesitancy-interpretation}
+   Evaluations = 10^{5} Dimensions
+   \end{equation}
+This means that evaluations will scale from 200K for the 2 dimensions,
+un to 4 millions for 4 dimensions.  This kind of parametrization is
+also usual in benchmarks, but of course we could use different
+parameters depending on the function and scaling in a different, and
+non-linear, way. 
 
+Every experiment was carried out 15 times, using % way which kind of
+                                % computer and operating system was
+                                % used, as well as the code, if it's
+                                % been released. Please add answer to
+                                % #17 here.
+
+\subsection{Results}
+\label{subs:results}
+%
 \begin{table}[htp]
   \caption{2,10,20,40 dimensional experiment result averages}
   \label{table:resultados-2}
@@ -719,6 +730,7 @@ For example, if the experiment has 2 dimensions, the maximum number of
       %       \includegraphics[width=\textwidth]{img/40-rosenbrock.jpg}
       %       \caption{40 dimensions experiments Rosenbrock.} \label{fig1}
       %       \end{figure}
+
 
     
             \begin{figure}[h!tb]
