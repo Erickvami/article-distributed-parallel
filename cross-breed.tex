@@ -293,10 +293,34 @@ the option to install some of these platforms locally; for instance, AWS (Amazon
 Web Services) \cite{Baird2016} or Apache Open Whisk \cite{Guerv2018}. 
 
 
-\begin{figure}[htp]
-  \includegraphics[width=\textwidth]{img/architectures.png}
-  \caption{Software architecture generations.} \label{fig1}
-  \end{figure}
+% \begin{figure}[htp]
+%   \includegraphics[width=\textwidth]{img/architectures.png}
+%   \caption{Software architecture generations.} \label{fig1}
+%   \end{figure}
+\begin{table}[htp]
+  \caption{Software architecture generations.}
+  \label{table:architectures}
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Monolitic & Microservices & Serverless \\
+  \hline
+  Pay for each virtual  & Pay for each  & Pay for each \\
+  machine and features & microservice & execution \\
+  \hline
+  Composed by a model  & Composed by virtual containers & Composed by functions \\
+  Client-Server-Database & that execute small parts of a system & inside containers \\
+  \hline
+  Inside Virtual Machines & Inside Containers & Cluster of functions\\
+  \hline
+  Require Operator System & Not Operator System required & Not Operator System required\\
+  \hline
+  \end{tabular}
+  \end{table}
+
+
+
+
 
 \subsubsection{Serverless Function} 
 In math, a function is a relation between a set of inputs and an allowed set of
@@ -605,34 +629,34 @@ For example, if the experiment has 2 dimensions, the maximum number of
 %   \end{figure}
 
 \begin{table}[htp]
-    \caption{2 dimensional experiment results}
-    \label{table:resultados-2}
-    \centering
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-    Fn & Best & AVG & Experiment Number \\
-    \hline
-    \hline
-    Rastrigin GA & 0 & 1.65377E-08 & 15\\
-    \hline
-    Rastrigin PSO & 0 & 1.8872E-12 & 15\\
-    \hline
-    Rastrigin GA-PSO & 0 & 0 & 15\\
-    \hline
-    Sphere GA & 4.53222E-18 & 4.36977E-10 & 15\\
-    \hline
-    Sphere PSO & 0 & 7.8012E-12 & 15\\
-    \hline
-    Sphere GA-PSO & 0 & 4.33161E-14 & 15\\
-    \hline
-    Rosenbrock GA & 1.62335E-13 & 1.24176E-08 & 15\\
-    \hline
-    Rosenbrock PSO & 1.11674E-12 & 2.47795E-06 & 15\\
-    \hline
-    Rosenbrock GA-PSO & 9.5809E-14 & 6.90695E-09 & 15\\
-    \hline
-    \end{tabular}
-    \end{table}
+  \caption{2,10,20,40 dimensional experiment result averages}
+  \label{table:resultados-2}
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Fn & 2D & 10D & 20D & 40D \\
+  \hline
+  \hline
+  Rastrigin GA & 1.65377E-08 & 2.38015E-06 & 0.220596203 & 3.560837088  \\
+  \hline
+  Rastrigin PSO & 1.8872E-12 & 2.715716161 & 25.51777514 & 130.2865863  \\
+  \hline
+  Rastrigin GA-PSO & 0 & 5.08668E-09 & 7.38E-02 & 2.13E+00\\
+  \hline
+  Sphere GA  & 4.36977E-10 & 2.5389E-08 & 9.22715E-06  & 0.005302951 \\
+  \hline
+  Sphere PSO & 7.8012E-12 & 4.72855E-09 & 3.50E-07 & 2.07E-03\\
+  \hline
+  Sphere GA-PSO & 4.33161E-14 & 1.30062E-09 & 2.13E-08  & 1.41E-04\\
+  \hline
+  Rosenbrock GA & 1.24176E-08 & 1.24176E-08 & 0.010958941  & 106.9287542   \\
+  \hline
+  Rosenbrock PSO & 2.47795E-06 & 4.431565444 & 13.37613983  & 0.368395353   \\
+  \hline
+  Rosenbrock GA-PSO & 6.90695E-09 & 0.000240251 & 0.005608855 & 0.525086565  \\
+  \hline
+  \end{tabular}
+  \end{table}
   
 
     
@@ -651,35 +675,7 @@ For example, if the experiment has 2 dimensions, the maximum number of
       %       \caption{10 dimensions experiments Rosenbrock.} \label{fig12}
       %       \end{figure}
 
-        \begin{table}[htp]
-          \caption{10 dimensional experiment results}
-          \label{table:resultados-2}
-          \centering
-          \begin{tabular}{|l|l|l|l|}
-          \hline
-          Fn & Best & Average & Experiment Number \\
-          \hline
-          \hline
-          Rastrigin GA & 3.21768E-09 & 2.38015E-06 & 15\\
-          \hline
-          Rastrigin PSO & 7.8586E-11 & 2.715716161 & 15\\
-          \hline
-          Rastrigin GA-PSO & 8.01492E-12 & 5.08668E-09 & 15\\
-          \hline
-          Sphere GA & 1.84051E-09 & 2.5389E-08 & 15\\
-          \hline
-          Sphere PSO & 4.50351E-11 & 4.72855E-09 & 15\\
-          \hline
-          Sphere GA-PSO & 3.33851E-11 & 1.30062E-09 & 15\\
-          \hline
-          Rosenbrock GA & 9.58323E-07 & 1.24176E-08 & 15\\
-          \hline
-          Rosenbrock PSO & 4.16711E-07 & 4.431565444 & 15\\
-          \hline
-          Rosenbrock GA-PSO & 3.62472E-07 & 0.000240251 & 15\\
-          \hline
-          \end{tabular}
-          \end{table}
+    
           
             % \begin{figure}[htp]
             %   \includegraphics[width=\textwidth]{img/20-sphere.jpg}
@@ -696,36 +692,7 @@ For example, if the experiment has 2 dimensions, the maximum number of
             %       \caption{20 dimensions experiments Rosenbrock.} \label{fig15}
             %       \end{figure}
 
-                  \begin{table}[htp]
-
-    \caption{Resultados 20 dimensiones}
-    \label{table:resultados-2}
-    \centering
-    \begin{tabular}{|l|l|l|l|}
-    \hline
-    Fn & Best & Average & Experiment Number \\
-    \hline
-    \hline
-    Rastrigin GA & 0.000808633 & 0.220596203 & 15\\
-    \hline
-    Rastrigin PSO & 3.988070734 & 25.51777514 & 15\\
-    \hline
-    Rastrigin GA-PSO & 9.13E-09 & 7.38E-02 & 15\\
-    \hline
-    Sphere GA & 1.84051E-09 & 9.22715E-06 & 15\\
-    \hline
-    Sphere PSO & 7.04E-11 & 3.50E-07 & 15\\
-    \hline
-    Sphere GA-PSO & 9.11E-11 & 2.13E-08 & 15\\
-    \hline
-    Rosenbrock GA & 0.000348015 & 0.010958941 & 15\\
-    \hline
-    Rosenbrock PSO & 9.119539342 & 13.37613983 & 15\\
-    \hline
-    Rosenbrock GA-PSO & 2.31663E-05 & 0.005608855 & 15\\
-    \hline
-    \end{tabular}
-    \end{table}
+       
     
       % \begin{figure}[htp]
       %   \includegraphics[width=\textwidth]{img/40-sphere.jpg}
@@ -742,36 +709,7 @@ For example, if the experiment has 2 dimensions, the maximum number of
       %       \caption{40 dimensions experiments Rosenbrock.} \label{fig1}
       %       \end{figure}
 
-            \begin{table}[htp]
-              \caption{Resultados 40 dimensiones}
-              \label{table:resultados-2}
-              \centering
-              \begin{tabular}{|l|l|l|l|}
-              \hline
-              Fn & Best & Average & Experiment Number \\
-              \hline
-              \hline
-              Rastrigin GA & 1.95478879 & 3.560837088 & 15\\
-              \hline
-              Rastrigin PSO & 29.06596132 & 130.2865863 & 15\\
-              \hline
-              Rastrigin GA-PSO & 2.46E-04 & 2.13E+00 & 15\\
-              \hline
-              Sphere GA & 0.002686956 & 0.005302951 & 15\\
-              \hline
-              Sphere PSO & 8.68E-11 & 2.07E-03 & 15\\
-              \hline
-              Sphere GA-PSO & 2.00E-10 & 1.41E-04 & 15\\
-              \hline
-              Rosenbrock GA & 0.000348015 & 106.9287542 & 15\\
-              \hline
-              Rosenbrock PSO & 0.032708559 & 0.368395353 & 15\\
-              \hline
-              Rosenbrock GA-PSO & 0.018538924 & 0.525086565 & 15\\
-              \hline
-              \end{tabular}
-            \end{table}
-
+    
             \begin{figure}
               \centering
                 \includegraphics[width=0.32\linewidth]{img/rastrigin-boxplot.png}
