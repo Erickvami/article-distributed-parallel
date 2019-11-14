@@ -698,26 +698,9 @@ Dimensions & Algorithm & Function & Average & SD & Best \\
   40 & Sphere & PSO & 2.07E-03 & 8.01E-03 & {\bf 8.68E-11 }\\  
   \end{tabular}
 \end{table}
-%
-\begin{figure}[h!tb]
-  \centering
-  \includegraphics[height=0.4\textheight]{img/rastrigin-boxplot.png}
-  \caption{Boxplot of results for Rastrigin function. Please note the $y$ axis is logarithmic..\label{fig:boxplot:rastrigin}}
-\end{figure}
-%
-\begin{figure}[h!tb]
-  \centering
-  \includegraphics[height=0.4\textheight]{img/sphere-boxplot.png}
-  \caption{Boxplot of results for the Sphere function, with a logarithmic $y$ axis.\label{fig:boxplot:sphere}}
-\end{figure}
-%
-\begin{figure}[h!tb]
-  \centering
-  \includegraphics[height=0.4\textheight]{img/rosenbrock-boxplot.png}
-  \caption{Boxplot of results for the Rosenbrock function; $y$ axis is logarithmic.\label{fig:boxplot:rosenbrock}}
-\end{figure}
 
-Results are shown in table \ref{ref:resultados}, including averages
+
+Results are shown in table \ref{table:resultados}, including averages
 (and standard deviation) and best results for the 15 runs. The {\bf
   Best} columns shows, among the 15 experiment, the best value
 reached. Except for two cases, the cros-breed algorithm is either the
@@ -726,12 +709,51 @@ reach the optimum, which is 0). There are two cases where the PSO
 algorithm reaches better values for the Sphere function, but in
 general we can affirm that the cross-breed algorithm proposed here
 reaches either the best or a value that is very close to it.
+%
+\begin{figure}[h!tb]
+  \centering
+  \includegraphics[height=0.4\textheight]{img/rastrigin-boxplot.png}
+  \caption{Boxplot of results for Rastrigin function. Please note the $y$ axis is logarithmic..\label{fig:boxplot:rastrigin}}
+\end{figure}
 
-
-
-with boxplots shown
+Let us analyze the average behavior also via the boxplots shown
 in Figure \ref{fig:boxplot:rastrigin},  \ref{fig:boxplot:sphere} and
-\ref{fig:boxplot:rosenbrock}. 
+\ref{fig:boxplot:rosenbrock}. Averages for Rastrigin are either
+significantly better or similar to GAs; 10 dimensions seems to be the
+case where the results for GA-PSO outperform significantly the rest of
+the algorithms; they are quite similar for more dimensions, and
+slightly better, but similar for smaller dimensions. 
+
+\begin{figure}[h!tb]
+  \centering
+  \includegraphics[height=0.4\textheight]{img/sphere-boxplot.png}
+  \caption{Boxplot of results for the Sphere function, with a logarithmic $y$ axis.\label{fig:boxplot:sphere}}
+\end{figure}
+%
+GA-PSO does not show a significative advantage for the Sphere
+function, shown in Figure \ref{fig:boxplot:sphere}, except for the
+smaller dimension; as the number of dimensions increases, so does the
+advantage of PSO. This is probably due to the big gap between the
+performance of the GA and the PSO algorithm. We will come back to this
+in the discussion.
+
+\begin{figure}[h!tb]
+  \centering
+  \includegraphics[height=0.4\textheight]{img/rosenbrock-boxplot.png}
+  \caption{Boxplot of results for the Rosenbrock function; $y$ axis is logarithmic.\label{fig:boxplot:rosenbrock}}
+\end{figure}
+%
+
+Finally, averages for GA-PSO show little difference with the best
+average in the Rosenbrock function, as shown in Figure
+\ref{fig:boxplot:rosenbrock}. In the cases its average is not the
+lowest, the difference with the highest average is not significant.
+
+These three functions show a different behavior; however, in most
+cases GA-PSO outperform the single-breed algorithms, and in some cases
+it shows an average behavior that is not significantly different from
+the best. We will discuss this findings in the next section.
+
 \section{Conclusions and future work}
 
 This architecture is completely scalable and useful for implementation of
