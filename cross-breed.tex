@@ -637,8 +637,10 @@ data license in {URL hidden}
 \label{subs:results}
 %
 \begin{table}[h!tp]
-  \caption{2,10,20,40 dimensional experiment result averages}
-  \label{table:resultados-2}
+  \caption{Experimental results. The {\bf Best} column shows in {\em
+      boldface} the best value among the three algorithms, or GA-PSO
+    if it's the same value as the best.}
+  \label{table:resultados}
   \centering
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
 % Thu Nov 14 13:02:26 2019
@@ -647,74 +649,111 @@ data license in {URL hidden}
 Dimensions & Algorithm & Function & Average & SD & Best \\ 
   \hline
    2 & Rastrigin & GA & 1.65E-08 & 1.94E-08 & 0 \\ 
-  2 & Rastrigin & GA-PSO & 0 & 0 & 0 \\ 
+  2 & Rastrigin & GA-PSO & 0 & 0 & {\bf 0} \\ 
   2 & Rastrigin & PSO & 1.89E-12 & 7.31E-12 & 0 \\ 
   2 & Rosenbrock & GA & 1.24E-08 & 2.27E-08 & 1.62E-13 \\ 
-  2 & Rosenbrock & GA-PSO & 6.91E-09 & 1.57E-08 & 9.58E-14 \\ 
+  2 & Rosenbrock & GA-PSO & 6.91E-09 & 1.57E-08 & {\bf 9.58E-14} \\ 
   2 & Rosenbrock & PSO & 2.48E-06 & 9.59E-06 & 1.12E-12 \\ 
   2 & Sphere & GA & 4.37E-10 & 1.17E-09 & 4.53E-18 \\ 
-  2 & Sphere & GA-PSO & 4.33E-14 & 1.37E-13 & 0 \\ 
+  2 & Sphere & GA-PSO & 4.33E-14 & 1.37E-13 & {\bf 0 }\\ 
   2 & Sphere & PSO & 7.80E-12 & 2.06E-11 & 0 \\ 
   3 & Rastrigin & GA & 1.21E-08 & 1.98E-08 & 9.98E-13 \\ 
-  3 & Rastrigin & GA-PSO & 7.72E-09 & 2.40E-08 & 0 \\ 
+  3 & Rastrigin & GA-PSO & 7.72E-09 & 2.40E-08 & {\bf 0} \\ 
   3 & Rastrigin & PSO & 0 & 0 & 0 \\ 
   3 & Sphere & GA & 4.20E-11 & 1.41E-10 & 1.74E-15 \\ 
-  3 & Sphere & GA-PSO & 6.28E-10 & 2.39E-09 & 0 \\ 
+  3 & Sphere & GA-PSO & 6.28E-10 & 2.39E-09 & {\bf 0} \\ 
   3 & Sphere & PSO & 3.30E-11 & 1.18E-10 & 0 \\ 
   5 & Rastrigin & GA & 1.27E-08 & 1.48E-08 & 4.68E-12 \\ 
-  5 & Rastrigin & GA-PSO & 5.57E-08 & 1.71E-07 & 0 \\ 
+  5 & Rastrigin & GA-PSO & 5.57E-08 & 1.71E-07 & {\bf 0} \\ 
   5 & Rastrigin & PSO & 6.54E-01 & 1.71E+00 & 0 \\ 
   5 & Sphere & GA & 5.89E-09 & 8.62E-09 & 4.41E-11 \\ 
-  5 & Sphere & GA-PSO & 8.68E-09 & 1.74E-08 & 0 \\ 
+  5 & Sphere & GA-PSO & 8.68E-09 & 1.74E-08 & {\bf 0} \\ 
   5 & Sphere & PSO & 1.48E-03 & 5.74E-03 & 0 \\ 
 10 & Rastrigin & GA & 2.38E-06 & 5.86E-06 & 3.22E-09 \\ 
-  10 & Rastrigin & GA-PSO & 5.09E-09 & 1.15E-08 & 8.01E-12 \\ 
+  10 & Rastrigin & GA-PSO & 5.09E-09 & 1.15E-08 & {\bf 8.01E-12} \\ 
   10 & Rastrigin & PSO & 2.72E+00 & 3.87E+00 & 7.86E-11 \\ 
   10 & Rosenbrock & GA & 1.67E-04 & 2.88E-04 & 9.58E-07 \\ 
-  10 & Rosenbrock & GA-PSO & 2.40E-04 & 4.63E-04 & 3.62E-07 \\ 
+  10 & Rosenbrock & GA-PSO & 2.40E-04 & 4.63E-04 & {\bf 3.62E-07} \\ 
   10 & Rosenbrock & PSO & 4.43E+00 & 1.07E+01 & 4.17E-07 \\ 
   10 & Sphere & GA & 2.54E-08 & 2.13E-08 & 1.84E-09 \\ 
-  10 & Sphere & GA-PSO & 1.30E-09 & 2.67E-09 & 3.34E-11 \\ 
+  10 & Sphere & GA-PSO & 1.30E-09 & 2.67E-09 & {\bf 3.34E-11} \\ 
   10 & Sphere & PSO & 3.08E-02 & 1.19E-01 & 4.50E-11 \\ 
   20 & Rastrigin & GA & 2.21E-01 & 4.30E-01 & 8.09E-04 \\ 
-  20 & Rastrigin & GA-PSO & 7.38E-02 & 2.58E-01 & 9.13E-09 \\ 
+  20 & Rastrigin & GA-PSO & 7.38E-02 & 2.58E-01 & {\bf 9.13E-09} \\ 
   20 & Rastrigin & PSO & 2.55E+01 & 4.04E+01 & 3.99E+00 \\ 
   20 & Rosenbrock & GA & 1.10E-02 & 1.71E-02 & 3.48E-04 \\ 
-  20 & Rosenbrock & GA-PSO & 5.61E-03 & 5.85E-03 & 2.32E-05 \\ 
+  20 & Rosenbrock & GA-PSO & 5.61E-03 & 5.85E-03 & {\bf 2.32E-05} \\ 
   20 & Rosenbrock & PSO & 1.34E+01 & 3.68E+00 & 9.12E+00 \\ 
   20 & Sphere & GA & 9.23E-06 & 7.55E-06 & 1.85E-06 \\ 
   20 & Sphere & GA-PSO & 2.13E-08 & 2.95E-08 & 9.11E-11 \\ 
-  20 & Sphere & PSO & 3.50E-07 & 9.46E-07 & 7.04E-11 \\ 
+  20 & Sphere & PSO & 3.50E-07 & 9.46E-07 & {\bf 7.04E-11} \\ 
   40 & Rastrigin & GA & 3.56E+00 & 1.47E+00 & 1.95E+00 \\ 
-  40 & Rastrigin & GA-PSO & 2.13E+00 & 1.83E+00 & 2.46E-04 \\ 
+  40 & Rastrigin & GA-PSO & 2.13E+00 & 1.83E+00 & {\bf 2.46E-04} \\ 
   40 & Rastrigin & PSO & 1.30E+02 & 1.12E+02 & 2.91E+01 \\ 
   40 & Rosenbrock & GA & 1.07E+02 & 1.66E+02 & 3.29E+01 \\ 
-  40 & Rosenbrock & GA-PSO & 5.25E-01 & 4.71E-01 & 1.85E-02 \\ 
+  40 & Rosenbrock & GA-PSO & 5.25E-01 & 4.71E-01 & {\bf 1.85E-02 }\\ 
   40 & Rosenbrock & PSO & 3.68E-01 & 3.28E-01 & 3.27E-02 \\ 
   40 & Sphere & GA & 5.30E-03 & 1.85E-03 & 2.69E-03 \\ 
   40 & Sphere & GA-PSO & 1.41E-04 & 3.63E-04 & 2.00E-10 \\ 
-  40 & Sphere & PSO & 2.07E-03 & 8.01E-03 & 8.68E-11 \\  
+  40 & Sphere & PSO & 2.07E-03 & 8.01E-03 & {\bf 8.68E-11 }\\  
   \end{tabular}
 \end{table}
+
+
+Results are shown in table \ref{table:resultados}, including averages
+(and standard deviation) and best results for the 15 runs. The {\bf
+  Best} columns shows, among the 15 experiment, the best value
+reached. Except for two cases, the cros-breed algorithm is either the
+best or the same value as the best (in some cases where all algorithms
+reach the optimum, which is 0). There are two cases where the PSO
+algorithm reaches better values for the Sphere function, but in
+general we can affirm that the cross-breed algorithm proposed here
+reaches either the best or a value that is very close to it.
 %
 \begin{figure}[h!tb]
   \centering
   \includegraphics[height=0.4\textheight]{img/rastrigin-boxplot.png}
   \caption{Boxplot of results for Rastrigin function. Please note the $y$ axis is logarithmic..\label{fig:boxplot:rastrigin}}
 \end{figure}
-%
+
+Let us analyze the average behavior also via the boxplots shown
+in Figure \ref{fig:boxplot:rastrigin},  \ref{fig:boxplot:sphere} and
+\ref{fig:boxplot:rosenbrock}. Averages for Rastrigin are either
+significantly better or similar to GAs; 10 dimensions seems to be the
+case where the results for GA-PSO outperform significantly the rest of
+the algorithms; they are quite similar for more dimensions, and
+slightly better, but similar for smaller dimensions. 
+
 \begin{figure}[h!tb]
   \centering
   \includegraphics[height=0.4\textheight]{img/sphere-boxplot.png}
   \caption{Boxplot of results for the Sphere function, with a logarithmic $y$ axis.\label{fig:boxplot:sphere}}
 \end{figure}
 %
+GA-PSO does not show a significative advantage for the Sphere
+function, shown in Figure \ref{fig:boxplot:sphere}, except for the
+smaller dimension; as the number of dimensions increases, so does the
+advantage of PSO. This is probably due to the big gap between the
+performance of the GA and the PSO algorithm. We will come back to this
+in the discussion.
+
 \begin{figure}[h!tb]
   \centering
   \includegraphics[height=0.4\textheight]{img/rosenbrock-boxplot.png}
   \caption{Boxplot of results for the Rosenbrock function; $y$ axis is logarithmic.\label{fig:boxplot:rosenbrock}}
 \end{figure}
-            
+%
+
+Finally, averages for GA-PSO show little difference with the best
+average in the Rosenbrock function, as shown in Figure
+\ref{fig:boxplot:rosenbrock}. In the cases its average is not the
+lowest, the difference with the highest average is not significant.
+
+These three functions show a different behavior; however, in most
+cases GA-PSO outperform the single-breed algorithms, and in some cases
+it shows an average behavior that is not significantly different from
+the best. We will discuss this findings in the next section.
+
 \section{Conclusions and future work}
 
 This architecture is completely scalable and useful for implementation of
@@ -723,6 +762,21 @@ with this kind of architecture there is no limit and it works better than
 cross-breed multi-population with only one algorithm, also every experiment executes in
 short times because serverless functions searching in an asynchronous way
 getting a fast convergence.
+
+In general, cross-breed algorithm increase diversity and then help
+exploration without sacrificing exploration; since results obtained by
+the two intervening algorithm are slightly different, the intermediate
+disturbance hypothesis, which has been used to explain results in PSO
+\cite{gao2013particle} as well as evolutionary algorithms
+\cite{merelo2008testing},  helps keep diversity high. However, in
+cases 
+where the results for GA and PSO are quite dissimilar, as is the case
+for the Sphere function, the cross-breed algorithm might, in some very
+specific cases, obtain worse results than the cross-breed  GA-PSO
+algorithm. However, the maintenance of diversity makes this difference
+relatively small, and the fact that it works better on the rest of the
+cases more than compensates.
+
 
 %\section{Future work}
 
