@@ -83,35 +83,30 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 
 In the past few decades, nature-inspired optimization algorithms have been
 applied to solve complex real-world problems \cite{yang2014nature}. Algorithms
-inspired in natural processes  include evolutionary algorithms (EAs)
-\cite{back1996evolutionary} and swarm intelligence (SI) \cite{kennedy2006swarm}, among others.
-These population-based algorithms share the common characteristic of using an initial set of
-random candidate solutions that are later used to generate a new set of
-candidates, using a nature-inspired heuristic. Popular EAs are Genetic Algorithms (GAs),
-Genetic Programming (GP), grey wolf optimization (GWO) and Differential Evolution (DE), 
-while examples of (SI) are particle swarm optimization (PSO) and
-ant colony algorithms (ACO). 
-% Insert here a quick reminder of the island model in GAs 
-As in nature, population-based algorithms are intrinsically parallel and
-asynchronous. Because of that, researchers have been proposing some form of
-parallelization since the earlier works \cite{muhlenbein1988evolution} with the
-objective of increasing the speed of these algorithms. One of the models
-proposed for parallization The concept of having several isolated populations 
-
-
-As in nature, population-based algorithms are intrinsically parallel and
-asynchronous. To increase the speed of these algorithms, researchers have been
-proposing some form of parallelization, since the earlier days
-\cite{muhlenbein1988evolution}. 
-%% Island Model
-One of the first concepts proposed for
-parallelization was the island model, which lead to an increased performance
-\cite{gorges1990explicit,grosso1985computer} by dividing a large population
-into communicated subpopulations.
-%% Multi-population
-Since then, the concept has been applied to
-other population-based algorithms, and generalized as multi-population based
-methods. Multi-population based methods divide the original population into
+inspired in natural processes include evolutionary algorithms (EAs)
+\cite{back1996evolutionary} and swarm intelligence (SI) \cite{kennedy2006swarm},
+among others. These population-based algorithms share the common characteristic
+of using an initial set of random candidate solutions that are later used to
+generate a new set of candidates, using a nature-inspired heuristic. Popular EAs
+are Genetic Algorithms (GAs), Genetic Programming (GP), grey wolf optimization
+(GWO) and Differential Evolution (DE), while examples of (SI) are particle swarm
+optimization (PSO) and ant colony algorithms (ACO).
+As in nature, population-based algorithms
+are intrinsically parallel and asynchronous. Because of that, researchers have
+been proposing some form of parallelization since the earlier works
+\cite{muhlenbein1988evolution} with the objective of increasing the speed of
+these algorithms. 
+%% Island Model 
+One of the first concepts proposed for parallelization was the island model,
+which lead to an increased performance \cite{gorges1990explicit,grosso1985computer} 
+by dividing a large population into communicated subpopulations.
+%% Multi-population 
+Since then, the concept has been applied to other population-based algorithms
+and has been adapted by researchers to pursue other objectives besides the
+execution speed. Currently, researchers use the term multi-population based
+methods to describe those techniques using subpopulations as part of their
+strategy.
+Multi-population based methods divide the original population into
 smaller subpopulations or islands, with every subpopulation carrying out the
 algorithm independently, with synchronous or asynchronous communication with the
 rest of the islands. This relative isolation helps in maintaining an overall
@@ -123,54 +118,49 @@ problem than bigger populations. However, it gives them the added advantage of
 parallel operation. Additionally, and in some cases, multi-population algorithms
 scale better than expected due to the interaction between the algorithm and the
 paralellism of the operation \cite{ALBA20027}.
-
-However, in most cases, what is run in the different islands is
-homogeneous, or at any rate, the same algorithm.  
-As long as this parallel operation is not synchronous, 
-other population-based algorithms, or, as a matter of
-fact, any algorithm, could be easily integrated. That is why 
-several works in multi-population are heterogeneous, integrating 
-various optimization algorithms, and often performing better than 
-single-population or homogeneous optimization algorithms 
-\cite{wu2016differential,nseef2016adaptive}.
-% Connect with the idea of heterogeneous populations 
+% Connect with the idea of heterogeneous populations
+However, in most cases, algorithms applied to each subpopulation are
+homogeneous, or at any rate, the same variant of the algorithm. As long as this
+parallel operation is not synchronous, other population-based algorithms, or, as
+a matter of fact, any algorithm, could be easily integrated. That is why several
+works based on multi-population are heterogeneous, integrating various
+optimization algorithms, and often performing better than single-population or
+homogeneous optimization algorithms \cite{wu2016differential,nseef2016adaptive}.
 % Explan the proposed method of mixing many algorithms through population streams  
-
-Even assuming that we selected an appropriate algorithm, we must also find the
-appropriate parameters. Some parameters affect the accuracy of the solution and
-the convergence speed of the algorithms as they tip the balance between exploration
-and exploitation of the search space. Heterogenous algorithms add
-another degree of freedom to the problem of finding the correct
-parameter settings for an algorithm; in this work we will simply use
-random settings withing a certain range to avoid this problem.
-% Two things here
-% * Add references to former work
+Heterogenous algorithms add another degree of freedom to the problem of finding
+the correct parameter settings for an algorithm; because some parameters affect
+the accuracy of the solution and the convergence speed of the algorithms as they
+tip the balance between exploration and exploitation of the search space. On the
+other hand, current studies show that by having a high number of subpopulations
+interacting in parallel, the effect of the individual parameters of each
+subpopulation is compensated by those selected in other subpopulations. In this
+work, we will use random settings within a specific range as results have shown
+this is a valid solution to this problem. 
+% Two things here 
+% * Add references to former work 
 % * Explain why some parameters, like the population size, are not
-% generated randomly too - JJ
+% generated randomly too - JJ 
+Some parameters, specialy the population size, are
+kept fixed in order to control more easily the execution of the algorithm. For
+instance, by having the size of subpopulations fixed, it is easier to control
+the number of evaluations and the communication costs, when the algorithm is in
+operation.
+% 2. State clearly from the beginning, and in a positive way (that is,
+% don't use the reasoning: this sucks, so we need something better)
+% what is your intention: use a parallel architecture for combined,
+% parameter-free-algorithms.
+Combining multiple algorithms, with different parameters, interacting with each
+other at the same time, can benefit from the strengths of each. For instance, a
+genetic algorithm could find a promising global solution that is not optimal
+while another algorithm, more suitable for a local search, finds the global
+optimum. This approach has been followed extensively in recent years, with
+success. Moreover, there is a need for frameworks, architecture, and
+implementation models that can allow researchers the development of new
+parallel, asynchronous, heterogeneous, and parameter-free algorithms in a scalable way.  
 
+%To deal with these problems, parallel and cross-breed multi-population
+%algorithms architecture has been proposed.
 
-% This belongs to a separate paragrahp
-Cross-breed multi-population algorithm that combine two or more
-heuristics can benefit from the strengths of each. % You need to
-                                % define what you mean by hybrid
-                                % algorithm. Actually, this algorithms
-                                % is not hybrid, but a combination of
-                                % several algorithms. - JJ 
-
-For instance, a genetic
-algorithm could find a promising global solution that is not optimal while another algorithm, more
-suitable for a local search, finds the global optimum. To deal with these problems,
-parallel and cross-breed multi-population algorithms architecture have been proposed. % Parallel
-                                % architectures were proposed mainly
-                                % for speed. You really need to
-                                % qualify this - JJ
-The clear advantage of
-these architectures is the faster execution of the algorithms. However, there is
-also the ability to change the search dynamically, % You can do that
-                                % in sequential architectures too - JJ
-having multiple algorithms
-with different parameters interacting with each other at the same
-time. % Now you're arriving somewhere. But you need to:
 % 1. Add more references. Most claims must have a reference to support it.
 % 2. State clearly from the beginning, and in a positive way (that is,
 % don't use the reasoning: this sucks, so we need something better)
@@ -178,51 +168,53 @@ time. % Now you're arriving somewhere. But you need to:
 % parameter-free-algorithms.
 % 3. 
 
+% a paragraph that binds that previous paragraph to our work in this paper. 
+%Why is this related to what we presented above? - JJ
 
-% a paragraph that binds that previous paragraph to our work in this paper. Why is this related to what we presented above? - JJ
-In this work, we present a new version of the event-driven architecture
-proposed in [Anonymous]; this is a so-called {\em serverless}
-architecture that
-processes independent small populations with their own characteristics % small? fragments? Aren't they independent populations?
-from a population of populations in a distributed way, working together to find an optimal value. % Please rephrase. You mention "population" 3 times in a single sentence - JJ
-The main components % of what? - JJ
-are stateless functions,
-running asynchronously, % They always do - JJ
-and communicating using message-queues, that process each
-sub-population. % Maybe previous to this a small introduction about cloud-native applications - JJ
-Also, sub-populations use the migration of data % What kind of data? - JJ
-between them, to
-help each other even if the algorithms or parameters of each sub-population are
-different. The objective is to prevent the algorithm from falling into local optimal
-values balancing inconvenients of a determinated population-based algorithm with the others. % Please check grammar, but also say which problems it balances - JJ
-This mechanism is driven by events, on arriving processed sub-population migrating with a random selection 
-from the best 2 sub-populations, keeping diversity but with a sort of elitism. 
-% But simple parallel evolutionary algorithms can also do the same
-% thing. You don't need to use two algorithms at the same time - JJ
+In this work, we present a new version of the event-driven architecture proposed
+in [Anonymous]; this is a so-called {\em serverless} architecture that
+asynchronously processes isolated and heterogeneous subpopulations. Each
+subpopulation is treated as an event, that is pushed asynchronously into a
+message queue. Events trigger stateless functions that receive the subpopulation
+and proceed to run an algorithm, using the paramaters and population included in
+the message. After the specified number of iterations, each stateless function
+returns the evolved subpopulation by again pushing a message to another queue,
+used for receiving the resulting subpopulations. Subpopulations are received
+from the queue by a controller that is responsible for mixing the individuals
+from different subpopulations and producing new subpopulations. These new
+subpopulations are pushed again by the controller into the message queue,
+creating a loop. The cycle stops when the controller receives a subpopulation
+containing a candidate solution that satisfies a particular condition, or a
+maximum number of messages were received. 
+
+In this new version, we propose several improvements to the original. First, we
+propose alternative methods of migration between populations to compensate for
+differences in the execution time of the functions. The architecture includes
+external storage for the subpopulations it receives, instead of an in-process
+buffer, that was limited to a small number of sub-populations. Also, the
+migration or mixing process includes the capability of doing operations at the
+individual-level. 
+We can see the proposal as a way of evolving and mixing a
+stream of populations that can very different as if their individuals belong to
+different species; the term we use to describe the solution is a cross-breed
+multi-population method.
+
 % This new
 % implementation uses JavaScript for the full stack, and it is designed to be
 % executed locally or in a cloud environment. The implementation includes a
 % web-based application to execute and monitor experiments
 % interactively. % implementation detail, best left for the conclusions
                % - JJ
-We also
-propose alternative methods of migration between populations to compensate for
-differences in the execution time of the functions. % This is probably
+%We also
+%propose alternative methods of migration between populations to compensate for
+%differences in the execution time of the functions. % This is probably
                                 % one of the main points of the
                                 % paper. Should be enphasized more
                                 % - JJ
 
-
-%This document shows what are serverless functions and their spot into the world
-%of software architecture, describing its features and advantages of its
-%implementation compared with others. Once that the concept of Serverless is
-%understood  
-% I think this can be explained briefly in the state of the art - Mario
-
 %%%%% BEGIN (needs work)
 
-To evaluate the software implementation and the capability of a 
-cross-breed multi-population solution,
+To evaluate the capability of a cross-breed multi-population solution,
 we conducted several experiments using different benchmark functions, comparing the
 results of single versus cross-breed multi-population algorithms. For the experiments, we choose to
 compare the PSO and GA algorithms, as they are well understood, and there are
@@ -238,12 +230,11 @@ stateless functions, and more algorithms can be added in the same way.
 %% what is presented in each section? 
 %% Check other papers to get the idea - Mario
 
-The rest of the paper is organized as follows: next section is devoted
-to analyzing the state of the art in multi-population, multi-paradigm,
+The rest of the paper is organized as follows: the next section is devoted
+to analyzing the state of the art of multi-population, multi-paradigm,
 stateless evolutionary algorithms. The architecture proposed is
-presented in Section \ref{sec:architecture} and put to work in the
-Section \ref{sec:exp}. Finally, we present our conclusions and the
-future lines of work.
+presented in Section \ref{sec:architecture} and put to work in Section\ref{sec:exp}.
+Finally, we present our conclusions and future lines of work.
 
 \section{State of the Art}
 
