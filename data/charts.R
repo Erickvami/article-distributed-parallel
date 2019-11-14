@@ -1,15 +1,16 @@
 library(ggplot2)
 library(ggthemes)
 library(xtable)
+library(tidyr)
 
 data <- read.csv("experiments.csv")
 
 means <-  aggregate(Fitness ~ Dimensions + Algorithm + Function, data = data, FUN= "mean" )
 sd <-  aggregate(Fitness ~ Dimensions + Algorithm + Function, data = data, FUN= "sd" )
 best <-  aggregate(Fitness ~ Dimensions + Algorithm + Function, data = data, FUN= "min" )
-stats.0 <-  merge(means,sd,by= c("Dimensions", "Algorithm", "Function"))
-stats <- merge(stats.0,best,by= c("Dimensions", "Algorithm", "Function"))
-names(stats) <- c("Dimensions", "Algorithm", "Function", "Average","SD","Best")
+stats.0 <-  merge(means,sd,by= c("Dimensions", "Function", "Algorithm"))
+stats <- merge(stats.0,best,by= c("Dimensions", "Function", "Algorithm"))
+names(stats) <- c("Dimensions", "Function", "Algorithm", "Average","SD","Best")
 print(xtable(stats,digits=c(0,0,0,0,-2,-2,-2)), include.rownames=FALSE)
 
 data$Dimensions <- as.factor(data$Dimensions)
