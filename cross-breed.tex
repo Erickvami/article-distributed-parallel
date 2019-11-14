@@ -721,13 +721,22 @@ For example, if the experiment has 2 dimensions, the maximum number of
       %       \end{figure}
 
     
-            \begin{figure}
+            \begin{figure}[h!tb]
               \centering
-                \includegraphics[width=0.32\linewidth]{img/rastrigin-boxplot.png}
-                \includegraphics[width=0.32\linewidth]{img/sphere-boxplot.png}
-                \includegraphics[width=0.32\linewidth]{img/rosenbrock-boxplot.png}
-              \caption{Boxplot of results for, from left to right,
-                Rastrigin, Sphere and Rosenbrock functions.\label{fig:boxplot}}
+                \includegraphics[height=0.5\textheight]{img/rastrigin-boxplot.png}
+              \caption{Boxplot of results for Rastrigin function. Please note the $y$ axis is logarithmic..\label{fig:boxplot:rastrigin}}
+            \end{figure}
+%
+                 \begin{figure}[h!tb]
+              \centering
+                \includegraphics[height=0.5\textheight]{img/sphere-boxplot.png}
+              \caption{Boxplot of results for the Sphere function, with a logarithmic $y$ axis.\label{fig:boxplot:sphere}}
+            \end{figure}
+%
+                 \begin{figure}[h!tb]
+              \centering
+                \includegraphics[height=0.5\textheight]{img/rosenbrock-boxplot.png}
+              \caption{Boxplot of results for the Rosenbrock function; $y$ axis is logarithmic.\label{fig:boxplot:rosenbrock}}
             \end{figure}
             
 \section{Conclusions and future work}
