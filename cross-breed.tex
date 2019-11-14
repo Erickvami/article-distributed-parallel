@@ -7,7 +7,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{graphicx}
-
+\hyphenation{pa-ra-me-tri-za-tion}
 
 \begin{document}
 %
@@ -108,7 +108,6 @@ and has been adapted by researchers to pursue other objectives besides the
 execution speed. Currently, researchers use the term multi-population based
 methods to describe those techniques using subpopulations as part of their
 strategy.
-
 
 Multi-population based methods divide the original population into
 smaller subpopulations or islands, with every subpopulation carrying out the
@@ -247,62 +246,50 @@ Finally, we present our conclusions and future lines of work.
 % The title of these subsections will be removed, they are just place-holders
 % References are pending
 %\subsection{Multi-population}
-
+ 
 Multi-population based methods have been used extensively in recent years, with
 some journal papers dedicated exclusively to surveying the current state of the
-art \cite{ma2019multi} and challenges \cite{li2015multi}. A recent survey on
-ensemble strategies for population-based optimization algorithms
-\cite{wu2019ensemble} reports current advances on parametrization and
-implementation techniques, presenting results in competitive and collaborative
-multi-populations as well as parametrization techniques.
-
-Multi-population techniques are heavily applied in dynamic optimization, from
+art \cite{ma2019multi}. Furthermore,  Li et al. \cite{li2015multi} described
+some of the challenges for multi-population methods in dynamic environments,
+e.g., how to dynamically adapt the number populations in response to the changes
+in the environment or how to determine the search area of each population. On
+the subject of heterogeneous populations, a recent survey on ensemble strategies
+Wu et al. \cite{wu2019ensemble} reports current advances on implementation
+techniques for multi-algorithm populations. They present several works on
+competitive and collaborative multi-populations as well as parametrization
+techniques. Multi-population techniques are heavily applied in dynamic optimization, from
 island-based parallel EAs \cite{lissovoi2017runtime}, harmony search
-\cite{turky2014multi} and ACO \cite{nseef2016adaptive}. Combinatorial problems
-\cite{pourvaziri2014hybrid}, using a combination of local and global operators
+\cite{turky2014multi} and ACO \cite{nseef2016adaptive}. There are also 
+applications to combinatorial problems \cite{pourvaziri2014hybrid}, 
+and hybrid techniques using a combination of local and global operators
 \cite{bai2018integrated}.
 
 Then there are also surveys dedicated to reporting current advances in the
 parallelization of particular population-based heuristics, from parallel PSO
-\cite{Lalwani2019}, using GPUs in particular \cite{tan2015survey} , ACO
+\cite{Lalwani2019}, using GPUs in particular \cite{tan2015survey}, ACO
 \cite{pedemonte2011survey} and distributed EAs \cite{gong2015distributed}.  
+The most common form of paralellization is to exploit the capabilities of
+multi-core CPUs and GPUs. Algorithms can run on a single workstation using a
+multi-core CPU, or a GPU with multiple processing elements or in multiple
+machines by using clusters, grids, or cloud services \cite{Lalwani2019}.
 
-
-\subsection{Parallel, Distributed}
-The most common form of paralellization is to exploit the capabilities of multi-core CPUs and
-GPUs.   
-
-
-
-
-Distributed and cloud-based architectures are used extensively in the software
-industry because of their high performance and lower overall cost. Many systems
-are being created and migrating step by step to microservices and new serverless
-architectures, which proposes the use of Function as a Service (FaaS) 
-\cite{Hellerstein2018,Everywhere,Baird2016}. 
-Researchers are starting to exploit this type of architectures in heuristic optimization
-development, and here we take advantage of them to increase the performance of
-some population-based algorithms.
-
-\subsection{Cloud, Serverless}
-% These sections can be optional, 
-% they can be part of the Intro, SoA, of a Concepts section - Mario
-
-% Multi-population
-% Parallel, Distributed 
-% Cloud
-% Serverless
-
-Recently, cloud providers such as Amazon Web Services (AWS), IBM Cloud, and
-Google Cloud, offers a new alternative to programming through interfaces called
-Serverless Computing [References], this platform consists of an effortless a
-mechanism where developers upload the code into the platform and execute it as
-many times as it is required, scaling and allowing to do this in parallel. This
-way, the developers do not worry about servers, connections, and other
-configurations. In serverless, users pay only for what it is used. There is also
-the option to install some of these platforms locally; for instance, AWS (Amazon
-Web Services) \cite{Baird2016} or Apache Open Whisk \cite{Guerv2018}. 
-
+In this paper, we will focus on the use of cloud-based architectures that have
+been used extensively in the software industry, because of their high
+performance and lower overall cost. Recently, cloud providers such as Amazon Web
+Services (AWS), IBM Cloud, and Google Cloud, offers a new alternative to
+programming through interfaces called Serverless Computing [References]. These
+platforms consist of a simple mechanism where developers can upload the code
+into the service and execute it as many times as it is required, scaling and
+replicating automatically, allowing a parallel execution. This way, developers
+do not worry about servers, connections, and other configurations. In
+serverless, users pay only for what they use. In this case, the service provides
+the simple concurrent execution of stateless functions, and that is why it is
+called Function as a Service (FaaS) \cite{Hellerstein2018,Everywhere,Baird2016}
+. When using a FaaS, the client pays for every single execution of the function.
+There is also the option to install some of these platforms locally; for
+instance, AWS (Amazon Web Services) \cite{Baird2016} or Apache Open Whisk
+\cite{Guerv2018}. The tendency in cloud-based architectures is to move from 
+monolithic to serverless architectures, as seen in Table~\ref{table:architectures}.     
 
 % \begin{figure}[htp]
 %   \includegraphics[width=\textwidth]{img/architectures.png}
@@ -330,9 +317,6 @@ Web Services) \cite{Baird2016} or Apache Open Whisk \cite{Guerv2018}.
   \end{table}
 
 
-
-
-
 \subsubsection{Serverless Operation} 
 In math, a function is a relation between a set of inputs and an allowed set of
 outputs, with the idea that each input goes to a single output. However, in
@@ -349,7 +333,6 @@ a short duration \cite{Baird2016,Cook2017}.
 % Explain a bit more the "Stateless" part - Mario 
 
 \subsection{Asynchronous}
-
 Asynchronous algorithms consist of performing a certain action such as the
 movement of the particles in PSO or the crosses and mutations of the GA without
 the need for the execution of one to affect the other, in a few words a
