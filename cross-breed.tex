@@ -559,7 +559,7 @@ our cross-breed (GA+PSO) version.
 %
 
    \begin{table}[h!tp]
-    \caption{Parameters used by the algorithms for all dimensions. The Random mutation for GA includes the Tournament2, Tournament3, Random, RandomLinearRank, Sequential, Fittest variants. Fitness function is minimized in both cases.}
+    \caption{Parameters used by the algorithms for all dimensions.}
     \label{table:ga-pso-parameters}
     \centering
     \begin{tabular}{|l|c|c|}
@@ -572,7 +572,7 @@ our cross-breed (GA+PSO) version.
     \hline
      GA Population size & 100 & 200\\
     \hline
-    GA Mutation &  \multicolumn{2}{c|}{Random}\\
+    GA Mutation selection &  \multicolumn{2}{c|}{Tournament3}\\
     \hline
     GA Crossover selection & \multicolumn{2}{c|}{Tournament3} \\
     \hline
@@ -580,7 +580,7 @@ our cross-breed (GA+PSO) version.
     \hline
     GA Mutation percentage & \multicolumn{2}{c|}{Random[10\%,50\%]} \\
     \hline
-    GA Crossover function & \multicolumn{2}{c|}{1 point crossover} \\
+    GA Crossover function & \multicolumn{2}{c|}{Splitting Point Uniform} \\
     \hline
     GA Mutation Function & \multicolumn{2}{c|}{Gaussian} \\
       \hline 
