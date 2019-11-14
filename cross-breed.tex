@@ -420,26 +420,28 @@ data flow between these services in more detail on the next points.
   serverless functions to perform a crossover or an update of any of the
   subpopulations \cite{Lovbjerg2001,Jimeno2019}. 
 
-\item {\bf Message Provider}: Its purpose is the creation of a sub-population messages
-  queue which is the communication channel % A queue is not a channel,
-                                % it's _in_ a channel - JJ
-  between the sub-population Manager and
-the Receiver (FaaS), each message is a trigger for the execution of a GA or PSO
-function. Thanks to the message queue, it is possible to perform the serverless
-functions asynchronously, avoiding waiting states in the algorithm
-while responses arrive, 
-independently of their duration and the simultaneous evaluation of different
-sub-populations independent of its algorithm or characteristics.
-\item Receiver: Here are the Serverless
-  functions of the % which section? Are you talking about the receiver
+\item {\bf Message Provider}:Communication is a vital aspect of distributed
+systems and can be complicated to implement. Messaging systems have been used
+successfully in cloud computing environments because they are scalable and
+easier to use. When used as a service, they provide a secure, asynchronous, and
+highly scalable mean of interprocess communication.  In this model, populations
+are messages.  Messages are independent of the particular algorithm that is
+going to receive them. When implemented, there are no dependencies on time,
+implementation language, or operating system; systems can broadcast, publish, or
+subscribe to message channels, enabling many configurations. In this
+implementation,  we use only three queues, one for each type of algorithm and
+one for populations returning to the manager.
+
+\item Serverless functions:
+% of the % which section? Are you talking about the receiver
                    % itself? - JJ
-algorithms to be executed, reducing the best possible using the functional
-programming paradigm so that they can be converted into FaaS without problems,
-in addition to achieving a completely clean and fast
-execution\cite{Roberts2016}. Each message received on this node is executed in
-the form of a multi-threaded process in parallel, this allows having more than
-one population-based search algorithm running at the same time and making a copy
-of itself each algorithm functions as required.
+                   Population-based optimization algorithms can be implemented
+as stateless functions, receiving a configuration and a population as
+parameters, and returning the evolved population. This operation has to be
+executed in complete isolation, as a lambda function in the functional
+programming paradigm so that they are compatible with a FaaS, where serverless
+functions can scale on-demand, and many copies of the same function could
+working at the same time. \cite{Roberts2016}. .
 \end{itemize}
 
 To develop this architecture the applied technologies are based in JavaScript
@@ -454,19 +456,18 @@ shown in Fig. \ref{flow}.
   \end{figure}
   % Could be OK for the presentation, divided in 3 slides - JJ
   
-\subsection{Sub-population definition}
-
-Individuals are created composed of 2 types of information, the one that is
-active or useful for crossing and the one that is not. % this is not a
-                                % proper definition. - JJ
-The population contains
-the series of possible solutions, while the rest % what is the rest? -
-% JJ
-% Please rewrite this - JJ
-contains the information on how
-the processing for the search of the optimal solutions will be executed, linked
-directly with their respective algorithms.
-Y
+\subsection{Subpopulations}
+Each subpopulation is a structure with two main attributes. 
+\begin{itemize}
+  \item {\bf metadata} This attribute has all the data needed 
+  to configure and report the execution of the population.
+  For instance, algorithm parameters, objective function, 
+  optimum value (benchmarks). But also a trace of the execution, 
+  for instance, the number of evaluations per iteration, 
+  the best individual, and its fitness value.   
+  \item {\bf population} This is the collection of individuals
+  in the population in their current state.    
+\end{itemize}
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\textwidth]{img/subpopulationDefinition.png}
