@@ -7,6 +7,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{graphicx}
+\usepackage[numbers,sort&compress]{natbib}
 \hyphenation{pa-ra-me-tri-za-tion}
 
 \begin{document}
@@ -413,7 +414,9 @@ data flow between these services in more detail on the next points.
   one randomly. Once it performs the selection, it executes a Splitting Point
   Uniform crossing, between the two. We will explain this process will in a
   later section.  As a result of the migration, we have now created two new
-  populations, which are resent back to their respective queues. This process is
+  populations that are going to be into a buffer that sends them in parallel messages
+  , which are resent back to their respective queues to AWS functions that internaly has 
+  its own execution queue using sockets. This process is
   repeated until completing the number of assigned migrations for the
   multi-population \cite{Ma2019,Santander-jim2018}. Of course, this whole
   process is performed asynchronously, avoiding the wait for all responses from
@@ -470,7 +473,7 @@ Each subpopulation is a structure with two main attributes.
 \end{itemize}
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.6\textwidth]{img/subpopulationDefinition.png}
+  \includegraphics[width=0.5\textwidth]{img/subpopulationDefinition.png}
   \caption{Sub-population composition.} \label{fig3}
   \end{figure}
 
@@ -484,21 +487,23 @@ crossover in Genetic Algorithms, creating 2 completely new sub-populations every
 time a processed sub-population arrives into the Manager node and replacing
 themselves in the multi-population.
 
-The migration created to % to? For? - JJ
+The migration created for % to? For? - JJ
 this architecture is a method called Splitting Point
 Uniform that consists of a uniform mask that is created to apply the migration
-between individuals, vectors or both of them, from two sub-populations. The
-selected data are combined using the midpoint between the active values
-points by the binary mask generated randomly. % Not clear. Maybe a
+between individuals, vectors or both of them, from two sub-populations. 
+The binary mask indicates for the first offspring where to swap individuals/vectors, 
+but in the second offspring the "0" values indicates where to swap individuals/vectors, for "1" 
+ makes a crossover between individuals/vectors creating uniform mask that indicates where to swap and where to 
+ replaces some of them with middle points of the selected data, for example from the values 
+ 2 and 5 the middle point would be 3.5.
+ % Not clear. Maybe a
                                 % picture? - JJ
-This process iterates the 2
-sub-populations to randomly swap values and replaces some of them with middle
-points \cite{Kramer2017,Kaya2011}.
+                                
 
 
-\begin{figure}[htp]
+\begin{figure}[!htp]
   \centering
-  \includegraphics[width=0.9\textwidth]{img/splittinPointUniform.png}
+  \includegraphics[width=0.8\textwidth]{img/splittinPointUniform.png}
   \caption{Splitting Point Uniform process.} \label{fig4}
   \end{figure}
 
@@ -732,7 +737,7 @@ slightly better, but similar for smaller dimensions.
 
 \begin{figure}[h!tb]
   \centering
-  \includegraphics[height=0.4\textheight]{img/sphere-boxplot.png}
+  \includegraphics[height=0.44\textheight]{img/sphere-boxplot.png}
   \caption{Boxplot of results for the Sphere function, with a logarithmic $y$ axis.\label{fig:boxplot:sphere}}
 \end{figure}
 %
@@ -742,8 +747,7 @@ smaller dimension; as the number of dimensions increases, so does the
 advantage of PSO. This is probably due to the big gap between the
 performance of the GA and the PSO algorithm. We will come back to this
 in the discussion.
-
-\begin{figure}[h!tb]
+\begin{figure}[h!tbp]
   \centering
   \includegraphics[height=0.4\textheight]{img/rosenbrock-boxplot.png}
   \caption{Boxplot of results for the Rosenbrock function; $y$ axis is logarithmic.\label{fig:boxplot:rosenbrock}}
@@ -798,6 +802,11 @@ increasing the possibilities to get an optimal result, preventing get stuck into
 a local optimum. Of course, it is expected to use this architecture using more
 algorithms than GA and PSO.
 
+We also think about implement a real time user interface to display how is actually 
+the behavior of the populations allowing to analyzing more precisely possible
+changes to improvements, of course this makes easier to use the architecture and
+even could help as educational tool.
+
 % Maybe add randomizing all elements of the population, including
 % population and number of generations - JJ
 
@@ -808,6 +817,6 @@ taking this much\\
 space
 
 \bibliography{multipopulation}
-      \bibliographystyle{ieeetr}
+      \bibliographystyle{plain}
   
 \end{document}
