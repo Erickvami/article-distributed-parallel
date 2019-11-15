@@ -450,15 +450,32 @@ one for populations returning to the manager.
 \subsubsection{Serverless functions}
 
 Population-based optimization algorithms can be implemented
-as stateless functions, receiving a configuration and a population as
-parameters, and returning the evolved population. This operation has to be
-executed in complete isolation, as a lambda function in the functional
-programming paradigm so that they are compatible with a FaaS, where serverless
-functions can scale on-demand, and many copies of the same function could
-working at the same time \cite{Roberts2016}.
+as stateless functions in a serverless framework  \cite{Roberts2016},
+receiving a configuration and a population as 
+parameters, and returning the evolved population. % Is this why you
+                                % need the "attribute" part of the
+                                % population? Please say so - JJ
 
+This operation has to be
+executed in complete isolation, as a lambda function in the functional
+programming paradigm, so that they are compatible with a FaaS, where serverless
+functions can scale on-demand, and many copies of the same function could
+working at the same time. % There needs to be a
+                                % justification in terms of the
+                                % algorithm for each section. Don't
+                                % just say "we use this". Why is this
+                                % needed? - JJ
+These functions are thus ``pure'' in the functional programming term:
+they have no side effects, which is why they are stateless: They
+receive a sub-population, and emit another one.
+
+This is one of the main strong points of this kind of
+architecture. This lack of side effects allows easy, and automatic,
+scalability, with the only bottleneck being in the message queue
+itself.
 
 \subsection{Subpopulations}
+
 Each subpopulation is a structure with two main attributes, shown in
 Figure \ref{fig4}.
 
@@ -482,7 +499,8 @@ Figure \ref{fig4}.
 
 % Say something about why this structure is needed and its relevance
 % to the algorithm itself. Is it just administrative data, or will the
-% algorithm use the attributes for something? See issue #18 - JJ
+% algorithm use the attributes for something? Also why do we need this
+% kind of structure. See issue #18 
 
 \subsection{Splitting Point Uniform Migration} 
 %
