@@ -7,6 +7,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{graphicx}
+\usepackage[numbers,sort&compress]{natbib}
 \hyphenation{pa-ra-me-tri-za-tion}
 
 \begin{document}
@@ -424,7 +425,9 @@ This component receives the configuration parameters of
   two populations from the pool, according to their best individual, and selects
   one randomly. Once it performs the selection, it executes a Splitting Point
   Uniform crossing, which will be explained below, between the two. As a result of the migration, we have now created two new
-  populations, which are resent back to their respective queues. This process is
+  populations that are going to be into a buffer that sends them in
+  parallel messages, which are resent back to their respective queues  to AWS functions that internaly has 
+  its own execution queue using sockets. This process is
   repeated until the number of assigned migrations for the
   multi-population \cite{Ma2019,Santander-jim2018} is completed.
 
@@ -493,7 +496,7 @@ Figure \ref{fig4}.
 %
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.6\textwidth]{img/subpopulationDefinition.png}
+  \includegraphics[width=0.5\textwidth]{img/subpopulationDefinition.png}
   \caption{Sub-population composition.} \label{fig3}
 \end{figure}
 
@@ -538,12 +541,29 @@ two individuals that were selected randomly as parents of two individuals for a
 new subpopulation. Parents are shown on the top. Because these individuals are
 vectors of uniform values, the crossover operator combines each component by
 adding them together and then dividing by two, as shown by the blue arrows.  
-% What happens to the first individual in sub-population 1? It's not
-% generated in the same way? - JJ
+
+The migration created for % to? For? - JJ
+this architecture is a method called Splitting Point
+Uniform that consists of a uniform mask that is created to apply the migration
+between individuals, vectors or both of them, from two sub-populations. 
+The binary mask indicates for the first offspring where to swap individuals/vectors, 
+but in the second offspring the "0" values indicates where to swap individuals/vectors, for "1" 
+ makes a crossover between individuals/vectors creating uniform mask that indicates where to swap and where to 
+ replaces some of them with middle points of the selected data, for example from the values 
+ 2 and 5 the middle point would be 3.5 as we can see in Figure \ref{fig4}.
+ % Not clear. Maybe a
+                                % picture? - JJ
 
 This kind of operator is simpler and less explorative than
 BLX-$alpha$, for instance \cite{picek2013recombination}. In our case,
 the exploration part is left to the architecture itself.
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{img/splittinPointUniform.png}
+  \caption{Splitting Point Uniform process.} \label{fig4}
+  \end{figure}
+
 
 %   \subsection{Migration Selection} 
   
@@ -762,7 +782,7 @@ slightly better, but similar for smaller dimensions.
 
 \begin{figure}[h!tb]
   \centering
-  \includegraphics[height=0.4\textheight]{img/sphere-boxplot.png}
+  \includegraphics[height=0.44\textheight]{img/sphere-boxplot.png}
   \caption{Boxplot of results for the Sphere function, with a logarithmic $y$ axis.\label{fig:boxplot:sphere}}
 \end{figure}
 %
@@ -772,8 +792,7 @@ smaller dimension; as the number of dimensions increases, so does the
 advantage of PSO. This is probably due to the big gap between the
 performance of the GA and the PSO algorithm. We will come back to this
 in the discussion.
-
-\begin{figure}[h!tb]
+\begin{figure}[h!tbp]
   \centering
   \includegraphics[height=0.4\textheight]{img/rosenbrock-boxplot.png}
   \caption{Boxplot of results for the Rosenbrock function; $y$ axis is logarithmic.\label{fig:boxplot:rosenbrock}}
@@ -847,6 +866,11 @@ Differential Evolution, brought into the mix. Scalability will also be
 something we will working on in the future, trying to find what are
 its limits and how they depend on the type of problem that is solved.
 
+We also think about implement a real time user interface to display how is actually 
+the behavior of the populations allowing to analyzing more precisely possible
+changes to improvements, of course this makes easier to use the architecture and
+even could help as educational tool.
+
 
 \section*{Acknowledgements}
 
@@ -854,7 +878,7 @@ Acks\\
 taking this much\\
 space
 
+\bibliographystyle{splncs04}
 \bibliography{multipopulation}
-      \bibliographystyle{ieeetr}
   
 \end{document}
