@@ -270,14 +270,24 @@ functions, as seen in Table~\ref{table:architectures}.
 \section{Proposed architecture}
 \label{sec:architecture}
 
-We propose is an architecture that allows the processing of multi-populations
-by sending each population to a queue, to be consumed by stateless functions,
-and then be mixed with others. This architecture can accept the use of an
+Taking into account the requirements of the majority of 
+multi-population methods and the advantages of cloud-native % Ref - Mario
+architectures, in this paper, we propose an architecture 
+that allows the scalable processing of multi-populations. 
+The approach follows the best-practices of cloud-based 
+distributed processing and uses a queue as the communication 
+channel between computing nodes. In our case,  
+each population is pushed to a queue, to be consumed by stateless functions.
+Again, using a queue, populations are returned to a controller to be mixed with others.
+This architecture can accept the use of an
 indeterminate number of algorithms, allowing an easy cross-breed
 multi-population and continuous adaptability for different problems. 
 The main components of the architecture and the flow chart are shown 
-in Figure~\ref{flow}. To develop this architecture the applied technologies are based in JavaScript
-using the NodeJS interpreter. 
+in Figure~\ref{flow}.
+
+%To develop this architecture the applied technologies are based in JavaScript
+%using the NodeJS interpreter. 
+% Moving to another place - Mario Explain here
 
 \begin{figure}[htp]
   \centering
@@ -292,8 +302,8 @@ focus on the most important components in the next subsections.
 
 There are three types of services in this model. First, there is a component
 responsible for the management of the algorithm in general, including
-starting and terminating the algorithm, and, additionally, migration between sub-populations; this
-particular task can be decoupled in other implementations. The second service is
+starting and terminating the algorithm, and, additionally, the migration between subpopulations; this
+last particular task can be decoupled in other implementations. The second service is
 a message provider consisting of several scalable asynchronous queues. As a
 third component, we have a collection of serverless functions. We explain the 
 data flow between these services in more detail on the next subsections.  
@@ -304,27 +314,28 @@ This component receives the configuration parameters of
   the experiment and initializes it; then it proceeds to create the
   number of subpopulations needed. Every time the manager creates a new
   population, it triggers an event that stores the new population into the
-  MongoDB data store. This pool of populations will be used later for migration
-  and as an experiment log. In previous works, this pool was kept in-memory and
+  MongoDB data store. This pool of populations will be used later for migration.
+  In previous works, this pool was kept in-memory and
   therefore limited by its size. 
 
   Also, the manager asynchronously pushes new populations into a message queue,
   which in turn triggers a serverless function, which will be
   described below. Because each sub-population
-  requires the execution of a different algorithm, locally, there is a different
+  requires the execution of a different algorithm, in the cloud-service, there is a different
   web socket assigned for each type of algorithm, to push each population to
   their respective queue.
 
- Once a subpopulation is processed, the manager pulls
-  the population from the Processed Populations queue and selects a population
-  from the pool to mix them. To make the selection, the manager takes the best
-  two populations from the pool, according to their best individual, and selects
-  one randomly. Once it performs the selection, it executes a Splitting Point
-  Uniform crossing, which will be explained below, between the two. 
-  As a result of the migration, we have now created two new
-  populations, which are resent back to their respective queues. This process is
-  repeated until the number of assigned migrations for the
-  multi-population \cite{Ma2019,Santander-jim2018} is completed.
+ Once a subpopulation is processed, the manager pulls the population from the
+  Processed Populations queue and selects a population from the pool to mix
+  them. To make the selection, the manager takes the best two populations from
+  the pool, according to their best individual, and selects one randomly. Once
+  the controller has selected a population from the pool, it mixes this
+  population with the one that just arrived. Populations are mixed by executing
+  a crossing between them; we will explain this process below. As a result of
+  the migration, we have now created two new populations, which are resent back
+  to their respective queues. This process is repeated until the number of
+  assigned migrations for the multi-population \cite{Ma2019,Santander-jim2018}
+  is completed.
 
 This whole
   process is performed asynchronously, avoiding the wait for all responses from
