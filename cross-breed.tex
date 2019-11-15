@@ -122,7 +122,7 @@ problem than bigger populations. However, it gives them the added advantage of
 parallel operation. Additionally, and in some cases, multi-population algorithms
 scale better than expected due to the interaction between the algorithm and the
 parallelism of the operation \cite{ALBA20027}.
-% Connect with the idea of heterogeneous populations
+
 However, in most cases, algorithms applied to each subpopulation are
 homogeneous, or at any rate, the same variant of the algorithm. As long as this
 parallel operation is not synchronous, other population-based algorithms, or, as
@@ -130,8 +130,6 @@ a matter of fact, any algorithm, could be easily integrated. That is why several
 works based on multi-population are heterogeneous, integrating various
 optimization algorithms, and often performing better than single-population or
 homogeneous optimization algorithms \cite{wu2016differential,nseef2016adaptive}.
-% Explan the proposed method of mixing many algorithms through population streams  
-
 
 Heterogeneous algorithms add another degree of freedom to the problem of finding
 the correct parameter settings for an algorithm; because some parameters affect
@@ -142,19 +140,13 @@ interacting in parallel, the effect of the individual parameters of each
 subpopulation is compensated by those selected in other subpopulations. In this
 work, we will use random settings within a specific range as results have shown
 this is a valid solution to this problem. 
-% Two things here 
-% * Add references to former work 
-% * Explain why some parameters, like the population size, are not
-% generated randomly too - JJ 
+
 Some parameters, specially the population size, are
 kept fixed in order to control more easily the execution of the algorithm. For
 instance, by having the size of subpopulations fixed, it is easier to control
 the number of evaluations and the communication costs, when the algorithm is in
 operation.
-% 2. State clearly from the beginning, and in a positive way (that is,
-% don't use the reasoning: this sucks, so we need something better)
-% what is your intention: use a parallel architecture for combined,
-% parameter-free-algorithms.
+
 Combining multiple algorithms, with different parameters, interacting with each
 other at the same time, can benefit from the strengths of each. For instance, a
 genetic algorithm could find a promising global solution that is not optimal
@@ -163,19 +155,6 @@ optimum. This approach has been followed extensively in recent years, with
 success. Moreover, there is a need for frameworks, architecture, and
 implementation models that can allow researchers the development of new
 parallel, asynchronous, heterogeneous, and parameter-free algorithms in a scalable way.  
-
-%To deal with these problems, parallel and cross-breed multi-population
-%algorithms architecture has been proposed.
-
-% 1. Add more references. Most claims must have a reference to support it.
-% 2. State clearly from the beginning, and in a positive way (that is,
-% don't use the reasoning: this sucks, so we need something better)
-% what is your intention: use a parallel architecture for combined,
-% parameter-free-algorithms.
-% 3. 
-
-% a paragraph that binds that previous paragraph to our work in this paper. 
-%Why is this related to what we presented above? - JJ
 
 In this work, we present a new version of the event-driven architecture proposed
 in [Anonymous]; this is a so-called {\em serverless} architecture that
@@ -205,36 +184,12 @@ stream of populations that can very different as if their individuals belong to
 different species; the term we use to describe the solution is a cross-breed
 multi-population method.
 
-% This new
-% implementation uses JavaScript for the full stack, and it is designed to be
-% executed locally or in a cloud environment. The implementation includes a
-% web-based application to execute and monitor experiments
-% interactively. % implementation detail, best left for the conclusions
-               % - JJ
-%We also
-%propose alternative methods of migration between populations to compensate for
-%differences in the execution time of the functions. % This is probably
-                                % one of the main points of the
-                                % paper. Should be enphasized more
-                                % - JJ
-
-%%%%% BEGIN (needs work)
-
 To evaluate the capability of a cross-breed multi-population solution,
 we conducted several experiments using different benchmark functions, comparing the
 results of single versus cross-breed multi-population algorithms. For the experiments, we choose to
 compare the PSO and GA algorithms, as they are well understood, and there are
 several implementations in the literature. We implemented both algorithms as
 stateless functions, and more algorithms can be added in the same way.
-
-%%%%% END (needs work): - Mario
-
-%%
-%% A description of the paper goes here
-%% what are we proposing? You can start with the description in the abstract.  
-%% what are the findings? 
-%% what is presented in each section? 
-%% Check other papers to get the idea - Mario
 
 The rest of the paper is organized as follows: the next section is devoted
 to analyzing the state of the art of multi-population, multi-paradigm,
@@ -244,10 +199,6 @@ Finally, we present our conclusions and future lines of work.
 
 \section{State of the Art}
 
-% The title of these subsections will be removed, they are just place-holders
-% References are pending
-%\subsection{Multi-population}
- 
 Multi-population based methods have been used extensively in recent years, with
 some journal papers dedicated exclusively to surveying the current state of the
 art \cite{ma2019multi}. Furthermore,  Li et al. \cite{li2015multi} described
@@ -290,12 +241,9 @@ called Function as a Service (FaaS) \cite{Hellerstein2018,Baird2016}
 There is also the option to install some of these platforms locally; for
 instance, AWS (Amazon Web Services) \cite{Baird2016} or Apache Open Whisk
 \cite{Guerv2018}. The tendency in cloud-based architectures is to move from 
-monolithic to serverless architectures, in this case we are using AWS functions, as seen in Table~\ref{table:architectures}.     
+monolithic to serverless architectures, in this case we are using AWS functions, 
+as seen in Table~\ref{table:architectures}.     
 
-% \begin{figure}[htp]
-%   \includegraphics[width=\textwidth]{img/architectures.png}
-%   \caption{Software architecture generations.} \label{fig1}
-%   \end{figure}
 \begin{table}[htp]
   \caption{Software architecture generations.}
   \label{table:architectures}
@@ -315,6 +263,9 @@ monolithic to serverless architectures, in this case we are using AWS functions,
   \end{tabular}
   \end{table}
 
+%%
+% SoA  for Multipopulations in Cloud 
+%%
 
 %\subsubsection{Serverless Operation} 
 %In math, a function is a relation between a set of inputs and an allowed set of
@@ -348,14 +299,14 @@ monolithic to serverless architectures, in this case we are using AWS functions,
 % I think this is known by the Parallel GA comunity 
 
 
-An asynchronous architecture has what is known as execution queues in the that
-can be appreciated that give an added value that gives advantage over other
-architectures by reducing waiting times and neglecting the concept that order is
-important, of course, this type of architectures is not applicable to all cases
-but speaking in distributed systems where multiple population-based algorithms
-are executed with parallel execution, they result in a better degree of
-efficiency, in addition to reducing the number of control parameters since they
-require having a decoupled architecture \cite{Ma2019,Santander-jim2018}.
+% An asynchronous architecture has what is known as execution queues in the that
+% can be appreciated that give an added value that gives advantage over other
+% architectures by reducing waiting times and neglecting the concept that order is
+% important, of course, this type of architectures is not applicable to all cases
+% but speaking in distributed systems where multiple population-based algorithms
+% are executed with parallel execution, they result in a better degree of
+% efficiency, in addition to reducing the number of control parameters since they
+% require having a decoupled architecture \cite{Ma2019,Santander-jim2018}.
 
 %\subsection{Functional Programming}
 
@@ -374,9 +325,9 @@ require having a decoupled architecture \cite{Ma2019,Santander-jim2018}.
 \section{Proposed architecture}
 \label{sec:architecture}
 
-The proposal is an architecture that allows the processing of multi-populations
+We propose is an architecture that allows the processing of multi-populations
 by sending each population to a queue, to be consumed by stateless functions,
-and then be mixed with others.  This architecture can accept the use of an
+and then be mixed with others. This architecture can accept the use of an
 indeterminate number of algorithms, allowing an easy cross-breed
 multi-population and continuous adaptability for different problems. 
 The main components of the architecture and the flow chart are shown 
@@ -424,10 +375,9 @@ This component receives the configuration parameters of
   from the pool to mix them. To make the selection, the manager takes the best
   two populations from the pool, according to their best individual, and selects
   one randomly. Once it performs the selection, it executes a Splitting Point
-  Uniform crossing, which will be explained below, between the two. As a result of the migration, we have now created two new
-  populations that are going to be into a buffer that sends them in
-  parallel messages, which are resent back to their respective queues  to AWS functions that internaly has 
-  its own execution queue using sockets. This process is
+  Uniform crossing, which will be explained below, between the two. 
+  As a result of the migration, we have now created two new
+  populations, which are resent back to their respective queues. This process is
   repeated until the number of assigned migrations for the
   multi-population \cite{Ma2019,Santander-jim2018} is completed.
 
@@ -526,7 +476,7 @@ population so that they keep the whole set from premature
 convergence.
 
 Our cross-breed architecture will use Splitting Point Uniform crossover found in GA
-algorithms. % Found where? I have not found any reference.
+algorithms \cite{Kramer2014}. % Found where? I have not found any reference.
 This method is applied in two levels; first, when selecting which
 individuals are going to migrate from one population to another, and later when
 single individuals are combined. The method consists of applying a uniform mask
@@ -540,7 +490,9 @@ This is exemplified in Figure \ref{fig4}, where we show
 two individuals that were selected randomly as parents of two individuals for a
 new subpopulation. Parents are shown on the top. Because these individuals are
 vectors of uniform values, the crossover operator combines each component by
-adding them together and then dividing by two, as shown by the blue arrows.  
+adding them together and then dividing by two, as shown by the blue arrows. 
+for example from the values 
+2 and 5 the middle point would be 3.5 as we can see in Figure \ref{fig4} 
 
 The migration created for % to? For? - JJ
 this architecture is a method called Splitting Point
@@ -811,8 +763,9 @@ the best. We will discuss this findings in the next section.
 
 \section{Conclusions and future work}
 
-Initial experiments using this architecture proved that it is completely scalable and useful for the implementation of
-multiple algorithms. % You have not proved anything about scalability
+%Initial experiments using this architecture proved that it is completely
+%scalable and useful for the implementation of
+%multiple algorithms. % You have not proved anything about scalability
                      % - JJ
 In this paper we have proved how a cross-breed algorithm algorithm,
 which uses GA and PSO; can be easily implemented using it. The
