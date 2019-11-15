@@ -395,7 +395,11 @@ Figure \ref{fig4}.
   For instance, algorithm parameters, objective function, 
   optimum value (benchmarks). It also includes a trace of the execution, 
   for instance, the number of evaluations per iteration, 
-  the best individual, and its fitness value.   
+  the best individual, and its fitness value.  
+  It is important to explain that each sub-population is independent, 
+  that means that there can be executed multiple benchmark functions 
+  at the same time and the architecture identify this attribute to migrate
+  only populations with the same benchmark function.
   \item {\bf Sub-population} This is the actual collection of individuals
   in the population in their current state.    
 \end{itemize}
