@@ -380,7 +380,7 @@ indeterminate number of algorithms, allowing an easy cross-breed
 multi-population and continuous adaptability for different problems. 
 The main components of the architecture and the flow chart are shown 
 in Figure~\ref{flow}. To develop this architecture the applied technologies are based in JavaScript
-using the NodeJS interpreter.
+using the NodeJS interpreter. 
 
 \begin{figure}[htp]
   \centering
@@ -792,15 +792,28 @@ the best. We will discuss this findings in the next section.
 
 \section{Conclusions and future work}
 
-This architecture is completely scalable and useful for the implementation of
-multiple algorithms. Until now it is only GA and PSO; However, according to the results
-with this kind of architecture, there is no limit and it works better than a
-cross-breed multi-population with only one algorithm. Also, every experiment executes in
-short times because serverless functions are searching asynchronously, and
-getting a fast convergence.
+Initial experiments using this architecture proved that it is completely scalable and useful for the implementation of
+multiple algorithms. % You have not proved anything about scalability
+                     % - JJ
+In this paper we have proved how a cross-breed algorithm algorithm,
+which uses GA and PSO; can be easily implemented using it. The
+cross-breeding actually occurs, allowing these combined algorithms
+outperform, with a high probability, single-algorithm
+versions. The framework we have provided also has few parameters to
+tune, since single-algorithm parameters are selected randomly; in
+general, this will boost diversity of every algorithm by itself. 
 
-In general, cross-breed algorithm increase diversity and then help
-exploration without sacrificing exploration; since results obtained by
+Since we are using a serverless architecture, high-performance is
+achieved % comment something on the overall time needed for each
+% experiment. - JJ
+Scalability has as only ceiling the amount of individuals memory can
+hold, but its main advantage is that the architecture itself is able
+to accommodate as many sub-populations as we need. The limits is
+something that we will need to explore in the future. 
+
+The results obtained are probably due to the increased diversity
+cross-breed algorithm bring, boosting exploration without sacrificing
+exploitation; since results obtained by 
 the two intervening algorithm are slightly different, the intermediate
 disturbance hypothesis, which has been used to explain results in PSO
 \cite{gao2013particle} as well as evolutionary algorithms
@@ -828,8 +841,12 @@ increasing the possibilities to get an optimal result, preventing get stuck into
 a local optimum. Of course, it is expected to use this architecture using more
 algorithms than GA and PSO.
 
-% Maybe add randomizing all elements of the population, including
-% population and number of generations - JJ
+Other futures avenues of research to explore would be to use other
+kind of algorithms, such as Estimation of Distribution Algorithms or
+Differential Evolution, brought into the mix. Scalability will also be
+something we will working on in the future, trying to find what are
+its limits and how they depend on the type of problem that is solved.
+
 
 \section*{Acknowledgements}
 
