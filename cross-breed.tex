@@ -441,20 +441,18 @@ parameters, and returning the evolved population. This operation has to be
 executed in complete isolation, as a lambda function in the functional
 programming paradigm so that they are compatible with a FaaS, where serverless
 functions can scale on-demand, and many copies of the same function could
-working at the same time. \cite{Roberts2016}. .
+working at the same time. \cite{Roberts2016}.
 \end{itemize}
 
 To develop this architecture the applied technologies are based in JavaScript
 using Node JS as it can be seen in the General Architecture Flowchart
-shown in Fig. \ref{flow}.
+shown in Figure \ref{flow}.
 
-% I don't think this figure is appropriate for a paper.
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.9\textwidth]{img/Architecture diagram.png}
+  \includegraphics[width=0.9\textwidth]{img/architecture.png}
   \caption{General Architecture Flowchart.} \label{flow}
   \end{figure}
-  % Could be OK for the presentation, divided in 3 slides - JJ
   
 \subsection{Subpopulations}
 Each subpopulation is a structure with two main attributes. 
