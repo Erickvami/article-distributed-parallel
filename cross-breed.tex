@@ -441,7 +441,7 @@ parameters, and returning the evolved population. This operation has to be
 executed in complete isolation, as a lambda function in the functional
 programming paradigm so that they are compatible with a FaaS, where serverless
 functions can scale on-demand, and many copies of the same function could
-working at the same time. \cite{Roberts2016}.
+working at the same time \cite{Roberts2016}.
 \end{itemize}
 
 To develop this architecture the applied technologies are based in JavaScript
@@ -455,51 +455,74 @@ shown in Figure \ref{flow}.
   \end{figure}
   
 \subsection{Subpopulations}
-Each subpopulation is a structure with two main attributes. 
+Each subpopulation is a structure with two main attributes, shown in
+Figure \ref{fig4}.
+
 \begin{itemize}
-  \item {\bf metadata} This attribute has all the data needed 
+  \item {\bf Metadata}: shown as ``Attributes'' in \ref{fig4}, this
+    section includes all the data needed 
   to configure and report the execution of the population.
   For instance, algorithm parameters, objective function, 
-  optimum value (benchmarks). But also a trace of the execution, 
+  optimum value (benchmarks). It also includes a trace of the execution, 
   for instance, the number of evaluations per iteration, 
   the best individual, and its fitness value.   
-  \item {\bf population} This is the collection of individuals
+  \item {\bf population} This is the actual collection of individuals
   in the population in their current state.    
 \end{itemize}
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\textwidth]{img/subpopulationDefinition.png}
   \caption{Sub-population composition.} \label{fig3}
-  \end{figure}
+\end{figure}
+
+% Say something about why this structure is needed and its relevance
+% to the algorithm itself. Is it just administrative data, or will the
+% algorithm use the attributes for something? See issue #18 - JJ
 
 \subsection{Splitting Point Uniform Migration} 
+%
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{img/splittinPointUniform.png}
+  \caption{Splitting Point Uniform process. The offspring in
+    population two gets the result of summing the corresponding gene
+    of the two ancestors and dividing it by two.} \label{fig4}
 
-As we have mentioned earlier, an essential aspect of multi-population methods is
+\end{figure}
+
+As we have mentioned earlier, an essential aspect of multi-population
+and cross-breeding methods is
 the communication between subpopulations after some iterations of isolated
-search. Promising or even opposite individuals migrating from another population
-can keep a population from premature convergence. Here we explain the propose
-migration method, based on the Splitting Point Uniform crossover found in GA
-algorithms. This method is applied in two levels; first, when selecting which
+search. Individuals with some specifically chosen characteristics,
+such as a high fitness, maybe combined with a certain degree of
+similitude or difference to the host population, can be sent to other
+population so that they keep the whole set from premature
+convergence.
+
+Our cross-breed architecture will use Splitting Point Uniform crossover found in GA
+algorithms. % Found where? I have not found any reference.
+This method is applied in two levels; first, when selecting which
 individuals are going to migrate from one population to another, and later when
 single individuals are combined. The method consists of applying a uniform mask
 created to select which elements are going to participate in the migration or
 crossover in the case of individuals. When selected individuals are going to be
 combined, the selected components, in this case, continuous values, are combined
-using the midpoint between the matching points selected by the binary mask.
-\cite{Kramer2017,Kaya2011}. As an example, we can see Figure \ref{fig4} showing
+using the midpoint between the matching genes selected by the binary mask.
+\cite{Kramer2017,Kaya2011}.
+
+This is exemplified in Figure \ref{fig4}, where we show
 two individuals that were selected randomly as parents of two individuals for a
 new subpopulation. Parents are shown on the top. Because these individuals are
 vectors of uniform values, the crossover operator combines each component by
 adding them together and then dividing by two, as shown by the blue arrows.  
-% It's not an architecture, unless you mean the overall architecture - JJ
-% Not clear. Maybe a
-% picture? - JJ
+% What happens to the first individual in sub-population 1? It's not
+% generated in the same way? - JJ
 
-\begin{figure}[htp]
-  \centering
-  \includegraphics[width=0.9\textwidth]{img/splittinPointUniform.png}
-  \caption{Splitting Point Uniform process.} \label{fig4}
-  \end{figure}
+This kind of operator is simpler and less explorative than
+BLX-$alpha$, for instance \cite{picek2013recombination}. In our case,
+the exploration part is left to the architecture itself.
+
+
 
 %   \subsection{Migration Selection} 
   
@@ -621,11 +644,6 @@ non-linear, way.
 Every experiment was carried out 15 times, using a Dell Poweredge
 R730, with two Intel Xeon E5-2670v3 12-core processors, 128GB of RAM and
 running Ubuntu Server 18.04 OS.
-% way which kind of
-                                % computer and operating system was
-                                % used, as well as the code, if it's
-                                % been released. Please add answer to
-                                % #17 here.
 
 Results obtained in the experiments have been published with an open
 data license in {URL hidden}
