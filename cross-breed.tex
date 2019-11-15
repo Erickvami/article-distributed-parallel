@@ -379,48 +379,58 @@ and then be mixed with others.  This architecture can accept the use of an
 indeterminate number of algorithms, allowing an easy cross-breed
 multi-population and continuous adaptability for different problems. 
 The main components of the architecture and the flow chart are shown 
-in Figure~\ref{flow}. 
-% A reference to a
-% figure should go around here - JJ
-% Before nodes, you need to explain the overall layout of the
-% architecture - JJ
+in Figure~\ref{flow}. To develop this architecture the applied technologies are based in JavaScript
+using the NodeJS interpreter.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{img/architecture.png}
+  \caption{General Architecture Flowchart.} \label{flow}
+  \end{figure}
+
 There are three types of services in this model. First, there is a component
-responsible for the management of the algorithm in general. The manager is
-responsible for starting and terminating the algorithm. Furthermore, in this
-case, it is also responsible for the migration between populations; this
+responsible for the management of the algorithm in general, including
+starting and terminating the algorithm, and, additionally, migration between sub-populations; this
 particular task can be decoupled in other implementations. The second service is
 a message provider consisting of several scalable asynchronous queues. As a
 third component, we have a collection of serverless functions. We explain the 
-data flow between these services in more detail on the next points.   
+data flow between these services in more detail on the next sections.   
 
-\begin{itemize}
-  \item {\bf Manager}: This component receives the configuration parameters of
-  the experiment and initializes the experiment. Then it proceeds to create the
+\subsection{Manager}
+
+This component receives the configuration parameters of
+  the experiment and initializes it; then it proceeds to create the
   number of subpopulations needed. Every time the manager creates a new
   population, it triggers an event that stores the new population into the
   MongoDB data store. This pool of populations will be used later for migration
   and as an experiment log. In previous works, this pool was kept in-memory and
   therefore limited by its size. 
-  %with the risk of (preventing to saturate the memory) % what do you mean here? - JJ
+
   Also, the manager asynchronously pushes new populations into a message queue,
-  which in turn triggers a stateless function. Because each sub-population
+  which in turn triggers a serverless function, which will be
+  described below. Because each sub-population
   requires the execution of a different algorithm, locally, there is a different
   web socket assigned for each type of algorithm, to push each population to
-  their respective queue. Once a subpopulation is processed, the manager pulls
+  their respective queue.
+
+ Once a subpopulation is processed, the manager pulls
   the population from the Processed Populations queue and selects a population
   from the pool to mix them. To make the selection, the manager takes the best
   two populations from the pool, according to their best individual, and selects
   one randomly. Once it performs the selection, it executes a Splitting Point
-  Uniform crossing, between the two. We will explain this process will in a
-  later section.  As a result of the migration, we have now created two new
+  Uniform crossing, which will be explained below, between the two. As a result of the migration, we have now created two new
   populations, which are resent back to their respective queues. This process is
-  repeated until completing the number of assigned migrations for the
-  multi-population \cite{Ma2019,Santander-jim2018}. Of course, this whole
+  repeated until the number of assigned migrations for the
+  multi-population \cite{Ma2019,Santander-jim2018} is completed.
+
+This whole
   process is performed asynchronously, avoiding the wait for all responses from
   serverless functions to perform a crossover or an update of any of the
   subpopulations \cite{Lovbjerg2001,Jimeno2019}. 
 
-\item {\bf Message Provider}:Communication is a vital aspect of distributed
+  \subsection{Message Provider}
+
+  Communication is a vital aspect of distributed
 systems and can be complicated to implement. Messaging systems have been used
 successfully in cloud computing environments because they are scalable and
 easier to use. When used as a service, they provide a secure, asynchronous, and
@@ -432,28 +442,17 @@ subscribe to message channels, enabling many configurations. In this
 implementation,  we use only three queues, one for each type of algorithm and
 one for populations returning to the manager.
 
-\item Serverless functions:
-% of the % which section? Are you talking about the receiver
-                   % itself? - JJ
-                   Population-based optimization algorithms can be implemented
+\subsection{Serverless functions}
+
+Population-based optimization algorithms can be implemented
 as stateless functions, receiving a configuration and a population as
 parameters, and returning the evolved population. This operation has to be
 executed in complete isolation, as a lambda function in the functional
 programming paradigm so that they are compatible with a FaaS, where serverless
 functions can scale on-demand, and many copies of the same function could
 working at the same time \cite{Roberts2016}.
-\end{itemize}
 
-To develop this architecture the applied technologies are based in JavaScript
-using Node JS as it can be seen in the General Architecture Flowchart
-shown in Figure \ref{flow}.
 
-\begin{figure}[htp]
-  \centering
-  \includegraphics[width=0.9\textwidth]{img/architecture.png}
-  \caption{General Architecture Flowchart.} \label{flow}
-  \end{figure}
-  
 \subsection{Subpopulations}
 Each subpopulation is a structure with two main attributes, shown in
 Figure \ref{fig4}.
@@ -466,9 +465,10 @@ Figure \ref{fig4}.
   optimum value (benchmarks). It also includes a trace of the execution, 
   for instance, the number of evaluations per iteration, 
   the best individual, and its fitness value.   
-  \item {\bf population} This is the actual collection of individuals
+  \item {\bf Sub-population} This is the actual collection of individuals
   in the population in their current state.    
 \end{itemize}
+%
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\textwidth]{img/subpopulationDefinition.png}
@@ -522,8 +522,6 @@ This kind of operator is simpler and less explorative than
 BLX-$alpha$, for instance \cite{picek2013recombination}. In our case,
 the exploration part is left to the architecture itself.
 
-
-
 %   \subsection{Migration Selection} 
   
 %   The 2 sub-populations selected to realize
@@ -541,7 +539,7 @@ the exploration part is left to the architecture itself.
 
 % The above is inconsistent with our first description, 
 % Two pops are taken from the pool and just one is selected  randomly. - Mario
-
+% But you need to describe some kind of migration selection - JJ
 
   \section{Experiments and Results}
   \label{sec:exp}
