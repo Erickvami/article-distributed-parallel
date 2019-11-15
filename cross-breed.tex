@@ -474,27 +474,28 @@ Each subpopulation is a structure with two main attributes.
   \caption{Sub-population composition.} \label{fig3}
   \end{figure}
 
-\subsection{Splitting Point Uniform Migration}
+\subsection{Splitting Point Uniform Migration} 
 
-This architecture communicates sub-populations using migrations,
-taking
+As we have mentioned earlier, an essential aspect of multi-population methods is
+the communication between subpopulations after some iterations of isolated
+search. Promising or even opposite individuals migrating from another population
+can keep a population from premature convergence. Here we explain the propose
+migration method, based on the Splitting Point Uniform crossover found in GA
+algorithms. This method is applied in two levels; first, when selecting which
+individuals are going to migrate from one population to another, and later when
+single individuals are combined. The method consists of applying a uniform mask
+created to select which elements are going to participate in the migration or
+crossover in the case of individuals. When selected individuals are going to be
+combined, the selected components, in this case, continuous values, are combined
+using the midpoint between the matching points selected by the binary mask.
+\cite{Kramer2017,Kaya2011}. As an example, we can see Figure \ref{fig4} showing
+two individuals that were selected randomly as parents of two individuals for a
+new subpopulation. Parents are shown on the top. Because these individuals are
+vectors of uniform values, the crossover operator combines each component by
+adding them together and then dividing by two, as shown by the blue arrows.  
 % It's not an architecture, unless you mean the overall architecture - JJ
-information from 2 sub-populations and mixing them using a process similar to a
-crossover in Genetic Algorithms, creating 2 completely new sub-populations every
-time a processed sub-population arrives into the Manager node and replacing
-themselves in the multi-population.
-
-The migration created to % to? For? - JJ
-this architecture is a method called Splitting Point
-Uniform that consists of a uniform mask that is created to apply the migration
-between individuals, vectors or both of them, from two sub-populations. The
-selected data are combined using the midpoint between the active values
-points by the binary mask generated randomly. % Not clear. Maybe a
-                                % picture? - JJ
-This process iterates the 2
-sub-populations to randomly swap values and replaces some of them with middle
-points \cite{Kramer2017,Kaya2011}.
-
+% Not clear. Maybe a
+% picture? - JJ
 
 \begin{figure}[htp]
   \centering
@@ -502,63 +503,50 @@ points \cite{Kramer2017,Kaya2011}.
   \caption{Splitting Point Uniform process.} \label{fig4}
   \end{figure}
 
-  \subsection{Migration Selection} The 2 sub-populations selected to realize
-  migration is one arrived sub-population from a serverless function and another
-  one using selection by tournament keeping up the information of the best
-  sub-population of the multi-population but without discarding possible
-  sub-populations that in a near future could be the clue to find optimal
-  values.
+%   \subsection{Migration Selection} 
+  
+%   The 2 sub-populations selected to realize
+%   migration is one arrived sub-population from a serverless function and another
+%   one using selection by tournament keeping up the information of the best
+%   sub-population of the multi-population but without discarding possible
+%   sub-populations that in a near future could be the clue to find optimal
+%   values.
 
-\begin{figure}[htp]
-  \centering
-  \includegraphics[width=0.5\textwidth]{img/selection.png}
-  \caption{Selection by tournament.} \label{fig5}
-  \end{figure}
+% \begin{figure}[htp]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{img/selection.png}
+%   \caption{Selection by tournament.} \label{fig5}
+%   \end{figure}
+
+% The above is inconsistent with our first description, 
+% Two pops are taken from the pool and just one is selected  randomly. - Mario
 
 
   \section{Experiments and Results}
   \label{sec:exp}
 
-  In this section we will first present the experiments that have been
-  made, including the configuration of parameters that has been used,
-  to then proceed to present and discuss the results in Subsection
-  \ref{subs:results}. 
+  In this section, we will first present the experiments that we have performed,
+  including the selection of parameters, to then proceed to present and discuss
+  the results in Subsection \ref{subs:results}. 
     
   \subsection{Experiments}
 
-With the configuration shown in the section above, we performed a
-series of runs to check that results obtained were, at least, similar
-to similar estups, and we were satisfied with them; we need to prove,
-however, they obtain a good performance on benchmark functions, and
-what is their relative performance in a controlled environment.
+\begin{figure}[htp] \centering
+\includegraphics[width=0.7\textwidth]{img/benchmark.png} 
+\caption{Benchmark
+functions for experimentation.} 
+\label{fig:functions} 
+\end{figure} % 
 
-% ----------------- This intro eliminated ---------------------------------
-% Now that interaction between sub-populations with different algorithms is
-% working and cross-breed multi-population has been a success, using until now the added
-% algorithms (GA and PSO) algorithms \cite{Kramer2017,Guerrero2017,Lalwani2019},
-% all thanks to the developed architecture, let's proceed to the
-% experiments.
-% --------------------------------------------------------------------------
-%
-\begin{figure}[htp]
-  \centering
-    \includegraphics[width=0.7\textwidth]{img/benchmark.png}
-    \caption{Benchmark functions for experimentation.} \label{fig:functions}
-    \end{figure}
-%
-First, we will select the functions we are going to apply this
-framework to. We will be working on continuous optimization, since
-they are hard optimization problems and have also been chosen for
-benchmarks such as BBOB \cite{hansen2010bbob}; out of these functions,
-we have chosen Rastrigin, Sphere and Rosenbrock, which are represented
-in Figure \ref{fig:functions}. They have a different
-degree of difficulty, can be scaled to different dimensions (as all
-the rest of the benchmark functions), and they can at least give us an
-idea of how single-breed (GA or PSO) algorithms perform compared to
-our cross-breed (GA+PSO) version.
-The computational resources that we select to execute our experiments is a Dell Poweredge R730, 
-2 processors Intel Xeon E5-2670v3 12 core, Hard drive 1TB, RAM 128GB, Ubuntu Server 18.04 Operator System.
-%
+First, we will select those functions in which we are going to apply this framework. We
+will be working on continuous optimization since they are hard optimization
+problems and have also been chosen for benchmarks such as BBOB
+\cite{hansen2010bbob}; out of these functions, we have chosen Rastrigin, Sphere
+and Rosenbrock, which are represented in Figure \ref{fig:functions}. They have a
+different degree of difficulty, can be scaled to different dimensions (as all
+the rest of the benchmark functions), and they can at least give us an idea of
+how single-breed (GA or PSO) algorithms perform compared to our cross-breed
+(GA+PSO) version.  
 
    \begin{table}[h!tp]
     \caption{Parameters used by the algorithms for all dimensions.}
@@ -600,23 +588,25 @@ The computational resources that we select to execute our experiments is a Dell 
     \end{tabular}
 \end{table}
 
-The parameters used for these algorithms are shown in table
-\ref{table:ga-pso-parameters}. In every algorithm run, we will use  a
-stop criteria of an error below 0.5E-8. The cross-breed algorithm
+We show the parameters used for these algorithms in Table
+\ref{table:ga-pso-parameters}. In every algorithm run, we will use as a
+stop criteria an error below 0.5E-8. The cross-breed algorithm
 itself used 10 sub-populations for each
-experiment and a maximum of 4 migrations per sub-population..
-Since this was intended mainly
-as a first approach to the performance of the cross-breed algorith, we
-did not perform any kind of optimization in the parameter space. Note
+experiment and a maximum of 4 migrations per subpopulation.
+Since this was intended mainly as a first approach to the performance of the cross-breed algorithm, we
+did not perform any optimization in the parameter space. Note
 that we use random parametrization for every population, except for
-the number of iterations before migration takes place and the vector
-size (in the case of PSO) % Please clarify what's this vector size, I
+the number of iterations before migration takes place and 
+%the vector
+%size (in the case of PSO) % Please clarify what's this vector size, I
                           % have no idea - JJ
-or population size (in the case of the GA). We kept these number
-fixed, and also did not vary it except for the smallest case
-(dimensions = 2). This was made mainly for the sake of a fair
-comparison between two algorithms, but in principle, and as a line of
-research we could approach in the future, this could also be either
+                          % It is population size, in this case.
+                          % Will be number of particles in PSO 
+the population size (number of initial particals in the case of PSO). 
+We kept this number fixed, and also did not vary it except for the smallest case
+(dimensions = 2). That was made mainly for the sake of a fair
+comparison between the two algorithms. However, in principle, and as a line of
+research that we could approach in the future, population size could be
 random or adaptive depending on the number of dimensions.
 
 The maximum number of evaluations follows this equation:
@@ -630,7 +620,10 @@ also usual in benchmarks, but of course we could use different
 parameters depending on the function and scaling in a different, and
 non-linear, way. 
 
-Every experiment was carried out 15 times, using % way which kind of
+Every experiment was carried out 15 times, using a Dell Poweredge
+R730, with two Intel Xeon E5-2670v3 12-core processors, 128GB of RAM and
+running Ubuntu Server 18.04 OS.
+% way which kind of
                                 % computer and operating system was
                                 % used, as well as the code, if it's
                                 % been released. Please add answer to
@@ -645,7 +638,7 @@ data license in {URL hidden}
 \begin{table}[h!tp]
   \caption{Experimental results. The {\bf Best} column shows in {\em
       boldface} the best value among the three algorithms, or GA-PSO
-    if it's the same value as the best.}
+    if it is the same value as the best.}
   \label{table:resultados}
   \centering
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
@@ -706,28 +699,28 @@ Dimensions & Algorithm & Function & Average & SD & Best \\
 \end{table}
 
 
-Results are shown in table \ref{table:resultados}, including averages
-(and standard deviation) and best results for the 15 runs. The {\bf
-  Best} columns shows, among the 15 experiment, the best value
-reached. Except for two cases, the cros-breed algorithm is either the
+Results are shown in Table \ref{table:resultados}, including averages
+(and standard deviation) and the best results for the 15 runs. The {\bf
+  Best} column show, among the 15 experiments, the best value
+reached. Except for two cases, the cross-breed algorithm is either the
 best or the same value as the best (in some cases where all algorithms
 reach the optimum, which is 0). There are two cases where the PSO
 algorithm reaches better values for the Sphere function, but in
-general we can affirm that the cross-breed algorithm proposed here
+general, we can affirm that the cross-breed algorithm proposed here
 reaches either the best or a value that is very close to it.
 %
 \begin{figure}[h!tb]
   \centering
   \includegraphics[height=0.4\textheight]{img/rastrigin-boxplot.png}
-  \caption{Boxplot of results for Rastrigin function. Please note the $y$ axis is logarithmic..\label{fig:boxplot:rastrigin}}
+  \caption{Boxplots of results for the Rastrigin function. Please note the $y$ axis is logarithmic.\label{fig:boxplot:rastrigin}}
 \end{figure}
 
 Let us analyze the average behavior also via the boxplots shown
 in Figure \ref{fig:boxplot:rastrigin},  \ref{fig:boxplot:sphere} and
 \ref{fig:boxplot:rosenbrock}. Averages for Rastrigin are either
-significantly better or similar to GAs; 10 dimensions seems to be the
-case where the results for GA-PSO outperform significantly the rest of
-the algorithms; they are quite similar for more dimensions, and
+significantly better or similar to GAs; 10 dimensions seem to be the
+case where the results for GA-PSO outperform the rest of
+the algorithms significantly; they are quite similar for more dimensions and
 slightly better, but similar for smaller dimensions. 
 
 \begin{figure}[h!tb]
@@ -753,7 +746,7 @@ in the discussion.
 Finally, averages for GA-PSO show little difference with the best
 average in the Rosenbrock function, as shown in Figure
 \ref{fig:boxplot:rosenbrock}. In the cases its average is not the
-lowest, the difference with the highest average is not significant.
+lowest; the difference with the highest average is not significant.
 
 These three functions show a different behavior; however, in most
 cases GA-PSO outperform the single-breed algorithms, and in some cases
@@ -762,11 +755,11 @@ the best. We will discuss this findings in the next section.
 
 \section{Conclusions and future work}
 
-This architecture is completely scalable and useful for implementation of
-multiple algorithms, until now is only GA and PSO but according to the results
-with this kind of architecture there is no limit and it works better than
-cross-breed multi-population with only one algorithm, also every experiment executes in
-short times because serverless functions searching in an asynchronous way
+This architecture is completely scalable and useful for the implementation of
+multiple algorithms. Until now it is only GA and PSO; However, according to the results
+with this kind of architecture, there is no limit and it works better than a
+cross-breed multi-population with only one algorithm. Also, every experiment executes in
+short times because serverless functions are searching asynchronously, and
 getting a fast convergence.
 
 In general, cross-breed algorithm increase diversity and then help
