@@ -388,15 +388,20 @@ using the NodeJS interpreter.
   \caption{General Architecture Flowchart.} \label{flow}
   \end{figure}
 
+The general architecture will be described next, and then we will
+focus on the most important components in the next subsections.
+
+\subsection{Architecture}
+
 There are three types of services in this model. First, there is a component
 responsible for the management of the algorithm in general, including
 starting and terminating the algorithm, and, additionally, migration between sub-populations; this
 particular task can be decoupled in other implementations. The second service is
 a message provider consisting of several scalable asynchronous queues. As a
 third component, we have a collection of serverless functions. We explain the 
-data flow between these services in more detail on the next sections.   
+data flow between these services in more detail on the next subsections.  
 
-\subsection{Manager}
+\subsubsection{Manager}
 
 This component receives the configuration parameters of
   the experiment and initializes it; then it proceeds to create the
@@ -428,7 +433,7 @@ This whole
   serverless functions to perform a crossover or an update of any of the
   subpopulations \cite{Lovbjerg2001,Jimeno2019}. 
 
-  \subsection{Message Provider}
+  \subsubsection{Message Provider}
 
   Communication is a vital aspect of distributed
 systems and can be complicated to implement. Messaging systems have been used
@@ -442,7 +447,7 @@ subscribe to message channels, enabling many configurations. In this
 implementation,  we use only three queues, one for each type of algorithm and
 one for populations returning to the manager.
 
-\subsection{Serverless functions}
+\subsubsection{Serverless functions}
 
 Population-based optimization algorithms can be implemented
 as stateless functions, receiving a configuration and a population as
