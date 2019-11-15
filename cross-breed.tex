@@ -267,61 +267,6 @@ functions, as seen in Table~\ref{table:architectures}.
 % SoA  for Multipopulations in Cloud 
 %%
 
-%\subsubsection{Serverless Operation} 
-%In math, a function is a relation between a set of inputs and an allowed set of
-%outputs, with the idea that each input goes to a single output. However, in
-%computer science, a function is defined as a unit of code that has a role in a
-%greater code structure, works on various inputs that usually are variables and
-%throws a concrete output that is the result of the process those variables. One
-%of the main features that belong to functions is that they are stateless, they
-%are focused on inputs and result with a simple process that does not require a
-%state, at the moment the inputs get into the function are already generating an
-%output. In serverless, events such as messages or HTTP requests can trigger
-%these functions. Also, each function scales independently and is stateless with
-%a short duration \cite{Baird2016,Cook2017}.
-% I am not a fan of that definition of a function in CS - Mario
-% Explain a bit more the "Stateless" part - Mario 
-
-% I kind of explain this above. - Mario
-
-% \subsection{Asynchronous}
-% Asynchronous algorithms consist of performing a certain action such as the
-% movement of the particles in PSO or the crosses and mutations of the GA without
-% the need for the execution of one to affect the other, in a few words a
-% Individual execution of each without waiting times. This is very useful. when
-% several threads are used in parallel execution because if the expected response
-% of action, for example, a GA of 100 generations and a GA of 10 is it is
-% preferable not to stop the search and give priority to 10 generations
-% \cite{Santander-jim2018,Sherry2012,Goebel2016,Guerv2018}. Asynchronous functions
-% are created in programming that has promising results response that is immediate
-% and does not stop the main execution by secundary actions
-% \cite{Moroney2017,Ambler2015}.
-% I think this is known by the Parallel GA comunity 
-
-
-% An asynchronous architecture has what is known as execution queues in the that
-% can be appreciated that give an added value that gives advantage over other
-% architectures by reducing waiting times and neglecting the concept that order is
-% important, of course, this type of architectures is not applicable to all cases
-% but speaking in distributed systems where multiple population-based algorithms
-% are executed with parallel execution, they result in a better degree of
-% efficiency, in addition to reducing the number of control parameters since they
-% require having a decoupled architecture \cite{Ma2019,Santander-jim2018}.
-
-%\subsection{Functional Programming}
-
-%It is a very important programming paradigm that is based on lambda expression,
-%created from math knowledge. The programming languages could be classified by
-%programming styles, there are usually known as programming paradigms
-%\cite{Kunasaikaran2016}.
-
-%In the functional programming style the data does not exist independently or by
-%themselves, but these happen in the form of arguments and are transformed as a
-%flow in an exit through the functions. Each function is described as atomic
-%because each one only has a simple operation that generates an expected result
-%\cite{Kunasaikaran2016}.
-
-
 \section{Proposed architecture}
 \label{sec:architecture}
 
@@ -494,6 +439,9 @@ adding them together and then dividing by two, as shown by the blue arrows.
 for example from the values 
 2 and 5 the middle point would be 3.5 as we can see in Figure \ref{fig4} 
 
+% What happens to the first individual in sub-population 1? It's not
+% generated in the same way? - JJ
+
 The migration created for % to? For? - JJ
 this architecture is a method called Splitting Point
 Uniform that consists of a uniform mask that is created to apply the migration
@@ -503,8 +451,6 @@ but in the second offspring the "0" values indicates where to swap individuals/v
  makes a crossover between individuals/vectors creating uniform mask that indicates where to swap and where to 
  replaces some of them with middle points of the selected data, for example from the values 
  2 and 5 the middle point would be 3.5 as we can see in Figure \ref{fig4}.
- % Not clear. Maybe a
-                                % picture? - JJ
 
 This kind of operator is simpler and less explorative than
 BLX-$alpha$, for instance \cite{picek2013recombination}. In our case,
@@ -534,6 +480,7 @@ the exploration part is left to the architecture itself.
 
 % The above is inconsistent with our first description, 
 % Two pops are taken from the pool and just one is selected  randomly. - Mario
+
 % But you need to describe some kind of migration selection - JJ
 
   \section{Experiments and Results}
@@ -603,19 +550,13 @@ how single-breed (GA or PSO) algorithms perform compared to our cross-breed
 \end{table}
 
 We show the parameters used for these algorithms in Table
-\ref{table:ga-pso-parameters}. In every algorithm run, we will use as a
-stop criteria an error below 0.5E-8. The cross-breed algorithm
-itself used 10 sub-populations for each
-experiment and a maximum of 4 migrations per subpopulation.
-Since this was intended mainly as a first approach to the performance of the cross-breed algorithm, we
-did not perform any optimization in the parameter space. Note
-that we use random parametrization for every population, except for
-the number of iterations before migration takes place and 
-%the vector
-%size (in the case of PSO) % Please clarify what's this vector size, I
-                          % have no idea - JJ
-                          % It is population size, in this case.
-                          % Will be number of particles in PSO 
+\ref{table:ga-pso-parameters}. In every algorithm run, we will use as a stop
+criteria an error below 0.5E-8. The cross-breed algorithm itself used 10
+sub-populations for each experiment and a maximum of 4 migrations per
+subpopulation. Since this was intended mainly as a first approach to the
+performance of the cross-breed algorithm, we did not perform any optimization in
+the parameter space. Note that we use random parametrization for every
+population, except for the number of iterations before migration takes place and
 the population size (number of initial particles in the case of PSO). 
 We kept this number fixed, and also did not vary it except for the smallest case
 (dimensions = 2). That was made mainly for the sake of a fair
@@ -763,10 +704,6 @@ the best. We will discuss this findings in the next section.
 
 \section{Conclusions and future work}
 
-%Initial experiments using this architecture proved that it is completely
-%scalable and useful for the implementation of
-%multiple algorithms. % You have not proved anything about scalability
-                     % - JJ
 In this paper we have proved how a cross-breed algorithm algorithm,
 which uses GA and PSO; can be easily implemented using it. The
 cross-breeding actually occurs, allowing these combined algorithms
