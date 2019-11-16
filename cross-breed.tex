@@ -313,31 +313,32 @@ data flow between these services in more detail on the next subsections.
 This component receives the configuration parameters of
   the experiment and initializes it; then it proceeds to create the
   number of subpopulations needed. Every time the manager creates a new
-  population, it triggers an event that stores the new population into the
-  MongoDB data store. This pool of populations will be used later for migration.
-  In previous works, this pool was kept in-memory and
-  therefore limited by its size. 
-
-  Also, the manager asynchronously pushes new populations into a message queue,
+  population, it triggers an event that stores the new population into 
+  an external key-based data store implemented in MongoDB.  
+  This pool of populations will be used later for in 
+  the migration process. In previous works, this pool was kept in-memory and
+  therefore was limited by its size. Also, the manager asynchronously 
+  pushes new populations into a message queue,
   which in turn triggers a serverless function, which will be
-  described below. Because each sub-population
-  requires the execution of a different algorithm, in the cloud-service, there is a different
-  web socket assigned for each type of algorithm, to push each population to
+  described below. Because each sub-population requires the execution 
+  of a different algorithm in the cloud-service, there is a web socket 
+  assigned for each type of algorithm, push populations to
   their respective queue.
 
- Once a subpopulation is processed, the manager pulls the population from the
-  Processed Populations queue and selects a population from the pool to mix
-  them. To make the selection, the manager takes the best two populations from
-  the pool, according to their best individual, and selects one randomly. Once
-  the controller has selected a population from the pool, it mixes this
-  population with the one that just arrived. Populations are mixed by executing
-  a crossing between them; we will explain this process below. As a result of
-  the migration, we have now created two new populations, which are resent back
+  Once a population is processed by a stateless function, it is 
+  pushed to a queue containing the processed populations. 
+  The manager constantly pulls populations from this queue
+  (Processed Populations queue). Each population population it takes,
+  it is mixed with one of the populations stored in the population pool.
+  For this, the manager takes the best two populations from
+  the pool and selects one randomly. Populations in the pool are
+  sorted according to their best fitness. Populations are mixed by executing
+  a crossing (migration) between them; we will explain this process below. As a result of
+  the migration, we have now two new populations, which are resent back
   to their respective queues. This process is repeated until the number of
   assigned migrations for the multi-population \cite{Ma2019,Santander-jim2018}
-  is completed.
-
-This whole
+  is completed. 
+  This whole
   process is performed asynchronously, avoiding the wait for all responses from
   serverless functions to perform a crossover or an update of any of the
   subpopulations \cite{Lovbjerg2001,Jimeno2019}. 
@@ -361,7 +362,14 @@ one for populations returning to the manager.
 Population-based optimization algorithms can be implemented
 as stateless functions in a serverless framework  \cite{Roberts2016},
 receiving a configuration and a population as 
-parameters, and returning the evolved population. % Is this why you
+parameters, and returning the evolved population. 
+The configuration parameter is needed because it contains all
+the information needed to execute the optimization algorithm
+and to report and identify the population when it is returned to the queue. 
+The identifier is needed because many experiments with their corresponding 
+multi-populations can be running at the same time.
+
+% Is this why you
                                 % need the "attribute" part of the
                                 % population? Please say so - JJ
 
@@ -392,16 +400,16 @@ Figure \ref{fig4}.
   \item {\bf Metadata}: shown as ``Attributes'' in \ref{fig4}, this
     section includes all the data needed 
   to configure and report the execution of the population.
-  For instance, algorithm parameters, objective function, 
-  optimum value (benchmarks). It also includes a trace of the execution, 
+  For instance, it has the algorithm, the parameters, objective function and 
+  the optimum value (when executing benchmarks). It also includes a trace of the execution, 
   for instance, the number of evaluations per iteration, 
-  the best individual, and its fitness value.  
-  It is important to explain that each sub-population is independent, 
-  that means that there can be executed multiple benchmark functions 
-  at the same time and the architecture identify this attribute to migrate
-  only populations with the same benchmark function.
-  \item {\bf Sub-population} This is the actual collection of individuals
-  in the population in their current state.    
+  the best individuals, and their fitness value.  
+  It is necessary to explain that each population is independent, which means
+  that even multiple benchmark functions could be optimized at the same time.
+  The controller needs this data in order to migrate only populations working on
+  the same problem. 
+  \item {\bf Sub-population} This is the actual collection of
+  individuals in the population in their current state.  
 \end{itemize}
 %
 \begin{figure}[htp]
