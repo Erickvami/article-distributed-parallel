@@ -34,26 +34,28 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 %
 \maketitle              % typeset the header of the contribution
 %
-\begin{abstract}
-  Combining multiple algorithms, with different parameters, interacting with each
-other at the same time, can benefit from the strengths of each. For instance, a
-genetic algorithm could find a promising global solution that is not optimal
-while another algorithm, more suitable for a local search, finds the global
-optimum. This approach has been followed extensively in recent years, with
-success. Moreover, there is a need for frameworks, architecture, and
-implementation models that can allow researchers the development of new
-parallel, asynchronous, heterogeneous, and parameter-free algorithms in a scalable way.
-In this work, we present an event-driven architecture, designed to asynchronously distribute the
-processing of population-based algorithms. 
-The search algorithm uses a multi-population approach, creating multiple populations 
-with different parameters of execution, allowing the implementation of multiple algorithms, in
-this case Genetic Algorithms (GAs) and Particle Swarm Optimization (PSO).The
-cross-breeding actually occurs, allowing these combined algorithms
-outperform, with a high probability, single-algorithm
-versions. The framework we have provided also has few parameters to
-tune, since single-algorithm parameters are selected randomly; in
-general, this will boost diversity of every algorithm by itself.
 
+
+\begin{abstract}
+
+  Multi-population methods can combine multiple algorithms, with different
+  parameters, interacting with each other at the same time. For instance, a
+  genetic algorithm could find a promising global solution that is not optimal
+  while another algorithm, more suitable for a local search, finds the global
+  optimum. This approach has been followed extensively in recent years, with
+  success. Moreover, there is a need for frameworks, architectures, and
+  implementation models that can allow researchers the development of new
+  parallel, asynchronous, heterogeneous, and parameter-free algorithms in a
+  scalable way. In this work, we present an event-driven architecture, designed
+  to distribute the processing of population-based algorithms asynchronously.
+  The search algorithm uses a multi-population approach, creating multiple
+  populations with different parameters of execution, allowing the
+  implementation of multiple algorithms. In this work, we cross-breed Genetic
+  Algorithms (GAs) and Particle Swarm Optimization (PSO). Experiments show that
+  the framework allows the combined algorithms outperform, with a high
+  probability, single-algorithm versions. The framework we provide also has few
+  parameters to tune since single-algorithm parameters are selected randomly; in
+  general, this will boost the diversity of every algorithm by itself.
 
 \keywords{Multi-population  
   \and Asynchronous 
