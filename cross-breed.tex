@@ -423,7 +423,7 @@ Figure \ref{fig4}.
 % algorithm use the attributes for something? Also why do we need this
 % kind of structure. See issue #18 
 
-\subsection{Splitting Point Uniform Migration} 
+\subsection{Migration} 
 %
 \begin{figure}[htp]
   \centering
@@ -435,78 +435,40 @@ Figure \ref{fig4}.
 \end{figure}
 
 As we have mentioned earlier, an essential aspect of multi-population
-and cross-breeding methods is
-the communication between subpopulations after some iterations of isolated
+and cross-breeding methods is the communication between subpopulations 
+after several iterations of isolated
 search. Individuals with some specifically chosen characteristics,
 such as a high fitness, maybe combined with a certain degree of
 similitude or difference to the host population, can be sent to other
 population so that they keep the whole set from premature
 convergence.
 
-Our cross-breed architecture will use Splitting Point Uniform crossover found in GA
+Our cross-breed architecture will use splitting point uniform crossover found in GA
 algorithms \cite{Kramer2014}. % Found where? I have not found any reference.
 This method is applied in two levels; first, when selecting which
 individuals are going to migrate from one population to another, and later when
-single individuals are combined. The method consists of applying a uniform mask
-created to select which elements are going to participate in the migration or
-crossover in the case of individuals. When selected individuals are going to be
+single individuals are combined. 
+
+The method consists of applying a uniform mask created to select which elements 
+are going to participate in the migration or crossover. When selected individuals are going to be
 combined, the selected components, in this case, continuous values, are combined
-using the midpoint between the matching genes selected by the binary mask.
+using the midpoint between the matching genes selected by a binary mask.
 \cite{Kramer2017,Kaya2011}.
 
-This is exemplified in Figure \ref{fig4}, where we show
-two individuals that were selected randomly as parents of two individuals for a
-new subpopulation. Parents are shown on the top. Because these individuals are
-vectors of uniform values, the crossover operator combines each component by
-adding them together and then dividing by two, as shown by the blue arrows. 
-for example from the values 
-2 and 5 the middle point would be 3.5 as we can see in Figure \ref{fig4} 
+We exemplified this in Figure \ref{fig4}, where we show two individuals that
+were randomly selected by the uniform mask as parents of two new individuals.
+Parents are shown on the top. First, the binary mask is applied. The uniform
+mask assigns a 0 or 1 bit randomly to each component of the vector. Those
+components having a 0 value are swapped with the other parent. For those with a
+1 bit, the following operation is applied to replace the selected component in
+the child: each component is combined by adding both values and then dividing
+the result by two, as shown by the blue arrows. For example, for values 2 and 5,
+the new value would be 3.5, as we can see in Figure \ref{fig4}. This kind of
+operator is more straightforward and less explorative than BLX-$alpha$, for
+instance \cite{picek2013recombination}. In our case, the exploration part is
+left to the architecture itself.
 
-% What happens to the first individual in sub-population 1? It's not
-% generated in the same way? - JJ
-
-The migration created for % to? For? - JJ
-this architecture is a method called Splitting Point
-Uniform that consists of a uniform mask that is created to apply the migration
-between individuals, vectors or both of them, from two sub-populations. 
-The binary mask indicates for the first offspring where to swap individuals/vectors, 
-but in the second offspring the "0" values indicates where to swap individuals/vectors, for "1" 
- makes a crossover between individuals/vectors creating uniform mask that indicates where to swap and where to 
- replaces some of them with middle points of the selected data, for example from the values 
- 2 and 5 the middle point would be 3.5 as we can see in Figure \ref{fig4}.
-
-This kind of operator is simpler and less explorative than
-BLX-$alpha$, for instance \cite{picek2013recombination}. In our case,
-the exploration part is left to the architecture itself.
-
-% \begin{figure}[!htp]
-%   \centering
-%   \includegraphics[width=0.8\textwidth]{img/splittinPointUniform.png}
-%   \caption{Splitting Point Uniform process.} \label{fig4}
-%   \end{figure}
-
-
-%   \subsection{Migration Selection} 
-  
-%   The 2 sub-populations selected to realize
-%   migration is one arrived sub-population from a serverless function and another
-%   one using selection by tournament keeping up the information of the best
-%   sub-population of the multi-population but without discarding possible
-%   sub-populations that in a near future could be the clue to find optimal
-%   values.
-
-% \begin{figure}[htp]
-%   \centering
-%   \includegraphics[width=0.5\textwidth]{img/selection.png}
-%   \caption{Selection by tournament.} \label{fig5}
-%   \end{figure}
-
-% The above is inconsistent with our first description, 
-% Two pops are taken from the pool and just one is selected  randomly. - Mario
-
-% But you need to describe some kind of migration selection - JJ
-
-  \section{Experiments and Results}
+\section{Experiments and Results}
   \label{sec:exp}
 
   In this section, we will first present the experiments that we have performed,
@@ -520,7 +482,7 @@ the exploration part is left to the architecture itself.
 \caption{Benchmark
 functions for experimentation.} 
 \label{fig:functions} 
-\end{figure} % 
+\end{figure}  
 
 First, we will select those functions in which we are going to apply this framework. We
 will be working on continuous optimization since they are hard optimization
@@ -757,14 +719,6 @@ specific cases, obtain worse results than the cross-breed  GA-PSO
 algorithm. However, the maintenance of diversity makes this difference
 relatively small, and the fact that it works better on the rest of the
 cases more than compensates.
-
-
-%\section{Future work}
-
-% Reference with interesting challenges: li2015multi 
-% Dynamic optimization needs: a non-fixed number of populations, 
-% how to increase (measure) diversity in dynamic optimization problems.
-% restrict or not restrict populations in certain areas.
 
 To get a continuous improvement it is believed that it is required a sort of
 mutation applied to the sub-populations. This mutation would be a swapping type,
