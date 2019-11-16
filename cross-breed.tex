@@ -35,39 +35,24 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-  % It seems like the abstract is incompleate, it is a good idea to 
-  % write it at the end - Mario
-  % You can't present software implementations, but a methodology that
-  % you have tested - JJ
-  In this work, we present a software implementation that follows an
-  event-driven architecture, designed to asynchronously distribute the
-  processing of population-based algorithms. The search algorithm uses a
-  multi-population approach, creating multiple populations with different
-  parameters of execution, allowing the implementation of multiple algorithms, in
-  this case Genetic Algorithms (GAs) and Particle Swarm Optimization (PSO).
-  Using a message queue, each population is handled by asynchronous
-  serverless functions, taking advantage of functional programming
-  % "taking advantage of" is not really it. Really, it needs to be
-  % that way.
-    % \cite{Kunasaikaran2016}
-    % No citations in abstract.
-    .This cloud-based JavaScript implementation includes a web-based
-    application for
-    % Why is it cloud ready? - JJ
-    the configuration and interaction with algorithms. We executed
-    several
-    % That's an implementation detail - JJ
-    experiments to validate the system, using benchmark functions and
-    several configurations. Results show ...
-
-    % Results here 
-
-   % Having
-   % the knowledge that both of them are population-based algorithms it can be
-   % defined that a migration between 2 or more populations are possible, and
-   % this type of hybrid could be helpful to increase the possibility to find the
-   % optimal result (the best of the best), there is where fits the concept of
-   % Multi-population. 
+  Combining multiple algorithms, with different parameters, interacting with each
+other at the same time, can benefit from the strengths of each. For instance, a
+genetic algorithm could find a promising global solution that is not optimal
+while another algorithm, more suitable for a local search, finds the global
+optimum. This approach has been followed extensively in recent years, with
+success. Moreover, there is a need for frameworks, architecture, and
+implementation models that can allow researchers the development of new
+parallel, asynchronous, heterogeneous, and parameter-free algorithms in a scalable way.
+In this work, we present an event-driven architecture, designed to asynchronously distribute the
+processing of population-based algorithms. 
+The search algorithm uses a multi-population approach, creating multiple populations 
+with different parameters of execution, allowing the implementation of multiple algorithms, in
+this case Genetic Algorithms (GAs) and Particle Swarm Optimization (PSO).The
+cross-breeding actually occurs, allowing these combined algorithms
+outperform, with a high probability, single-algorithm
+versions. The framework we have provided also has few parameters to
+tune, since single-algorithm parameters are selected randomly; in
+general, this will boost diversity of every algorithm by itself.
 
 
 \keywords{Multi-population  
@@ -698,7 +683,9 @@ tune, since single-algorithm parameters are selected randomly; in
 general, this will boost diversity of every algorithm by itself. 
 
 Since we are using a serverless architecture, high-performance is
-achieved % comment something on the overall time needed for each
+achieved, each single experiment lasted between 30 to 40 seconds.
+And the whole set of experiments took about 3 hours to complete.
+% comment something on the overall time needed for each
 % experiment. - JJ
 Scalability has as only ceiling the amount of individuals memory can
 hold, but its main advantage is that the architecture itself is able
