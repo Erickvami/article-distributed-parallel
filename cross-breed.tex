@@ -382,12 +382,10 @@ itself.
 
 \subsection{Subpopulations}
 
-Each subpopulation is a structure with two main attributes, shown in
-Figure \ref{subpop}.
+Each subpopulation is a structure with two main attributes:
 
 \begin{itemize}
-  \item {\bf Metadata}: shown as ``Algorithm Attributes'' in Figure \ref{subpop}, this
-    section includes all the data needed 
+  \item {\bf Metadata}: This atribute includes all the data needed 
   to configure and report the execution of the population.
   For instance, it has the algorithm, the parameters, objective function and 
   the optimum value (when executing benchmarks). It also includes a trace of the execution, 
@@ -401,11 +399,11 @@ Figure \ref{subpop}.
   individuals in the population in their current state.  
 \end{itemize}
 %
-\begin{figure}[htp]
-  \centering
-  \includegraphics[width=0.5\textwidth]{img/subpopulationDefinition.png}
-  \caption{Sub-population composition.} \label{subpop}
-\end{figure}
+%\begin{figure}[htp]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{img/subpopulationDefinition.png}
+%  \caption{Sub-population composition.} \label{subpop}
+%\end{figure}
 
 % Say something about why this structure is needed and its relevance
 % to the algorithm itself. Is it just administrative data, or will the
@@ -416,7 +414,7 @@ Figure \ref{subpop}.
 %
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.9\textwidth]{img/splittinPointUniform.png}
+  \includegraphics[width=0.5\textwidth]{img/splittinPointUniform.png}
   \caption{Splitting Point Uniform process. The offspring in
     population two gets the result of summing the corresponding gene
     of the two ancestors and dividing it by two.} \label{fig4}
@@ -466,18 +464,18 @@ left to the architecture itself.
     
   \subsection{Experiments}
 
-\begin{figure}[htp] \centering
-\includegraphics[width=0.7\textwidth]{img/benchmark.png} 
-\caption{Benchmark
-functions for experimentation.} 
-\label{fig:functions} 
-\end{figure}  
+%\begin{figure}[htp] \centering
+%\includegraphics[width=0.7\textwidth]{img/benchmark.png} 
+%\caption{Benchmark
+%functions for experimentation.} 
+%\label{fig:functions} 
+%\end{figure}  
 
 First, we will select those functions in which we are going to apply this framework. We
 will be working on continuous optimization since they are hard optimization
 problems and have also been chosen for benchmarks such as BBOB
 \cite{hansen2010bbob}; out of these functions, we have chosen Rastrigin, Sphere
-and Rosenbrock, which are represented in Figure \ref{fig:functions}. They have a
+and Rosenbrock. They have a
 different degree of difficulty, can be scaled to different dimensions (as all
 the rest of the benchmark functions), and they can at least give us an idea of
 how single-breed (GA or PSO) algorithms perform compared to our cross-breed
@@ -635,7 +633,7 @@ reaches either the best or a value that is very close to it.
 %
 \begin{figure}[h!tb]
   \centering
-  \includegraphics[height=0.4\textheight]{img/rastrigin-boxplot.png}
+  \includegraphics[width=0.8\textwidth]{img/rastrigin-boxplot.png}
   \caption{Boxplots of results for the Rastrigin function. Please note the $y$ axis is logarithmic.\label{fig:boxplot:rastrigin}}
 \end{figure}
 
@@ -649,7 +647,7 @@ slightly better, but similar for smaller dimensions.
 
 \begin{figure}[h!tb]
   \centering
-  \includegraphics[height=0.44\textheight]{img/sphere-boxplot.png}
+  \includegraphics[width=0.8\textwidth]{img/sphere-boxplot.png}
   \caption{Boxplot of results for the Sphere function, with a logarithmic $y$ axis.\label{fig:boxplot:sphere}}
 \end{figure}
 %
@@ -661,7 +659,7 @@ performance of the GA and the PSO algorithm. We will come back to this
 in the discussion.
 \begin{figure}[h!tbp]
   \centering
-  \includegraphics[height=0.4\textheight]{img/rosenbrock-boxplot.png}
+  \includegraphics[width=0.8\textwidth]{img/rosenbrock-boxplot.png}
   \caption{Boxplot of results for the Rosenbrock function; $y$ axis is logarithmic.\label{fig:boxplot:rosenbrock}}
 \end{figure}
 %
@@ -729,9 +727,8 @@ We also think about experiemtning other types of migration and comparing them.
 
 \section*{Acknowledgements}
 
-Acks\\
-taking this much\\
-space
+This paper has been supported in part by projects DeepBio (TIN2017-85727-C4-2-P) and 
+TecNM-5654.19-P.
 
 \bibliographystyle{splncs04}
 \bibliography{multipopulation}
