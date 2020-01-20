@@ -317,7 +317,8 @@ This component receives the configuration parameters of
   pushed to a queue containing the processed populations. 
   The manager constantly pulls populations from this queue
   (Processed Populations queue). Each population population it takes,
-  it is mixed with one of the populations stored in the population pool.
+  it is mixed with one of the populations stored in the population pool, only when 
+  there is at least two populations in the pool.
   For this, the manager takes the best two populations from
   the pool and selects one randomly. Populations in the pool are
   sorted according to their best fitness. Populations are mixed by executing
@@ -382,10 +383,10 @@ itself.
 \subsection{Subpopulations}
 
 Each subpopulation is a structure with two main attributes, shown in
-Figure \ref{fig4}.
+Figure \ref{subpop}.
 
 \begin{itemize}
-  \item {\bf Metadata}: shown as ``Attributes'' in \ref{fig4}, this
+  \item {\bf Metadata}: shown as ``Algorithm Attributes'' in Figure \ref{subpop}, this
     section includes all the data needed 
   to configure and report the execution of the population.
   For instance, it has the algorithm, the parameters, objective function and 
@@ -403,7 +404,7 @@ Figure \ref{fig4}.
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.5\textwidth]{img/subpopulationDefinition.png}
-  \caption{Sub-population composition.} \label{fig3}
+  \caption{Sub-population composition.} \label{subpop}
 \end{figure}
 
 % Say something about why this structure is needed and its relevance
