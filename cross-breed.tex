@@ -135,7 +135,8 @@ instance, by having the size of subpopulations fixed, it is easier to control
 the number of evaluations and the communication costs, when the algorithm is in
 operation.
 
-Combining multiple algorithms, with different parameters, interacting with each
+A multi-population algorithm can benefit from having different algorithms 
+and parameters in each subpopulation, interacting with each
 other at the same time, can benefit from the strengths of each. For instance, a
 genetic algorithm could find a promising global solution that is not optimal
 while another algorithm, more suitable for a local search, finds the global
@@ -438,10 +439,10 @@ This method is applied in two levels; first, when selecting which
 individuals are going to migrate from one population to another, and later when
 single individuals are combined. 
 
-The method consists of applying a uniform mask created to select which elements 
-are going to participate in the migration or crossover. When selected individuals are going to be
+The method consists of randomly select which elements 
+are going to participate in the migration. When selected individuals are going to be
 combined, the selected components, in this case, continuous values, are combined
-using the midpoint between the matching genes selected by a binary mask.
+using the midpoint between the matching genes selected also at random.
 \cite{Kramer2017,Kaya2011}.
 
 We exemplified this in Figure \ref{fig4}, where we show two individuals that
@@ -724,9 +725,7 @@ Differential Evolution, brought into the mix. Scalability will also be
 something we will working on in the future, trying to find what are
 its limits and how they depend on the type of problem that is solved.
 
-We also think about implementing an interactive user interface to display the
-behavior of the populations and allowing a more accessible and precise analysis
-of the algorithm. This interface could be helpful as an educational tool.
+We also think about experiemtning other types of migration and comparing them. 
 
 
 \section*{Acknowledgements}
