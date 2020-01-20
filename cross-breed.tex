@@ -57,6 +57,7 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
   parameters to tune since single-algorithm parameters are selected randomly; in
   general, this will boost the diversity of every algorithm by itself.
 
+
 \keywords{Multi-population  
   \and Asynchronous 
   \and Sub-population 
@@ -71,7 +72,7 @@ XXXXXXXXXX\inst{2}\orcidID{2222--3333-4444-5555}}
 
 In the past few decades, nature-inspired optimization algorithms have been
 applied to solve complex real-world problems \cite{yang2014nature}. Algorithms
-inspired in natural processes include evolutionary algorithms (EAs)
+inspired by natural processes include evolutionary algorithms (EAs)
 \cite{back1996evolutionary} and swarm intelligence (SI) \cite{kennedy2006swarm},
 among others. These population-based algorithms share the common characteristic
 of using an initial set of random candidate solutions that are later used to
@@ -89,7 +90,7 @@ these algorithms.
 %% Island Model 
 One of the first concepts proposed for parallelization was the island model,
 which lead to an increased performance \cite{gorges1990explicit,grosso1985computer} 
-by dividing a large population into communicated subpopulations.
+by dividing a large population into communicating subpopulations.
 %% Multi-population 
 Since then, the concept has been applied to other population-based algorithms
 and has been adapted by researchers to pursue other objectives besides the
@@ -293,7 +294,7 @@ starting and terminating the algorithm, and, additionally, the migration between
 last particular task can be decoupled in other implementations. The second service is
 a message provider consisting of several scalable asynchronous queues. As a
 third component, we have a collection of serverless functions. We explain the 
-data flow between these services in more detail on the next subsections.  
+data flow between these services in more detail next.  
 
 \subsubsection{Manager}
 
@@ -676,7 +677,7 @@ the best. We will discuss this findings in the next section.
 
 \section{Conclusions and future work}
 
-In this paper we have proved how a cross-breed algorithm algorithm,
+In this paper we have shown how a cross-breed algorithm algorithm,
 which uses GA and PSO; can be easily implemented using it. The
 cross-breeding actually occurs, allowing these combined algorithms
 outperform, with a high probability, single-algorithm
